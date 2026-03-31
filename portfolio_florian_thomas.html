@@ -20,6 +20,9 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
+  .page-wrapper { max-width: 1200px; margin: 0 auto; }
+  section, .semestre, .sae-intro, .chiffres, .acces, .nav-pages, .retour, .hero, .formation, .competences, .matieres, .ressenti, .debouches, .stages-section, .annee-section, .sae-explainer, .fonctionnement, .definition { width: 100%; }
+  section > *, .semestre > *, .hero > *, .formation > *, .competences > *, .matieres > *, .ressenti > *, .debouches > *, .stages-section > *, .annee-section > *, .sae-explainer > *, .fonctionnement > *, .definition > * { max-width: 1100px; margin-left: auto; margin-right: auto; width: 100%; }
 
   body {
     background: var(--cream);
@@ -85,7 +88,7 @@
     border: 1px solid var(--border);
     opacity: 0.4;
   }
-  .hero-content { max-width: 680px; animation: fadeUp 0.9s ease both; }
+  .hero-content { max-width: 680px; margin-left: auto; margin-right: auto; animation: fadeUp 0.9s ease both; }
   .hero-eyebrow {
     font-size: 0.75rem;
     letter-spacing: 0.2em;
@@ -114,7 +117,7 @@
   .hero-desc {
     font-size: 1rem;
     color: var(--text-muted);
-    max-width: 500px;
+    max-width: 500px; margin-left: auto; margin-right: auto;
     margin-bottom: 2.5rem;
     line-height: 1.8;
   }
@@ -157,7 +160,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
-    max-width: 1000px;
+    max-width: 1000px; margin-left: auto; margin-right: auto;
   }
   .about-text p {
     color: var(--text-muted);
@@ -186,7 +189,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
-    max-width: 1000px;
+    max-width: 1000px; margin-left: auto; margin-right: auto;
   }
   .skill-card {
     background: white;
@@ -223,7 +226,7 @@
 
   /* EXPERIENCES */
   .experiences { background: white; }
-  .timeline { max-width: 800px; position: relative; }
+  .timeline { max-width: 800px; margin-left: auto; margin-right: auto; position: relative; }
   .timeline::before {
     content: '';
     position: absolute; left: 0; top: 0; bottom: 0;
@@ -282,7 +285,7 @@
 
   /* CV */
   .cv-section { background: var(--parchment); text-align: center; }
-  .cv-inner { max-width: 500px; margin: 0 auto; }
+  .cv-inner { max-width: 500px; margin-left: auto; margin-right: auto; margin: 0 auto; }
   .cv-inner p { color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem; }
   .cv-btn {
     display: inline-flex; align-items: center; gap: 0.75rem;
@@ -303,7 +306,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    max-width: 800px;
+    max-width: 800px; margin-left: auto; margin-right: auto;
   }
   .contact-card {
     background: white;
