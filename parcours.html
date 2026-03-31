@@ -54,6 +54,11 @@
   .parcours-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.3);flex-shrink:0;}
   .parcours-list li.active{color:white;font-weight:500;}
   .parcours-list li.active::before{background:var(--gold);}
+  /* liste sur fond blanc dans section formation */
+  .col .parcours-list li{border-bottom:1px solid var(--border);color:var(--muted);}
+  .col .parcours-list li::before{background:var(--border);}
+  .col .parcours-list li.active{color:var(--charcoal);}
+  .col .parcours-list li.active::before{background:var(--wine);}
 
   /* COMPÉTENCES grille 3 colonnes */
   .comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
@@ -128,7 +133,6 @@
     <div class="breadcrumb"><a href="portfolio_florian_thomas.html">Accueil</a> <span>/</span> Mon parcours</div>
     <h1>BUT Génie<br><em>Biologique</em></h1>
     <p class="hero-sub">Parcours Sciences de l'Aliment et Biotechnologies — IUT Nancy-Brabois · 2023–2026</p>
-    <a href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-1-licence-professionnelle-bachelor-universitaire-de-technologie-g-nie-biologique-29013.pdf" target="_blank" class="hero-link">↗ Programme officiel</a>
   </div>
   <div class="hero-right">
     <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:1rem;">Les 5 parcours du BUT GB</p>
@@ -160,7 +164,7 @@
       <a href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-1-licence-professionnelle-bachelor-universitaire-de-technologie-g-nie-biologique-29013.pdf" target="_blank" class="prog-link">↗ Consulter le programme officiel</a>
     </div>
     <div class="col">
-      <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:1rem;">5 compétences visées</p>
+      <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">5 compétences visées</p>
       <ul class="parcours-list">
         <li class="active">Réaliser des analyses biologiques</li>
         <li class="active">Expérimenter dans le génie biologique</li>
@@ -189,36 +193,36 @@
   <h2>Les matières <em>enseignées</em></h2>
   <div class="year-label">1ère année — Semestres 1 & 2</div>
   <div class="mat-grid">
-    <div class="mat-card"><h3>Biologie cellulaire</h3><p>Bases de la cellule vivante</p></div>
-    <div class="mat-card"><h3>Biochimie</h3><p>Molécules du vivant</p></div>
-    <div class="mat-card"><h3>Microbiologie</h3><p>Bactéries, levures, moisissures</p></div>
-    <div class="mat-card"><h3>Chimie & Physique appliquées</h3><p>Notions de base en labo</p></div>
-    <div class="mat-card"><h3>Mathématiques & Statistiques</h3><p>Traitement de données</p></div>
-    <div class="mat-card"><h3>Technologie alimentaire</h3><p>Procédés de transformation</p></div>
-    <div class="mat-card"><h3>Qualité & Hygiène alimentaire</h3><p>Normes et réglementation</p></div>
-    <div class="mat-card"><h3>Anglais scientifique</h3><p>Lecture et communication</p></div>
+    <div class="mat-card"><h3>Biologie & Physiologie</h3><p>Cellule, organes, physiologie animale et végétale</p></div>
+    <div class="mat-card"><h3>Biochimie</h3><p>Composition et analyse des molécules du vivant</p></div>
+    <div class="mat-card"><h3>Microbiologie</h3><p>Bactéries, levures, moisissures, milieux de culture</p></div>
+    <div class="mat-card"><h3>Chimie analytique</h3><p>Dosages, titrages, acido-basicité</p></div>
+    <div class="mat-card"><h3>Technologie alimentaire</h3><p>Fabrication du yaourt, paramètres physicochimiques</p></div>
+    <div class="mat-card"><h3>Qualité & Hygiène (QHSE)</h3><p>Normes, bonnes pratiques, sécurité alimentaire</p></div>
+    <div class="mat-card"><h3>Mathématiques & Statistiques</h3><p>Traitement et analyse de données</p></div>
+    <div class="mat-card"><h3>Anglais scientifique</h3><p>Lecture de publications, communication</p></div>
   </div>
   <div class="year-label">2ème année — Semestres 3 & 4</div>
   <div class="mat-grid">
-    <div class="mat-card"><h3>Microbiologie alimentaire</h3><p>Contrôle microbiologique</p></div>
-    <div class="mat-card"><h3>Analyses physico-chimiques</h3><p>Méthodes instrumentales</p></div>
-    <div class="mat-card"><h3>Génie des procédés</h3><p>Fermentation, transformation</p></div>
-    <div class="mat-card"><h3>Génie enzymatique</h3><p>Enzymes et biotransformations</p></div>
-    <div class="mat-card"><h3>Management de la qualité</h3><p>HACCP, traçabilité, normes</p></div>
-    <div class="mat-card"><h3>Biotechnologies</h3><p>Procédés biologiques industriels</p></div>
-    <div class="mat-card"><h3>Analyse sensorielle</h3><p>Évaluation organoleptique</p></div>
-    <div class="mat-card"><h3>Projet tutoré</h3><p>Travail en équipe encadré</p></div>
+    <div class="mat-card"><h3>Biochimie avancée</h3><p>Extraction, purification, dosage spectrophotométrique</p></div>
+    <div class="mat-card"><h3>Microbiologie alimentaire</h3><p>Contrôles microbiologiques, critères FCD</p></div>
+    <div class="mat-card"><h3>Chimie de l'eau</h3><p>DCO, nitrates, pesticides, potabilité</p></div>
+    <div class="mat-card"><h3>Enzymologie</h3><p>Cinétique enzymatique, génie enzymatique</p></div>
+    <div class="mat-card"><h3>Analyse sensorielle</h3><p>Évaluation organoleptique des aliments</p></div>
+    <div class="mat-card"><h3>Œnologie analytique</h3><p>Sucres, alcool, sulfites, acides organiques du vin</p></div>
+    <div class="mat-card"><h3>Génie des procédés</h3><p>Pilote industriel, pasteurisation, bilans matière</p></div>
+    <div class="mat-card"><h3>Innovation alimentaire</h3><p>Conception de produits, formulation, circuit court</p></div>
   </div>
   <div class="year-label">3ème année — Semestres 5 & 6</div>
   <div class="mat-grid">
-    <div class="mat-card"><h3>Analyses avancées</h3><p>Méthodes complexes niveau 2</p></div>
-    <div class="mat-card"><h3>R&D et innovation</h3><p>Conception de nouveaux produits</p></div>
-    <div class="mat-card"><h3>Assurance qualité</h3><p>Amélioration continue, audit</p></div>
-    <div class="mat-card"><h3>Plan de maîtrise sanitaire</h3><p>Sécurité des aliments</p></div>
-    <div class="mat-card"><h3>Projet transversal innovant</h3><p>Jury professionnel final</p></div>
-    <div class="mat-card"><h3>Management & Communication</h3><p>Leadership, gestion d'équipe</p></div>
+    <div class="mat-card"><h3>R&D appliquée</h3><p>Protocoles expérimentaux, rapports techniques</p></div>
+    <div class="mat-card"><h3>Analyses avancées</h3><p>Méthodes complexes, validation de résultats</p></div>
+    <div class="mat-card"><h3>Management de la qualité</h3><p>HACCP, audit, amélioration continue</p></div>
+    <div class="mat-card"><h3>Plan de maîtrise sanitaire</h3><p>Réglementation, sécurité des aliments</p></div>
+    <div class="mat-card"><h3>Production & pilotage</h3><p>Industries alimentaires et biotechnologiques</p></div>
+    <div class="mat-card"><h3>Management & Communication</h3><p>Gestion de projet, travail en équipe</p></div>
     <div class="mat-card"><h3>Stage / Alternance</h3><p>22–26 semaines en entreprise</p></div>
-    <div class="mat-card"><h3>Portfolio de compétences</h3><p>Bilan des 3 années</p></div>
+    <div class="mat-card"><h3>Portfolio de compétences</h3><p>Bilan réflexif sur les 3 années</p></div>
   </div>
 </section>
 
