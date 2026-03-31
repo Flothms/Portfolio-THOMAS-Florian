@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florian Thomas — Projets 1ère année</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F4EF;
+    --parchment: #EDE8DE;
+    --wine: #6B2D3E;
+    --gold: #B8966A;
+    --charcoal: #2A2825;
+    --text-muted: #6E6A62;
+    --text-light: #9E9A92;
+    --border: #D8D2C6;
+    --analyser: #C0392B;
+    --experimenter: #D68A3A;
+    --animer: #B8962A;
+    --produire: #5A8A3C;
+    --innover: #3A6EA8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--charcoal); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(247,244,239,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 64px; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; letter-spacing: 0.08em; color: var(--wine); text-transform: uppercase; text-decoration: none; }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav a { text-decoration: none; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+  nav a:hover, nav a.active { color: var(--wine); }
+
+  .hero { min-height: 45vh; display: flex; align-items: flex-end; padding: 8rem 3rem 4rem; border-bottom: 1px solid var(--border); background: white; }
+  .breadcrumb { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+  .breadcrumb a { color: var(--gold); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--wine); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.05; margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--wine); }
+  .hero-sub { font-size: 0.92rem; color: var(--text-muted); max-width: 520px; }
+
+  /* EXPLICATION SAé */
+  .sae-intro { background: var(--parchment); padding: 3rem; border-bottom: 1px solid var(--border); }
+  .sae-intro-inner { max-width: 800px; display: flex; align-items: flex-start; gap: 2rem; }
+  .sae-intro-icon { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold); flex-shrink: 0; line-height: 1; }
+  .sae-intro p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; }
+  .ue-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+  .ue-pill { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.75rem; font-weight: 500; }
+  .ue-pill.analyser { background: rgba(192,57,43,0.1); color: var(--analyser); border: 1px solid rgba(192,57,43,0.25); }
+  .ue-pill.experimenter { background: rgba(214,138,58,0.1); color: var(--experimenter); border: 1px solid rgba(214,138,58,0.25); }
+  .ue-pill.animer { background: rgba(184,150,42,0.1); color: var(--animer); border: 1px solid rgba(184,150,42,0.25); }
+  .ue-pill.produire { background: rgba(90,138,60,0.1); color: var(--produire); border: 1px solid rgba(90,138,60,0.25); }
+
+  /* SEMESTRES */
+  .semestre { padding: 4rem 3rem; }
+  .semestre:nth-child(even) { background: white; }
+  .semestre-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .semestre-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; margin-bottom: 2.5rem; }
+  .semestre-title em { font-style: italic; color: var(--wine); }
+
+  /* CARTE SAé */
+  .sae-card { max-width: 960px; border: 1px solid var(--border); margin-bottom: 2.5rem; background: white; transition: border-color 0.2s; }
+  .sae-card:hover { border-color: var(--gold); }
+  .sae-card.highlight { border-color: var(--gold); }
+  .sae-card-top { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem 1rem; border-bottom: 1px solid var(--border); }
+  .sae-num-title { display: flex; align-items: baseline; gap: 1rem; }
+  .sae-num { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--text-light); }
+  .sae-card-top h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; line-height: 1.2; }
+  .sae-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end; }
+  .sae-badge { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; font-weight: 500; flex-shrink: 0; }
+  .sae-badge.analyser { background: rgba(192,57,43,0.1); color: var(--analyser); }
+  .sae-badge.experimenter { background: rgba(214,138,58,0.1); color: var(--experimenter); }
+  .sae-badge.animer { background: rgba(184,150,42,0.1); color: var(--animer); }
+  .sae-badge.produire { background: rgba(90,138,60,0.1); color: var(--produire); }
+
+  .sae-card-body { display: grid; grid-template-columns: 1fr 1fr; }
+  .sae-info { padding: 1.5rem; border-right: 1px solid var(--border); }
+  .sae-media { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+
+  .info-block { margin-bottom: 1.25rem; }
+  .info-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+  .info-block p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+  .sae-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+  .sae-tag { font-size: 0.68rem; border: 1px solid var(--border); padding: 0.15rem 0.55rem; color: var(--text-light); }
+
+  .conclu-block { background: var(--parchment); padding: 1rem 1.25rem; border-top: 1px solid var(--border); }
+  .conclu-block p { font-size: 0.83rem; color: var(--text-muted); font-style: italic; line-height: 1.7; }
+  .conclu-block p::before { content: '« '; color: var(--gold); }
+  .conclu-block p::after { content: ' »'; color: var(--gold); }
+
+  /* RESSENTI PLACEHOLDER */
+  .ressenti-block { border: 1.5px dashed var(--border); padding: 1.25rem; position: relative; }
+  .placeholder-tag { position: absolute; top: -10px; left: 1rem; background: var(--gold); color: white; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.15rem 0.65rem; }
+  .ressenti-block p { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--text-light); line-height: 1.7; }
+
+  /* IMAGE PLACEHOLDER */
+  .img-placeholder { background: var(--parchment); border: 1px dashed var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 140px; position: relative; gap: 0.4rem; }
+  .img-placeholder-tag { position: absolute; top: -10px; left: 1rem; background: var(--border); color: var(--text-muted); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.15rem 0.65rem; }
+  .img-placeholder span { font-size: 0.75rem; color: var(--text-light); letter-spacing: 0.05em; }
+  .img-placeholder-icon { font-size: 1.5rem; opacity: 0.3; }
+  .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+  /* NAV PAGES */
+  .nav-pages { background: var(--charcoal); padding: 4rem 3rem; }
+  .nav-pages-inner { max-width: 960px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+  .nav-page-card { border: 1px solid rgba(255,255,255,0.12); padding: 1.75rem; text-decoration: none; display: block; transition: border-color 0.2s; position: relative; }
+  .nav-page-card:hover { border-color: var(--gold); }
+  .nav-page-card::after { content: '→'; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); color: var(--gold); }
+  .nav-page-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .nav-page-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: white; margin-bottom: 0.3rem; }
+  .nav-page-card p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+  .nav-page-card.current { border-color: rgba(184,150,42,0.4); }
+  .nav-page-card.current h3 { color: var(--gold); }
+
+  .retour { padding: 2rem 3rem; background: var(--cream); border-top: 1px solid var(--border); }
+  .retour a { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+  .retour a:hover { color: var(--wine); }
+
+  @media (max-width: 700px) {
+    nav { padding: 0 1.25rem; } nav ul { display: none; }
+    .hero, .semestre, .sae-intro, .nav-pages, .retour { padding: 4rem 1.5rem; }
+    .sae-card-body { grid-template-columns: 1fr; }
+    .sae-info { border-right: none; border-bottom: 1px solid var(--border); }
+    .nav-pages-inner { grid-template-columns: 1fr; }
+    .sae-card-top { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="portfolio_florian_thomas.html" class="nav-logo">Florian Thomas</a>
+  <ul>
+    <li><a href="portfolio_florian_thomas.html">Accueil</a></li>
+    <li><a href="parcours.html">Parcours BUT</a></li>
+    <li><a href="stages.html">Stages</a></li>
+    <li><a href="projets_intro.html" class="active">Projets</a></li>
+    <li><a href="portfolio_florian_thomas.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="breadcrumb">
+      <a href="portfolio_florian_thomas.html">Accueil</a> /
+      <a href="projets_intro.html">Projets SAé</a> /
+      1ère année
+    </div>
+    <h1>Projets <em>1ère année</em></h1>
+    <p class="hero-sub">Semestres 1 & 2 · 2023–2024 · IUT Nancy-Brabois — 8 SAé réalisées entre tronc commun agronomie et parcours SAB.</p>
+  </div>
+</div>
+
+<!-- EXPLICATION SAé -->
+<div class="sae-intro">
+  <div class="sae-intro-inner">
+    <div class="sae-intro-icon">?</div>
+    <div>
+      <p>Une <strong>SAé</strong> (Situation d'Apprentissage et d'Évaluation) est un projet concret qui place l'étudiant en situation professionnelle réelle : expérimentation en labo, production alimentaire, analyse terrain… Chaque SAé est rattachée à une ou plusieurs compétences du BUT.</p>
+      <div class="ue-pills">
+        <span class="ue-pill analyser">Analyser</span>
+        <span class="ue-pill experimenter">Expérimenter</span>
+        <span class="ue-pill animer">Animer</span>
+        <span class="ue-pill produire">Produire</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SEMESTRE 1 -->
+<div class="semestre" id="s1">
+  <div class="semestre-label">Semestre 1</div>
+  <div class="semestre-title">Premier <em>semestre</em></div>
+
+  <!-- SAé 1.1 -->
+  <div class="sae-card">
+    <div class="sae-card-top">
+      <div class="sae-num-title">
+        <span class="sae-num">SAé 1.1</span>
+        <h2>Réaliser des analyses dans le domaine de la biologie</h2>
+      </div>
+      <div class="sae-badges"><span class="sae-badge analyser">Analyser</span></div>
+    </div>
+    <div class="sae-card-body">
+      <div class="sae-info">
+        <div class="info-block">
+          <div class="info-label">Objectif</div>
+          <p>Apprendre de nouvelles techniques d'analyse et mesurer les paramètres chimiques d'un yaourt, notamment l'acidité Dornic.</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Méthodes utilisées</div>
+          <p>Différents types de dosages pour mesurer l'acidité Dornic d'un yaourt. Introduction au génie industriel agroalimentaire.</p>
+          <div class="sae-tags"><span class="sae-tag">Dosage acide-base</span><span class="sae-tag">Acidité Dornic</span><span class="sae-tag">Yaourt</span><span class="sae-tag">GIA</span></div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Mon ressenti</div>
+          <div class="ressenti-block">
+            <span class="placeholder-tag">À compléter</span>
+            <p>Décrivez ici votre ressenti personnel sur cette SAé — ce que vous avez aimé, ce que ça vous a apporté, une anecdote…</p>
+          </div>
+        </div>
+      </div>
+      <div class="sae-media">
+        <div class="info-label">Photos</div>
+        <div class="img-grid">
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="conclu-block"><p>Bonne introduction au BUT et au GIA, grâce aux différents types de dosages utilisés pour mesurer l'acidité Dornic du yaourt.</p></div>
+  </div>
+
+  <!-- SAé 1.2 -->
+  <div class="sae-card">
+    <div class="sae-card-top">
+      <div class="sae-num-title">
+        <span class="sae-num">SAé 1.2</span>
+        <h2>Explorer la place d'une cellule</h2>
+      </div>
+      <div class="sae-badges"><span class="sae-badge experimenter">Expérimenter</span></div>
+    </div>
+    <div class="sae-card-body">
+      <div class="sae-info">
+        <div class="info-block">
+          <div class="info-label">Objectif</div>
+          <p>Comprendre et reconnaître des cellules spécifiques à un organe. Organe étudié : le pancréas d'un rat (Rattus norvegicus).</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Méthodes & matériel</div>
+          <p>Préparation d'une coupe histologique par paraffinage. Observation des ilots de Langerhans avec colorations Hématoxyline/éosine et Trichome de Masson.</p>
+          <div class="sae-tags"><span class="sae-tag">Microtome</span><span class="sae-tag">Histologie</span><span class="sae-tag">Pancréas</span><span class="sae-tag">Coloration</span><span class="sae-tag">Microscope</span></div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Mon ressenti</div>
+          <div class="ressenti-block">
+            <span class="placeholder-tag">À compléter</span>
+            <p>Décrivez ici votre ressenti personnel sur cette SAé…</p>
+          </div>
+        </div>
+      </div>
+      <div class="sae-media">
+        <div class="info-label">Photos</div>
+        <div class="img-grid">
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 3</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 4</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="conclu-block"><p>Découverte de nouvelles techniques et matériels de découpe, en lien direct avec les cours de physiologie animale.</p></div>
+  </div>
+
+  <!-- SAé 1.3 -->
+  <div class="sae-card highlight">
+    <div class="sae-card-top">
+      <div class="sae-num-title">
+        <span class="sae-num">SAé 1.3</span>
+        <h2>Contrôler l'hygiène lors d'une production</h2>
+      </div>
+      <div class="sae-badges"><span class="sae-badge animer">Animer</span></div>
+    </div>
+    <div class="sae-card-body">
+      <div class="sae-info">
+        <div class="info-block">
+          <div class="info-label">Objectif</div>
+          <p>Utiliser les connaissances de microbiologie dans un cas concret : prélèvements d'air et de surfaces dans un EHPAD (Le Parc, Nancy), incubation sur différents milieux.</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Méthodes utilisées</div>
+          <p>Bio-impacteur, boîtes de Pétri (TA, CGA, Chapman), méthode ATP-métrie, écouvillonnage. Résultats analysés selon la norme NFEN 14.476 A2.</p>
+          <div class="sae-tags"><span class="sae-tag">Microbiologie</span><span class="sae-tag">Prélèvements terrain</span><span class="sae-tag">EHPAD</span><span class="sae-tag">ATP-métrie</span><span class="sae-tag">Autonomie</span></div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Mon ressenti</div>
+          <div class="ressenti-block">
+            <span class="placeholder-tag">À compléter</span>
+            <p>Décrivez ici votre ressenti personnel sur cette SAé…</p>
+          </div>
+        </div>
+      </div>
+      <div class="sae-media">
+        <div class="info-label">Photos</div>
+        <div class="img-grid">
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 3</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 4</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="conclu-block"><p>Grande autonomie acquise — projet géré hors cours de A à Z. Résultat : hygiène conforme, problème de ventilation identifié et recommandations formulées.</p></div>
+  </div>
+
+  <!-- SAé 1.4 -->
+  <div class="sae-card">
+    <div class="sae-card-top">
+      <div class="sae-num-title">
+        <span class="sae-num">SAé 1.4</span>
+        <h2>Préparer et mettre en œuvre une production alimentaire</h2>
+      </div>
+      <div class="sae-badges"><span class="sae-badge produire">Produire</span></div>
+    </div>
+    <div class="sae-card-body">
+      <div class="sae-info">
+        <div class="info-block">
+          <div class="info-label">Objectif</div>
+          <p>Découvrir la fabrication d'un yaourt, ses caractéristiques et sa dénomination. Première SAé de la formation.</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Méthodes utilisées</div>
+          <p>Production de yaourt avec tests de texture, pH et viscosité. Utilisation d'un analyseur de texture professionnel.</p>
+          <div class="sae-tags"><span class="sae-tag">Production yaourt</span><span class="sae-tag">Texture</span><span class="sae-tag">pH</span><span class="sae-tag">Viscosité</span><span class="sae-tag">Réfractométrie</span></div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Mon ressenti</div>
+          <div class="ressenti-block">
+            <span class="placeholder-tag">À compléter</span>
+            <p>Décrivez ici votre ressenti personnel sur cette SAé…</p>
+          </div>
+        </div>
+      </div>
+      <div class="sae-media">
+        <div class="info-label">Photos</div>
+        <div class="img-grid">
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="conclu-block"><p>Première SAé — avant-goût concret de la filière SAB et de ce que le BUT allait apporter.</p></div>
+  </div>
+</div>
+
+<!-- SEMESTRE 2 -->
+<div class="semestre" id="s2">
+  <div class="semestre-label">Semestre 2</div>
+  <div class="semestre-title">Deuxième <em>semestre</em></div>
+
+  <!-- SAé 2.1 -->
+  <div class="sae-card">
+    <div class="sae-card-top">
+      <div class="sae-num-title">
+        <span class="sae-num">SAé 2.1</span>
+        <h2>Extraction, purification et dosage spectrophotométrique</h2>
+      </div>
+      <div class="sae-badges"><span class="sae-badge analyser">Analyser</span></div>
+    </div>
+    <div class="sae-card-body">
+      <div class="sae-info">
+        <div class="info-block">
+          <div class="info-label">Objectif</div>
+          <p>Comprendre les composantes biochimiques d'un œuf et les mesurer. Deux groupes : lipides dans le jaune / protéines dans le blanc.</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Méthodes utilisées</div>
+          <p>Résine échangeuse d'ion DEAE, dosage spectrophotométrique de Bradford, électrophorèse SDS-page.</p>
+          <div class="sae-tags"><span class="sae-tag">Bradford</span><span class="sae-tag">SDS-Page</span><span class="sae-tag">DEAE</span><span class="sae-tag">Spectrophotométrie</span><span class="sae-tag">Lipides</span></div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Mon ressenti</div>
+          <div class="ressenti-block">
+            <span class="placeholder-tag">À compléter</span>
+            <p>Décrivez ici votre ressenti personnel sur cette SAé…</p>
+          </div>
+        </div>
+      </div>
+      <div class="sae-media">
+        <div class="info-label">Photos</div>
+        <div class="img-grid">
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="conclu-block"><p>Découverte de nouvelles méthodes d'analyse biochimique transposables à d'autres expérimentations que la composition d'un œuf.</p></div>
+  </div>
+
+  <!-- SAé 2.2 -->
+  <div class="sae-card">
+    <div class="sae-card-top">
+      <div class="sae-num-title">
+        <span class="sae-num">SAé 2.2</span>
+        <h2>Mesurer la réponse d'un paramètre physiologique</h2>
+      </div>
+      <div class="sae-badges"><span class="sae-badge experimenter">Expérimenter</span></div>
+    </div>
+    <div class="sae-card-body">
+      <div class="sae-info">
+        <div class="info-block">
+          <div class="info-label">Objectif</div>
+          <p>Mesurer la réponse d'un végétal et d'un organe animal à différents paramètres physiologiques.</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Méthodes utilisées</div>
+          <p>Volet végétal : influence de la lumière sur la concentration en chlorophylle. Volet animal : prélèvement de l'intestin d'un rat et mesure des contractions musculaires.</p>
+          <div class="sae-tags"><span class="sae-tag">Physiologie végétale</span><span class="sae-tag">Chlorophylle</span><span class="sae-tag">Physiologie animale</span><span class="sae-tag">Contractions</span></div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Mon ressenti</div>
+          <div class="ressenti-block">
+            <span class="placeholder-tag">À compléter</span>
+            <p>Décrivez ici votre ressenti personnel sur cette SAé…</p>
+          </div>
+        </div>
+      </div>
+      <div class="sae-media">
+        <div class="info-label">Photos</div>
+        <div class="img-grid">
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="conclu-block"><p>Mise en pratique des cours de physiologie végétale et animale avec une liberté appréciée sur la partie végétale.</p></div>
+  </div>
+
+  <!-- SAé 2.3 -->
+  <div class="sae-card highlight">
+    <div class="sae-card-top">
+      <div class="sae-num-title">
+        <span class="sae-num">SAé 2.3</span>
+        <h2>Analyse des composants du vin</h2>
+      </div>
+      <div class="sae-badges"><span class="sae-badge animer">Animer</span></div>
+    </div>
+    <div class="sae-card-body">
+      <div class="sae-info">
+        <div class="info-block">
+          <div class="info-label">Objectif</div>
+          <p>Comprendre les étapes de fabrication du vin et analyser ses différents composants pour vérifier la conformité aux cahiers des charges.</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Méthodes utilisées</div>
+          <p>Dosage des sucres (DNS, HPLC), dosage de l'alcool (réfractométrie, aérométrie), dosage des sulfites par iodométrie, dosage des acides organiques par CLHP.</p>
+          <div class="sae-tags"><span class="sae-tag">Vin</span><span class="sae-tag">HPLC</span><span class="sae-tag">Sulfites</span><span class="sae-tag">Acides organiques</span><span class="sae-tag">Réfractométrie</span></div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Mon ressenti</div>
+          <div class="ressenti-block">
+            <span class="placeholder-tag">À compléter</span>
+            <p>Décrivez ici votre ressenti personnel sur cette SAé — particulièrement intéressante en lien avec l'œnologie…</p>
+          </div>
+        </div>
+      </div>
+      <div class="sae-media">
+        <div class="info-label">Photos</div>
+        <div class="img-grid">
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 3</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 4</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="conclu-block"><p>Découverte des méthodes d'analyse du vin — SAé directement en lien avec l'œnologie. Rigueur renforcée dans les travaux de groupe.</p></div>
+  </div>
+
+  <!-- SAé 2.4 -->
+  <div class="sae-card">
+    <div class="sae-card-top">
+      <div class="sae-num-title">
+        <span class="sae-num">SAé 2.4</span>
+        <h2>Présenter un équipement de production alimentaire</h2>
+      </div>
+      <div class="sae-badges"><span class="sae-badge produire">Produire</span></div>
+    </div>
+    <div class="sae-card-body">
+      <div class="sae-info">
+        <div class="info-block">
+          <div class="info-label">Objectif</div>
+          <p>Se familiariser avec l'équipement permettant la production d'un aliment. Visite du Cépal à Artem, Nancy.</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Ce que nous avons vu</div>
+          <p>Matériel de charcuterie et de panification : poussoir à saucisse, four de boulangerie, pétrisseuse industrielle Bongard. Observation d'une production en conditions professionnelles.</p>
+          <div class="sae-tags"><span class="sae-tag">Panification</span><span class="sae-tag">Charcuterie</span><span class="sae-tag">Équipements industriels</span><span class="sae-tag">Visite pro</span></div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Mon ressenti</div>
+          <div class="ressenti-block">
+            <span class="placeholder-tag">À compléter</span>
+            <p>Décrivez ici votre ressenti personnel sur cette SAé…</p>
+          </div>
+        </div>
+      </div>
+      <div class="sae-media">
+        <div class="info-label">Photos</div>
+        <div class="img-grid">
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 3</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 4</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="conclu-block"><p>Première confrontation avec du matériel de production professionnel et coûteux — vision concrète de la production alimentaire industrielle.</p></div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav-pages">
+  <div class="nav-pages-inner">
+    <div class="nav-page-card current">
+      <div class="nav-page-label">Vous êtes ici</div>
+      <h3>SAé 1ère année</h3>
+      <p>Semestres 1 & 2 · 2023–2024</p>
+    </div>
+    <a href="projets_annee2.html" class="nav-page-card">
+      <div class="nav-page-label">Suivant</div>
+      <h3>SAé 2ème année</h3>
+      <p>Semestres 3 & 4 · 2024–2025</p>
+    </a>
+    <a href="stages.html" class="nav-page-card">
+      <div class="nav-page-label">Découvrir</div>
+      <h3>Mes stages</h3>
+      <p>3 expériences de terrain</p>
+    </a>
+  </div>
+</div>
+
+<div class="retour">
+  <a href="portfolio_florian_thomas.html">← Retour à l'accueil</a>
+</div>
+
+</body>
+</html>

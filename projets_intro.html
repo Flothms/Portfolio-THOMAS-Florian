@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florian Thomas — Projets SAé</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F4EF;
+    --parchment: #EDE8DE;
+    --wine: #6B2D3E;
+    --gold: #B8966A;
+    --charcoal: #2A2825;
+    --text-muted: #6E6A62;
+    --text-light: #9E9A92;
+    --border: #D8D2C6;
+    --analyser: #C0392B;
+    --experimenter: #D68A3A;
+    --animer: #B8962A;
+    --produire: #5A8A3C;
+    --innover: #3A6EA8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--charcoal); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(247,244,239,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 64px; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; letter-spacing: 0.08em; color: var(--wine); text-transform: uppercase; text-decoration: none; }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav a { text-decoration: none; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+  nav a:hover, nav a.active { color: var(--wine); }
+
+  /* HERO */
+  .hero { min-height: 55vh; display: flex; align-items: flex-end; padding: 8rem 3rem 4rem; border-bottom: 1px solid var(--border); background: white; position: relative; overflow: hidden; }
+  .hero::before { content: 'SAé'; position: absolute; right: -0.5rem; bottom: -2rem; font-family: 'Cormorant Garamond', serif; font-size: 18rem; font-weight: 300; color: var(--parchment); line-height: 1; pointer-events: none; }
+  .hero-inner { max-width: 680px; position: relative; z-index: 1; }
+  .breadcrumb { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .breadcrumb a { color: var(--gold); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--wine); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.05; margin-bottom: 1.25rem; }
+  h1 em { font-style: italic; color: var(--wine); }
+  .hero-sub { font-size: 0.95rem; color: var(--text-muted); max-width: 500px; line-height: 1.8; }
+
+  section { padding: 5rem 3rem; }
+  .section-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 2rem; }
+  h2 em { font-style: italic; color: var(--wine); }
+
+  /* DÉFINITION */
+  .definition { background: white; }
+  .definition-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; max-width: 1000px; align-items: start; }
+  .definition-text p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.85; }
+  .definition-text strong { color: var(--charcoal); font-weight: 500; }
+  .quote-block { border-left: 3px solid var(--gold); padding: 1.5rem 2rem; background: var(--parchment); margin-top: 2rem; }
+  .quote-block p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: var(--text-muted); line-height: 1.8; }
+
+  /* SCHÉMA UE */
+  .schema-box { border: 1px solid var(--border); overflow: hidden; }
+  .schema-title { padding: 0.75rem 1rem; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); background: var(--parchment); border-bottom: 1px solid var(--border); }
+  .schema-header { display: grid; grid-template-columns: repeat(5, 1fr); }
+  .schema-col { padding: 0.65rem 0.4rem; text-align: center; font-size: 0.68rem; font-weight: 500; color: white; letter-spacing: 0.05em; }
+  .schema-col.analyser { background: var(--analyser); }
+  .schema-col.experimenter { background: var(--experimenter); }
+  .schema-col.animer { background: var(--animer); }
+  .schema-col.produire { background: var(--produire); }
+  .schema-col.innover { background: var(--innover); }
+  .schema-row { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--border); }
+  .schema-cell { padding: 0.6rem 0.4rem; font-size: 0.68rem; color: var(--text-muted); text-align: center; border-right: 1px solid var(--border); line-height: 1.4; }
+  .schema-cell:last-child { border-right: none; }
+  .schema-cell.empty { background: var(--cream); color: var(--text-light); font-style: italic; font-size: 0.6rem; }
+  .schema-year { padding: 0.3rem 0.75rem; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); background: var(--cream); border-top: 1px solid var(--border); }
+
+  /* LES 5 COMPÉTENCES */
+  .competences { background: var(--parchment); }
+  .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; max-width: 1000px; }
+  .comp-card { background: white; border: 1px solid var(--border); padding: 1.5rem; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+  .comp-card:hover { transform: translateY(-2px); }
+  .comp-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
+  .comp-card.analyser::before { background: var(--analyser); }
+  .comp-card.experimenter::before { background: var(--experimenter); }
+  .comp-card.animer::before { background: var(--animer); }
+  .comp-card.produire::before { background: var(--produire); }
+  .comp-card.innover::before { background: var(--innover); }
+  .comp-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--border); position: absolute; top: 0.75rem; right: 1rem; line-height: 1; }
+  .comp-ue { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; margin-bottom: 0.5rem; }
+  .comp-ue.analyser { color: var(--analyser); }
+  .comp-ue.experimenter { color: var(--experimenter); }
+  .comp-ue.animer { color: var(--animer); }
+  .comp-ue.produire { color: var(--produire); }
+  .comp-ue.innover { color: var(--innover); }
+  .comp-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; margin-bottom: 0.4rem; line-height: 1.3; }
+  .comp-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
+  .comp-note { font-size: 0.72rem; color: var(--text-light); font-style: italic; margin-top: 0.5rem; }
+
+  /* COMMENT ÇA MARCHE */
+  .fonctionnement { background: white; }
+  .steps { max-width: 800px; }
+  .step { display: flex; gap: 2rem; margin-bottom: 2.5rem; align-items: flex-start; }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--border); line-height: 1; flex-shrink: 0; width: 3rem; text-align: center; }
+  .step-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; margin-bottom: 0.4rem; }
+  .step-content p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; }
+
+  /* ACCÈS AUX ANNÉES */
+  .acces { background: var(--charcoal); padding: 5rem 3rem; }
+  .acces-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .acces-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: white; margin-bottom: 3rem; }
+  .acces-title em { font-style: italic; color: var(--gold); }
+  .acces-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 800px; }
+  .acces-card { border: 1px solid rgba(255,255,255,0.12); padding: 2.5rem; text-decoration: none; display: block; position: relative; transition: border-color 0.2s, background 0.2s; }
+  .acces-card:hover { border-color: var(--gold); background: rgba(255,255,255,0.03); }
+  .acces-card::after { content: '→'; position: absolute; right: 1.5rem; bottom: 1.5rem; color: var(--gold); font-size: 1.2rem; transition: right 0.2s; }
+  .acces-card:hover::after { right: 1.25rem; }
+  .acces-annee { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: rgba(255,255,255,0.08); line-height: 1; margin-bottom: 0.75rem; }
+  .acces-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: white; margin-bottom: 0.3rem; }
+  .acces-card .acces-sub { font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+  .acces-saes { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .acces-sae-pill { font-size: 0.65rem; padding: 0.2rem 0.6rem; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.45); }
+
+  .retour { padding: 2rem 3rem; background: var(--cream); border-top: 1px solid var(--border); }
+  .retour a { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+  .retour a:hover { color: var(--wine); }
+
+  @media (max-width: 700px) {
+    nav { padding: 0 1.25rem; } nav ul { display: none; }
+    section, .hero, .acces, .retour { padding: 4rem 1.5rem; }
+    .definition-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .acces-grid { grid-template-columns: 1fr; }
+    .hero::before { font-size: 8rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="portfolio_florian_thomas.html" class="nav-logo">Florian Thomas</a>
+  <ul>
+    <li><a href="portfolio_florian_thomas.html">Accueil</a></li>
+    <li><a href="parcours.html">Parcours BUT</a></li>
+    <li><a href="stages.html">Stages</a></li>
+    <li><a href="projets_intro.html" class="active">Projets</a></li>
+    <li><a href="portfolio_florian_thomas.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="portfolio_florian_thomas.html">Accueil</a> / Projets SAé</div>
+    <h1>Mes projets<br><em>SAé</em></h1>
+    <p class="hero-sub">Deux années de travaux pratiques, d'expérimentations et de projets concrets réalisés à l'IUT Nancy-Brabois dans le cadre du BUT Génie Biologique.</p>
+  </div>
+</div>
+
+<!-- DÉFINITION -->
+<section class="definition" id="definition">
+  <div class="section-label">C'est quoi ?</div>
+  <h2>La <em>SAé</em> expliquée</h2>
+  <div class="definition-grid">
+    <div class="definition-text">
+      <p>Une <strong>SAé</strong> — Situation d'Apprentissage et d'Évaluation — est un projet concret qui place l'étudiant en situation proche du monde professionnel réel.</p>
+      <p>Contrairement à un examen classique sur table, la SAé demande de <strong>faire</strong> : expérimenter en laboratoire, produire un aliment, analyser un échantillon terrain, concevoir un produit innovant… et d'en rendre compte de manière rigoureuse.</p>
+      <p>Chaque SAé est rattachée à une ou plusieurs <strong>Unités d'Enseignement (UE)</strong> correspondant aux compétences visées par le diplôme. Elle est évaluée en contrôle continu, sur la base du travail réalisé et du rapport produit.</p>
+      <p>C'est ce format qui donne au BUT sa dimension professionnalisante : <strong>plus de 50% des enseignements sont dédiés à la pratique.</strong></p>
+      <div class="quote-block">
+        <p>« Les SAé m'ont permis de confronter directement la théorie à la réalité du laboratoire — et de comprendre pourquoi la rigueur scientifique n'est pas une option. »</p>
+      </div>
+    </div>
+    <div>
+      <div class="schema-box">
+        <div class="schema-title">Progression des compétences par année</div>
+        <div class="schema-header">
+          <div class="schema-col analyser">Analyser</div>
+          <div class="schema-col experimenter">Expérimenter</div>
+          <div class="schema-col animer">Animer</div>
+          <div class="schema-col produire">Produire</div>
+          <div class="schema-col innover">Innover</div>
+        </div>
+        <div class="schema-year">1ère année</div>
+        <div class="schema-row">
+          <div class="schema-cell">Réaliser des analyses</div>
+          <div class="schema-cell">Observer un phénomène biologique</div>
+          <div class="schema-cell">Assurer la sécurité alimentaire</div>
+          <div class="schema-cell">Appréhender la production</div>
+          <div class="schema-cell empty">Non au programme</div>
+        </div>
+        <div class="schema-year">2ème année</div>
+        <div class="schema-row">
+          <div class="schema-cell">Analyses avancées</div>
+          <div class="schema-cell">Expérimenter une problématique</div>
+          <div class="schema-cell">Assurer la qualité</div>
+          <div class="schema-cell">Produire des aliments</div>
+          <div class="schema-cell">Participer à un projet d'innovation</div>
+        </div>
+        <div class="schema-year">3ème année</div>
+        <div class="schema-row">
+          <div class="schema-cell">—</div>
+          <div class="schema-cell">Démarche intégrative</div>
+          <div class="schema-cell">Adapter les démarches QHSE</div>
+          <div class="schema-cell">Piloter la production</div>
+          <div class="schema-cell">Développer un projet d'innovation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LES 5 COMPÉTENCES -->
+<section class="competences" id="competences">
+  <div class="section-label">Les 5 compétences</div>
+  <h2>Ce que chaque <em>UE</em> développe</h2>
+  <div class="comp-grid">
+    <div class="comp-card analyser">
+      <span class="comp-num">01</span>
+      <div class="comp-ue analyser">Analyser</div>
+      <h3>Réaliser des analyses biologiques</h3>
+      <p>Préparer et mettre en œuvre des protocoles analytiques dans une démarche qualité et de traçabilité.</p>
+    </div>
+    <div class="comp-card experimenter">
+      <span class="comp-num">02</span>
+      <div class="comp-ue experimenter">Expérimenter</div>
+      <h3>Expérimenter dans le génie biologique</h3>
+      <p>Concevoir et conduire des expérimentations en adoptant une démarche scientifique rigoureuse.</p>
+    </div>
+    <div class="comp-card animer">
+      <span class="comp-num">03</span>
+      <div class="comp-ue animer">Animer</div>
+      <h3>Manager la qualité et la sécurité</h3>
+      <p>Mettre en place et animer des démarches QHSE dans les industries alimentaires.</p>
+    </div>
+    <div class="comp-card produire">
+      <span class="comp-num">04</span>
+      <div class="comp-ue produire">Produire</div>
+      <h3>Organiser la production alimentaire</h3>
+      <p>Maîtriser la conduite d'une ligne de production et suivre les indicateurs qualité.</p>
+    </div>
+    <div class="comp-card innover">
+      <span class="comp-num">05</span>
+      <div class="comp-ue innover">Innover</div>
+      <h3>Innover en sciences des aliments</h3>
+      <p>Participer à des projets R&D et développer des produits ou procédés innovants.</p>
+      <p class="comp-note">Apparaît uniquement en 2ème et 3ème année</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ÇA MARCHE -->
+<section class="fonctionnement" id="fonctionnement">
+  <div class="section-label">Organisation</div>
+  <h2>Comment se déroule<br><em>une SAé ?</em></h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Un sujet ancré dans le réel</h3>
+        <p>Chaque SAé part d'une problématique concrète liée au monde professionnel : analyser une eau de lac, contrôler l'hygiène d'un EHPAD, produire un jus de pomme sur pilote industriel… Le contexte est toujours proche de la réalité du terrain.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Travail en équipe et en autonomie</h3>
+        <p>La plupart des SAé se réalisent en binôme ou en groupe. L'étudiant doit organiser son travail, gérer son temps, se documenter et prendre des initiatives — notamment dans les SAé de 2ème année, moins guidées que celles de 1ère année.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Travaux pratiques en laboratoire</h3>
+        <p>Le cœur de la SAé se déroule en labo : manipulations, protocoles expérimentaux, collecte de données. La rigueur scientifique est évaluée à chaque étape — préparation, réalisation, sécurité, traçabilité.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Rédaction d'un rapport argumenté</h3>
+        <p>À l'issue de chaque SAé, un compte-rendu est rédigé avec introduction, protocoles, résultats, analyse critique et bibliographie. C'est une compétence transversale essentielle, évaluée tout au long du BUT.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCÈS AUX ANNÉES -->
+<div class="acces">
+  <div class="acces-label">Mes SAé</div>
+  <div class="acces-title">Choisir <em>une année</em></div>
+  <div class="acces-grid">
+    <a href="projets.html" class="acces-card">
+      <div class="acces-annee">1</div>
+      <h3>Première année</h3>
+      <div class="acces-sub">Semestres 1 & 2 · 2023–2024 · 8 SAé</div>
+      <div class="acces-saes">
+        <span class="acces-sae-pill">SAé 1.1 Analyses</span>
+        <span class="acces-sae-pill">SAé 1.2 Histologie</span>
+        <span class="acces-sae-pill">SAé 1.3 Hygiène EHPAD</span>
+        <span class="acces-sae-pill">SAé 1.4 Yaourt</span>
+        <span class="acces-sae-pill">SAé 2.1 Biochimie œuf</span>
+        <span class="acces-sae-pill">SAé 2.2 Physiologie</span>
+        <span class="acces-sae-pill">SAé 2.3 Analyse du vin</span>
+        <span class="acces-sae-pill">SAé 2.4 Équipements</span>
+      </div>
+    </a>
+    <a href="projets_annee2.html" class="acces-card">
+      <div class="acces-annee">2</div>
+      <h3>Deuxième année</h3>
+      <div class="acces-sub">Semestres 3 & 4 · 2024–2025 · 5 SAé</div>
+      <div class="acces-saes">
+        <span class="acces-sae-pill">SAé 3.1 Eau de lac</span>
+        <span class="acces-sae-pill">SAé 3.2 Enzymologie</span>
+        <span class="acces-sae-pill">SAé 3.3 Jus de pomme</span>
+        <span class="acces-sae-pill">SAé 3.4 Innovation shampoing</span>
+        <span class="acces-sae-pill">SAé 4.1 Microbiologie eau</span>
+        <span class="acces-sae-pill">SAé 4.2 Fromages</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="retour">
+  <a href="portfolio_florian_thomas.html">← Retour à l'accueil</a>
+</div>
+
+</body>
+</html>
