@@ -3,131 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Florian Thomas — Projets 2ème année</title>
+<title>Florian Thomas — SAé 2ème année</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream: #F7F4EF;
-    --parchment: #EDE8DE;
-    --wine: #6B2D3E;
-    --gold: #B8966A;
-    --charcoal: #2A2825;
-    --text-muted: #6E6A62;
-    --text-light: #9E9A92;
-    --border: #D8D2C6;
-    --analyser: #C0392B;
-    --experimenter: #D68A3A;
-    --animer: #B8962A;
-    --produire: #5A8A3C;
-    --innover: #3A6EA8;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  .page-wrapper { max-width: 1200px; margin: 0 auto; }
-  section, .semestre, .sae-intro, .chiffres, .acces, .nav-pages, .retour, .hero, .formation, .competences, .matieres, .ressenti, .debouches, .stages-section, .annee-section, .sae-explainer, .fonctionnement, .definition { width: 100%; }
-  section > *, .semestre > *, .hero > *, .formation > *, .competences > *, .matieres > *, .ressenti > *, .debouches > *, .stages-section > *, .annee-section > *, .sae-explainer > *, .fonctionnement > *, .definition > * { max-width: 1100px; margin-left: auto; margin-right: auto; width: 100%; }
-  body { background: var(--cream); color: var(--charcoal); max-width: 1400px; margin: 0 auto; font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; }
+  :root{--cream:#F7F4EF;--parchment:#EDE8DE;--wine:#6B2D3E;--gold:#B8966A;--charcoal:#2A2825;--muted:#6E6A62;--light:#9E9A92;--border:#D8D2C6;--analyser:#C0392B;--experimenter:#D68A3A;--animer:#B8962A;--produire:#5A8A3C;--innover:#3A6EA8;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;width:100%;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.08em;color:var(--wine);text-transform:uppercase;text-decoration:none;}
+  nav ul{list-style:none;display:flex;gap:2.5rem;}
+  nav a{text-decoration:none;font-size:0.8rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+  nav a:hover,nav a.active{color:var(--wine);}
 
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(247,244,239,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 64px; }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; letter-spacing: 0.08em; color: var(--wine); text-transform: uppercase; text-decoration: none; }
-  nav ul { list-style: none; display: flex; gap: 2.5rem; }
-  nav a { text-decoration: none; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
-  nav a:hover, nav a.active { color: var(--wine); }
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:45vh;padding-top:64px;}
+  .hero-left{background:white;padding:5rem 5vw;display:flex;flex-direction:column;justify-content:center;}
+  .hero-right{background:var(--parchment);padding:5rem 5vw;display:flex;flex-direction:column;justify-content:center;gap:1rem;}
+  .breadcrumb{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light);margin-bottom:1.5rem;display:flex;gap:0.5rem;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--gold);text-decoration:none;}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;line-height:1.05;margin-bottom:1rem;}
+  h1 em{font-style:italic;color:var(--wine);}
+  .hero-sub{font-size:0.92rem;color:var(--muted);line-height:1.8;}
+  .ue-pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
+  .ue-pill{font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.25rem 0.75rem;font-weight:500;}
+  .ue-pill.analyser{background:rgba(192,57,43,0.1);color:var(--analyser);border:1px solid rgba(192,57,43,0.25);}
+  .ue-pill.experimenter{background:rgba(214,138,58,0.1);color:var(--experimenter);border:1px solid rgba(214,138,58,0.25);}
+  .ue-pill.animer{background:rgba(184,150,42,0.1);color:var(--animer);border:1px solid rgba(184,150,42,0.25);}
+  .ue-pill.produire{background:rgba(90,138,60,0.1);color:var(--produire);border:1px solid rgba(90,138,60,0.25);}
+  .ue-pill.innover{background:rgba(58,110,168,0.1);color:var(--innover);border:1px solid rgba(58,110,168,0.25);}
+  .new-badge{display:inline-block;background:var(--innover);color:white;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.5rem;margin-left:0.5rem;vertical-align:middle;}
 
-  .hero { min-height: 45vh; display: flex; align-items: flex-end; padding: 8rem 3rem 4rem; justify-content: center; border-bottom: 1px solid var(--border); background: white; }
-  .breadcrumb { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
-  .breadcrumb a { color: var(--gold); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--wine); }
-  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.05; margin-bottom: 1rem; }
-  h1 em { font-style: italic; color: var(--wine); }
-  .hero-sub { font-size: 0.92rem; color: var(--text-muted); max-width: 520px; }
+  .semestre{padding:4rem 5vw;}
+  .semestre:nth-child(even){background:white;}
+  .sec-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+  h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:300;line-height:1.1;margin-bottom:2.5rem;}
+  h2 em{font-style:italic;color:var(--wine);}
 
-  .sae-intro { background: var(--parchment); padding: 3rem; border-bottom: 1px solid var(--border); }
-  .sae-intro { display: flex; justify-content: center; } .sae-intro-inner { max-width: 800px; margin-left: auto; margin-right: auto; }
-  .sae-intro p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; }
-  .ue-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
-  .ue-pill { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.75rem; font-weight: 500; }
-  .ue-pill.analyser { background: rgba(192,57,43,0.1); color: var(--analyser); border: 1px solid rgba(192,57,43,0.25); }
-  .ue-pill.experimenter { background: rgba(214,138,58,0.1); color: var(--experimenter); border: 1px solid rgba(214,138,58,0.25); }
-  .ue-pill.animer { background: rgba(184,150,42,0.1); color: var(--animer); border: 1px solid rgba(184,150,42,0.25); }
-  .ue-pill.produire { background: rgba(90,138,60,0.1); color: var(--produire); border: 1px solid rgba(90,138,60,0.25); }
-  .ue-pill.innover { background: rgba(58,110,168,0.1); color: var(--innover); border: 1px solid rgba(58,110,168,0.25); }
+  .sae-card{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);margin-bottom:2rem;background:white;transition:border-color 0.2s;}
+  .sae-card:hover{border-color:var(--gold);}
+  .sae-card.hl{border-color:var(--gold);}
+  .sae-top{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);}
+  .sae-title-wrap{display:flex;align-items:baseline;gap:1rem;}
+  .sae-num{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--light);}
+  .sae-top h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;line-height:1.2;}
+  .sae-badges{display:flex;gap:0.4rem;flex-wrap:wrap;}
+  .sbadge{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.6rem;font-weight:500;}
+  .sbadge.analyser{background:rgba(192,57,43,0.1);color:var(--analyser);}
+  .sbadge.experimenter{background:rgba(214,138,58,0.1);color:var(--experimenter);}
+  .sbadge.animer{background:rgba(184,150,42,0.1);color:var(--animer);}
+  .sbadge.produire{background:rgba(90,138,60,0.1);color:var(--produire);}
+  .sbadge.innover{background:rgba(58,110,168,0.1);color:var(--innover);}
 
-  .semestre { padding: 4rem 3rem; display: flex; flex-direction: column; align-items: center; }
-  .semestre:nth-child(even) { background: white; }
-  .semestre > * { width: 100%; max-width: 960px; } .semestre-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-  .semestre-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; margin-bottom: 2.5rem; }
-  .semestre-title em { font-style: italic; color: var(--wine); }
+  .sae-info{padding:1.5rem;border-right:1px solid var(--border);}
+  .sae-media{padding:1.5rem;display:flex;flex-direction:column;gap:1rem;}
+  .info-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
+  .info-block{margin-bottom:1.25rem;}
+  .info-block p{font-size:0.88rem;color:var(--muted);line-height:1.7;}
+  .tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;}
+  .tag{font-size:0.7rem;border:1px solid var(--border);padding:0.15rem 0.55rem;color:var(--light);}
+  .conclu{background:var(--parchment);padding:1rem 1.5rem;grid-column:1/-1;border-top:1px solid var(--border);font-size:0.84rem;color:var(--muted);font-style:italic;}
+  .conclu::before{content:'« ';color:var(--gold);}
+  .conclu::after{content:' »';color:var(--gold);}
 
-  .sae-card { max-width: 960px; margin-left: auto; margin-right: auto; border: 1px solid var(--border); margin-bottom: 2.5rem; background: white; transition: border-color 0.2s; }
-  .sae-card:hover { border-color: var(--gold); }
-  .sae-card.highlight { border-color: var(--gold); }
-  .sae-card-top { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem 1rem; border-bottom: 1px solid var(--border); }
-  .sae-num-title { display: flex; align-items: baseline; gap: 1rem; }
-  .sae-num { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--text-light); }
-  .sae-card-top h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; line-height: 1.2; }
-  .sae-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end; }
-  .sae-badge { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; font-weight: 500; flex-shrink: 0; }
-  .sae-badge.analyser { background: rgba(192,57,43,0.1); color: var(--analyser); }
-  .sae-badge.experimenter { background: rgba(214,138,58,0.1); color: var(--experimenter); }
-  .sae-badge.animer { background: rgba(184,150,42,0.1); color: var(--animer); }
-  .sae-badge.produire { background: rgba(90,138,60,0.1); color: var(--produire); }
-  .sae-badge.innover { background: rgba(58,110,168,0.1); color: var(--innover); }
+  .res-block{border:1.5px dashed var(--border);padding:1.25rem;position:relative;}
+  .placeholder-tag{position:absolute;top:-10px;left:1rem;background:var(--gold);color:white;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.15rem 0.65rem;}
+  .res-block p{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--light);line-height:1.7;}
+  .img-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+  .img-ph{background:var(--parchment);border:1px dashed var(--border);min-height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.3rem;position:relative;font-size:0.74rem;color:var(--light);}
+  .img-ph-tag{position:absolute;top:-9px;left:0.75rem;background:var(--border);color:var(--muted);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.12rem 0.5rem;}
 
-  .sae-card-body { display: grid; grid-template-columns: 1fr 1fr; }
-  .sae-info { padding: 1.5rem; border-right: 1px solid var(--border); }
-  .sae-media { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .nav-pages{background:var(--charcoal);padding:4rem 5vw;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+  .np-card{border:1px solid rgba(255,255,255,0.12);padding:1.75rem;text-decoration:none;display:block;position:relative;transition:border-color 0.2s,background 0.2s;}
+  .np-card:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
+  .np-card::after{content:'→';position:absolute;right:1.25rem;top:50%;transform:translateY(-50%);color:var(--gold);}
+  .np-card.current{border-color:rgba(184,150,42,0.4);}
+  .np-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+  .np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;margin-bottom:0.3rem;}
+  .np-card.current h3{color:var(--gold);}
+  .np-card:not(.current) h3{color:white;}
+  .np-card p{font-size:0.78rem;color:rgba(255,255,255,0.35);}
+  .retour{padding:2rem 5vw;background:var(--cream);border-top:1px solid var(--border);}
+  .retour a{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);text-decoration:none;transition:color 0.2s;}
+  .retour a:hover{color:var(--wine);}
 
-  .info-block { margin-bottom: 1.25rem; }
-  .info-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
-  .info-block p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
-  .sae-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
-  .sae-tag { font-size: 0.68rem; border: 1px solid var(--border); padding: 0.15rem 0.55rem; color: var(--text-light); }
-
-  .conclu-block { background: var(--parchment); padding: 1rem 1.25rem; border-top: 1px solid var(--border); }
-  .conclu-block p { font-size: 0.83rem; color: var(--text-muted); font-style: italic; line-height: 1.7; }
-  .conclu-block p::before { content: '« '; color: var(--gold); }
-  .conclu-block p::after { content: ' »'; color: var(--gold); }
-
-  .ressenti-block { border: 1.5px dashed var(--border); padding: 1.25rem; position: relative; }
-  .placeholder-tag { position: absolute; top: -10px; left: 1rem; background: var(--gold); color: white; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.15rem 0.65rem; }
-  .ressenti-block p { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--text-light); line-height: 1.7; }
-
-  .img-placeholder { background: var(--parchment); border: 1px dashed var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 140px; position: relative; gap: 0.4rem; }
-  .img-placeholder-tag { position: absolute; top: -10px; left: 1rem; background: var(--border); color: var(--text-muted); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.15rem 0.65rem; }
-  .img-placeholder span { font-size: 0.75rem; color: var(--text-light); letter-spacing: 0.05em; }
-  .img-placeholder-icon { font-size: 1.5rem; opacity: 0.3; }
-  .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-  .img-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; }
-
-  .nav-pages { background: var(--charcoal); padding: 4rem 3rem; }
-  .nav-pages-inner { max-width: 960px; margin-left: auto; margin-right: auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
-  .nav-page-card { border: 1px solid rgba(255,255,255,0.12); padding: 1.75rem; text-decoration: none; display: block; transition: border-color 0.2s; position: relative; }
-  .nav-page-card:hover { border-color: var(--gold); }
-  .nav-page-card::after { content: '→'; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); color: var(--gold); }
-  .nav-page-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
-  .nav-page-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: white; margin-bottom: 0.3rem; }
-  .nav-page-card p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-  .nav-page-card.current { border-color: rgba(184,150,42,0.4); }
-  .nav-page-card.current h3 { color: var(--gold); }
-
-  .retour { padding: 2rem 3rem; background: var(--cream); border-top: 1px solid var(--border); }
-  .retour a { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
-  .retour a:hover { color: var(--wine); }
-
-  @media (max-width: 700px) {
-    nav { padding: 0 1.25rem; } nav ul { display: none; }
-    .hero, .semestre, .sae-intro, .nav-pages, .retour { padding: 4rem 1.5rem; }
-    .sae-card-body { grid-template-columns: 1fr; }
-    .sae-info { border-right: none; border-bottom: 1px solid var(--border); }
-    .nav-pages-inner { grid-template-columns: 1fr; }
-    .sae-card-top { grid-template-columns: 1fr; }
-    .img-grid-3 { grid-template-columns: 1fr 1fr; }
-  }
+  @media(max-width:900px){nav ul{display:none;}.hero,.sae-card,.nav-pages{grid-template-columns:1fr;}.sae-info{border-right:none;border-bottom:1px solid var(--border);}}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="portfolio_florian_thomas.html" class="nav-logo">Florian Thomas</a>
   <ul>
@@ -140,320 +101,107 @@
 </nav>
 
 <div class="hero">
-  <div>
-    <div class="breadcrumb">
-      <a href="portfolio_florian_thomas.html">Accueil</a> /
-      <a href="projets_intro.html">Projets SAé</a> /
-      2ème année
-    </div>
-    <h1>Projets <em>2ème année</em></h1>
+  <div class="hero-left">
+    <div class="breadcrumb"><a href="portfolio_florian_thomas.html">Accueil</a><span>/</span><a href="projets_intro.html">Projets SAé</a><span>/</span>2ème année</div>
+    <h1>SAé <em>2ème année</em></h1>
     <p class="hero-sub">Semestres 3 & 4 · 2024–2025 · IUT Nancy-Brabois — 5 SAé dont l'apparition de la compétence Innover.</p>
   </div>
-</div>
-
-<div class="sae-intro">
-  <div class="sae-intro-inner">
-    <p>En 2ème année, une nouvelle compétence entre en jeu : <strong>Innover</strong>. Les SAé deviennent plus complexes, moins guidées, et font appel à davantage d'autonomie et de travail collaboratif. Les 5 compétences du BUT sont désormais toutes actives.</p>
+  <div class="hero-right">
+    <p style="font-size:0.82rem;color:var(--muted);line-height:1.8;">En 2ème année, les 5 compétences sont actives. Les SAé deviennent plus complexes, moins guidées, et font appel à davantage d'autonomie.</p>
     <div class="ue-pills">
       <span class="ue-pill analyser">Analyser</span>
       <span class="ue-pill experimenter">Expérimenter</span>
       <span class="ue-pill animer">Animer</span>
       <span class="ue-pill produire">Produire</span>
-      <span class="ue-pill innover">Innover — nouveau !</span>
+      <span class="ue-pill innover">Innover <span class="new-badge">Nouveau</span></span>
     </div>
   </div>
 </div>
 
 <!-- SEMESTRE 3 -->
 <div class="semestre" id="s3">
-  <div class="semestre-label">Semestre 3</div>
-  <div class="semestre-title">Troisième <em>semestre</em></div>
+  <div class="sec-label">Semestre 3</div>
+  <h2>Troisième <em>semestre</em></h2>
 
-  <!-- SAé 3.1 -->
   <div class="sae-card">
-    <div class="sae-card-top">
-      <div class="sae-num-title">
-        <span class="sae-num">SAé 3.1</span>
-        <h2>Expérimentation et suivi analytique — eau de lac</h2>
-      </div>
-      <div class="sae-badges">
-        <span class="sae-badge analyser">Analyser</span>
-        <span class="sae-badge experimenter">Expérimenter</span>
-      </div>
+    <div class="sae-top"><div class="sae-title-wrap"><span class="sae-num">SAé 3.1</span><h3>Expérimentation et suivi analytique — eau de lac</h3></div><div class="sae-badges"><span class="sbadge analyser">Analyser</span><span class="sbadge experimenter">Expérimenter</span></div></div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Analyser une eau choisie en autonomie — eau d'un lac en forêt des Vosges — et comparer les résultats avec un lac urbain.</p></div>
+      <div class="info-block"><div class="info-label">Analyses réalisées</div><p>Demande chimique en oxygène (DCO), nitrites et nitrates, dosage de pesticides, dureté totale, caractère acido-basique.</p><div class="tags"><span class="tag">DCO</span><span class="tag">Nitrates</span><span class="tag">Pesticides</span><span class="tag">Dureté</span><span class="tag">pH</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><span class="placeholder-tag">À compléter</span><p>Décrivez ici votre ressenti personnel sur cette SAé…</p></div></div>
     </div>
-    <div class="sae-card-body">
-      <div class="sae-info">
-        <div class="info-block">
-          <div class="info-label">Objectif</div>
-          <p>Analyser une eau choisie en autonomie — eau d'un lac en forêt des Vosges — et comparer les résultats avec un lac urbain.</p>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Analyses réalisées</div>
-          <p>Demande chimique en oxygène (DCO), nitrites et nitrates, dosage de pesticides, dureté totale, caractère acido-basique.</p>
-          <div class="sae-tags"><span class="sae-tag">DCO</span><span class="sae-tag">Nitrates</span><span class="sae-tag">Pesticides</span><span class="sae-tag">Dureté</span><span class="sae-tag">pH</span><span class="sae-tag">Travail d'équipe</span></div>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Mon ressenti</div>
-          <div class="ressenti-block">
-            <span class="placeholder-tag">À compléter</span>
-            <p>Décrivez ici votre ressenti personnel sur cette SAé…</p>
-          </div>
-        </div>
-      </div>
-      <div class="sae-media">
-        <div class="info-label">Photos</div>
-        <div class="img-grid">
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="conclu-block"><p>Renforcement de la cohésion d'équipe et de la rigueur collective — la complémentarité du groupe a permis d'obtenir une note à la hauteur du travail fourni.</p></div>
+    <div class="sae-media"><div class="info-label">Photos</div><div class="img-grid"><div class="img-ph"><span class="img-ph-tag">Photo 1</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Photo 2</span>🖼 Ajouter</div></div></div>
+    <div class="conclu">Renforcement de la cohésion d'équipe — la complémentarité du groupe a permis d'obtenir une note à la hauteur du travail fourni.</div>
   </div>
 
-  <!-- SAé 3.2 -->
   <div class="sae-card">
-    <div class="sae-card-top">
-      <div class="sae-num-title">
-        <span class="sae-num">SAé 3.2</span>
-        <h2>Brunissement enzymatique & analyse microbiologique</h2>
-      </div>
-      <div class="sae-badges"><span class="sae-badge animer">Animer</span></div>
+    <div class="sae-top"><div class="sae-title-wrap"><span class="sae-num">SAé 3.2</span><h3>Brunissement enzymatique & analyse microbiologique</h3></div><div class="sae-badges"><span class="sbadge animer">Animer</span></div></div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Deux volets : cinétique de la polyphénol oxydase sur pommes (brunissement enzymatique), et démarche microbiologique complète sur jus de pommes selon les critères FCD.</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>Cinétique enzymatique PPO, inhibition du brunissement, dénombrements microbiologiques (levures, E. coli, Salmonella, Listeria).</p><div class="tags"><span class="tag">PPO</span><span class="tag">Enzymologie</span><span class="tag">Microbiologie</span><span class="tag">FCD</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><span class="placeholder-tag">À compléter</span><p>Décrivez ici votre ressenti personnel sur cette SAé…</p></div></div>
     </div>
-    <div class="sae-card-body">
-      <div class="sae-info">
-        <div class="info-block">
-          <div class="info-label">Objectif</div>
-          <p>Deux volets : étude de la cinétique de la polyphénol oxydase sur pommes, et démarche microbiologique complète sur jus de pommes selon les critères FCD.</p>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Méthodes utilisées</div>
-          <p>Cinétique enzymatique de la PPO, inhibition du brunissement, dénombrements microbiologiques (levures, flores lactiques, E. coli, Salmonella, Listeria).</p>
-          <div class="sae-tags"><span class="sae-tag">PPO</span><span class="sae-tag">Enzymologie</span><span class="sae-tag">Microbiologie</span><span class="sae-tag">FCD</span><span class="sae-tag">Jus de pomme</span></div>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Mon ressenti</div>
-          <div class="ressenti-block">
-            <span class="placeholder-tag">À compléter</span>
-            <p>Décrivez ici votre ressenti personnel sur cette SAé…</p>
-          </div>
-        </div>
-      </div>
-      <div class="sae-media">
-        <div class="info-label">Photos</div>
-        <div class="img-grid">
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 3</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 4</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="conclu-block"><p>Plus grande autonomie et travail en groupe élargi — moins guidée que les SAé précédentes, ce qui a favorisé l'initiative personnelle.</p></div>
+    <div class="sae-media"><div class="info-label">Photos</div><div class="img-grid"><div class="img-ph"><span class="img-ph-tag">Photo 1</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Photo 2</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Photo 3</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Photo 4</span>🖼 Ajouter</div></div></div>
+    <div class="conclu">Plus grande autonomie et groupe élargi — moins guidée que les SAé précédentes, ce qui a favorisé l'initiative personnelle.</div>
   </div>
 
-  <!-- SAé 3.3 -->
   <div class="sae-card">
-    <div class="sae-card-top">
-      <div class="sae-num-title">
-        <span class="sae-num">SAé 3.3</span>
-        <h2>Piloter une opération unitaire de production</h2>
-      </div>
-      <div class="sae-badges"><span class="sae-badge produire">Produire</span></div>
+    <div class="sae-top"><div class="sae-title-wrap"><span class="sae-num">SAé 3.3</span><h3>Piloter une opération unitaire de production</h3></div><div class="sae-badges"><span class="sbadge produire">Produire</span></div></div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Produire un jus de pomme pasteurisé sur un pilote industriel, en réalisant des analyses tout au long du processus.</p></div>
+      <div class="info-block"><div class="info-label">Analyses réalisées</div><p>Dépectinisation du jus, bilans de matière, mesure de l'acidité, dosage des tannins par méthode Lowenthal.</p><div class="tags"><span class="tag">Pilote industriel</span><span class="tag">Pasteurisation</span><span class="tag">Dépectinisation</span><span class="tag">Tannins</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><span class="placeholder-tag">À compléter</span><p>Décrivez ici votre ressenti personnel sur cette SAé…</p></div></div>
     </div>
-    <div class="sae-card-body">
-      <div class="sae-info">
-        <div class="info-block">
-          <div class="info-label">Objectif</div>
-          <p>Produire un jus de pomme pasteurisé sur un pilote industriel de type agroalimentaire, en réalisant des analyses tout au long du processus.</p>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Analyses réalisées</div>
-          <p>Dépectinisation du jus, bilans de matière, mesure de l'acidité, dosage des tannins par méthode Lowenthal.</p>
-          <div class="sae-tags"><span class="sae-tag">Pilote industriel</span><span class="sae-tag">Pasteurisation</span><span class="sae-tag">Dépectinisation</span><span class="sae-tag">Tannins</span><span class="sae-tag">Bilan matière</span></div>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Mon ressenti</div>
-          <div class="ressenti-block">
-            <span class="placeholder-tag">À compléter</span>
-            <p>Décrivez ici votre ressenti personnel sur cette SAé…</p>
-          </div>
-        </div>
-      </div>
-      <div class="sae-media">
-        <div class="info-label">Photos</div>
-        <div class="img-grid">
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="conclu-block"><p>Maîtrise des procédés indispensable pour conduire des analyses cohérentes — importance de comprendre le produit dans sa globalité.</p></div>
+    <div class="sae-media"><div class="info-label">Photos</div><div class="img-grid"><div class="img-ph"><span class="img-ph-tag">Photo 1</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Photo 2</span>🖼 Ajouter</div></div></div>
+    <div class="conclu">Maîtrise des procédés indispensable pour conduire des analyses cohérentes — importance de comprendre le produit dans sa globalité.</div>
   </div>
 
-  <!-- SAé 3.4 INNOVATION -->
-  <div class="sae-card highlight">
-    <div class="sae-card-top">
-      <div class="sae-num-title">
-        <span class="sae-num">SAé 3.4 → 4.4</span>
-        <h2>Projet Innovation — Shampoing solide au lait d'avoine</h2>
-      </div>
-      <div class="sae-badges"><span class="sae-badge innover">Innover</span></div>
+  <div class="sae-card hl">
+    <div class="sae-top"><div class="sae-title-wrap"><span class="sae-num">SAé 3.4 → 4.4</span><h3>Projet Innovation — Shampoing solide au lait d'avoine</h3></div><div class="sae-badges"><span class="sbadge innover">Innover</span></div></div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif sur 2 semestres</div><p>Concevoir un shampoing solide éco-responsable, en circuit court, à base de lait d'avoine et de déchets de fruits de saison.</p></div>
+      <div class="info-block"><div class="info-label">Étape 1 — Lait d'avoine</div><p>Transformation des graines en flocons (floconneuse), production du lait par hydratation + alpha-amylase.</p></div>
+      <div class="info-block"><div class="info-label">Étape 2 — Shampoing solide</div><p>Séchage et broyage de peaux de clémentines (la fée maraîchère). Mélange + tensioactif SCI (Sodium Cocoyl Isethionate). Moulage en format solide.</p><div class="tags"><span class="tag">Lait d'avoine</span><span class="tag">SCI</span><span class="tag">Circuit court</span><span class="tag">Clémentine</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><span class="placeholder-tag">À compléter</span><p>Décrivez votre ressenti sur ce projet innovation sur 2 semestres…</p></div></div>
     </div>
-    <div class="sae-card-body">
-      <div class="sae-info">
-        <div class="info-block">
-          <div class="info-label">Objectif sur 2 semestres</div>
-          <p>Concevoir un shampoing solide éco-responsable, en circuit court, à base de lait d'avoine et de déchets de fruits de saison.</p>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Étape 1 — Lait d'avoine</div>
-          <p>Transformation des graines d'avoine en flocons (floconneuse), puis production du lait d'avoine par hydratation et ajout d'alpha-amylase.</p>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Étape 2 — Shampoing solide</div>
-          <p>Séchage et broyage de peaux de clémentines (la fée maraîchère). Mélange lait d'avoine + poudre de clémentine + tensioactif SCI (Sodium Cocoyl Isethionate). Moulage en format solide.</p>
-          <div class="sae-tags"><span class="sae-tag">Lait d'avoine</span><span class="sae-tag">SCI</span><span class="sae-tag">Circuit court</span><span class="sae-tag">Peaux de clémentine</span><span class="sae-tag">Alpha-amylase</span></div>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Mon ressenti</div>
-          <div class="ressenti-block">
-            <span class="placeholder-tag">À compléter</span>
-            <p>Décrivez ici votre ressenti sur ce projet innovation — le plus ambitieux de vos 2 années…</p>
-          </div>
-        </div>
-      </div>
-      <div class="sae-media">
-        <div class="info-label">Photos</div>
-        <div class="img-grid">
-          <div class="img-placeholder"><span class="img-placeholder-tag">Graines d'avoine</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Floconneuse</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Clémentines</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Shampoing final</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="conclu-block"><p>Importance de la communication rigoureuse dans un projet collaboratif — aussi bien à l'intérieur du groupe qu'avec les intervenants extérieurs.</p></div>
+    <div class="sae-media"><div class="info-label">Photos</div><div class="img-grid"><div class="img-ph"><span class="img-ph-tag">Graines d'avoine</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Floconneuse</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Clémentines</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Shampoing final</span>🖼 Ajouter</div></div></div>
+    <div class="conclu">Importance de la communication rigoureuse dans un projet collaboratif — aussi bien en interne qu'avec les intervenants extérieurs.</div>
   </div>
 </div>
 
 <!-- SEMESTRE 4 -->
 <div class="semestre" id="s4">
-  <div class="semestre-label">Semestre 4</div>
-  <div class="semestre-title">Quatrième <em>semestre</em></div>
+  <div class="sec-label">Semestre 4</div>
+  <h2>Quatrième <em>semestre</em></h2>
 
-  <!-- SAé 4.1 -->
   <div class="sae-card">
-    <div class="sae-card-top">
-      <div class="sae-num-title">
-        <span class="sae-num">SAé 4.1</span>
-        <h2>Analyse microbiologique de l'eau de lac</h2>
-      </div>
-      <div class="sae-badges">
-        <span class="sae-badge analyser">Analyser</span>
-        <span class="sae-badge experimenter">Expérimenter</span>
-      </div>
+    <div class="sae-top"><div class="sae-title-wrap"><span class="sae-num">SAé 4.1</span><h3>Analyse microbiologique de l'eau de lac</h3></div><div class="sae-badges"><span class="sbadge analyser">Analyser</span><span class="sbadge experimenter">Expérimenter</span></div></div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Continuité de la SAé 3.1 — analyse microbiologique de la même eau vosgienne selon les critères de potabilité (FCD).</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>TP microbiologie autour des critères de potabilité des eaux, dénombrements selon les référentiels réglementaires.</p><div class="tags"><span class="tag">Microbiologie</span><span class="tag">Potabilité</span><span class="tag">FCD</span><span class="tag">Dénombrement</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><span class="placeholder-tag">À compléter</span><p>Décrivez ici votre ressenti personnel sur cette SAé…</p></div></div>
     </div>
-    <div class="sae-card-body">
-      <div class="sae-info">
-        <div class="info-block">
-          <div class="info-label">Objectif</div>
-          <p>Continuité de la SAé 3.1 — analyse cette fois microbiologique de la même eau de lac vosgienne selon les critères de potabilité (FCD).</p>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Méthodes utilisées</div>
-          <p>TP microbiologie autour des critères de potabilité des eaux : dénombrements de germes selon les référentiels réglementaires.</p>
-          <div class="sae-tags"><span class="sae-tag">Microbiologie</span><span class="sae-tag">Potabilité</span><span class="sae-tag">FCD</span><span class="sae-tag">Dénombrement</span></div>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Mon ressenti</div>
-          <div class="ressenti-block">
-            <span class="placeholder-tag">À compléter</span>
-            <p>Décrivez ici votre ressenti personnel sur cette SAé…</p>
-          </div>
-        </div>
-      </div>
-      <div class="sae-media">
-        <div class="info-label">Photos</div>
-        <div class="img-grid">
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="conclu-block"><p>Vision élargie des panels d'analyse possibles sur un même produit — richesse des métiers accessibles en biologie alimentaire.</p></div>
+    <div class="sae-media"><div class="info-label">Photos</div><div class="img-grid"><div class="img-ph"><span class="img-ph-tag">Photo 1</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Photo 2</span>🖼 Ajouter</div></div></div>
+    <div class="conclu">Vision élargie des panels d'analyse possibles sur un même produit — richesse des métiers accessibles en biologie alimentaire.</div>
   </div>
 
-  <!-- SAé 4.2 -->
-  <div class="sae-card highlight">
-    <div class="sae-card-top">
-      <div class="sae-num-title">
-        <span class="sae-num">SAé 4.2</span>
-        <h2>Production et analyse de fromages</h2>
-      </div>
-      <div class="sae-badges">
-        <span class="sae-badge animer">Animer</span>
-        <span class="sae-badge produire">Produire</span>
-        <span class="sae-badge innover">Innover</span>
-      </div>
+  <div class="sae-card hl">
+    <div class="sae-top"><div class="sae-title-wrap"><span class="sae-num">SAé 4.2</span><h3>Production et analyse de fromages</h3></div><div class="sae-badges"><span class="sbadge animer">Animer</span><span class="sbadge produire">Produire</span><span class="sbadge innover">Innover</span></div></div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Fabriquer deux types de fromages (pâte pressée non cuite et pâte molle) avec standardisation du lait par écrémage. Valorisation de la crème en beurre.</p></div>
+      <div class="info-block"><div class="info-label">Analyses réalisées</div><p>Extrait sec, force de présure, indice de lipolyse, taux de mouillage et taux d'écrémage. SAé directement en lien avec le stage à la fromagerie d'Orval.</p><div class="tags"><span class="tag">Fromage</span><span class="tag">Écrémage</span><span class="tag">Présure</span><span class="tag">Lipolyse</span><span class="tag">Beurre</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><span class="placeholder-tag">À compléter</span><p>Décrivez votre ressenti — notamment le lien avec le stage à l'abbaye d'Orval…</p></div></div>
     </div>
-    <div class="sae-card-body">
-      <div class="sae-info">
-        <div class="info-block">
-          <div class="info-label">Objectif</div>
-          <p>Fabriquer deux types de fromages (pâte pressée non cuite et pâte molle) avec standardisation du lait par écrémage. Valorisation de la crème en beurre.</p>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Analyses réalisées</div>
-          <p>Calcul de l'extrait sec, force de présure, indice de lipolyse, taux de mouillage et taux d'écrémage. SAé directement en lien avec le stage à la fromagerie d'Orval.</p>
-          <div class="sae-tags"><span class="sae-tag">Fromage</span><span class="sae-tag">Écrémage</span><span class="sae-tag">Présure</span><span class="sae-tag">Lipolyse</span><span class="sae-tag">Beurre</span><span class="sae-tag">Extrait sec</span></div>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Mon ressenti</div>
-          <div class="ressenti-block">
-            <span class="placeholder-tag">À compléter</span>
-            <p>Décrivez ici votre ressenti — notamment le lien avec votre stage à l'abbaye d'Orval…</p>
-          </div>
-        </div>
-      </div>
-      <div class="sae-media">
-        <div class="info-label">Photos</div>
-        <div class="img-grid">
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 1</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 2</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 3</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-          <div class="img-placeholder"><span class="img-placeholder-tag">Photo 4</span><div class="img-placeholder-icon">🖼</div><span>Ajouter une photo</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="conclu-block"><p>Vision complète d'un procédé de fabrication de A à Z — et découverte de la multiplicité des méthodes analytiques pour mesurer une même valeur.</p></div>
+    <div class="sae-media"><div class="info-label">Photos</div><div class="img-grid"><div class="img-ph"><span class="img-ph-tag">Photo 1</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Photo 2</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Photo 3</span>🖼 Ajouter</div><div class="img-ph"><span class="img-ph-tag">Photo 4</span>🖼 Ajouter</div></div></div>
+    <div class="conclu">Vision complète d'un procédé de fabrication de A à Z — multiplicité des méthodes analytiques pour une même valeur.</div>
   </div>
 </div>
 
-<!-- NAVIGATION -->
 <div class="nav-pages">
-  <div class="nav-pages-inner">
-    <a href="projets.html" class="nav-page-card">
-      <div class="nav-page-label">Précédent</div>
-      <h3>SAé 1ère année</h3>
-      <p>Semestres 1 & 2 · 2023–2024</p>
-    </a>
-    <div class="nav-page-card current">
-      <div class="nav-page-label">Vous êtes ici</div>
-      <h3>SAé 2ème année</h3>
-      <p>Semestres 3 & 4 · 2024–2025</p>
-    </div>
-    <a href="stages.html" class="nav-page-card">
-      <div class="nav-page-label">Découvrir</div>
-      <h3>Mes stages</h3>
-      <p>3 expériences de terrain</p>
-    </a>
-  </div>
+  <a href="projets.html" class="np-card"><div class="np-label">Précédent</div><h3>SAé 1ère année</h3><p>Semestres 1 & 2 · 2023–2024</p></a>
+  <div class="np-card current"><div class="np-label">Vous êtes ici</div><h3>SAé 2ème année</h3><p>Semestres 3 & 4 · 2024–2025</p></div>
+  <a href="stages.html" class="np-card"><div class="np-label">Découvrir</div><h3>Mes stages</h3><p>3 expériences de terrain</p></a>
 </div>
-
-<div class="retour">
-  <a href="portfolio_florian_thomas.html">← Retour à l'accueil</a>
-</div>
-
+<div class="retour"><a href="portfolio_florian_thomas.html">← Retour à l'accueil</a></div>
 </body>
 </html>
