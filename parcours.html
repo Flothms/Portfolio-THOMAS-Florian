@@ -19,15 +19,16 @@
 
   /* HERO deux colonnes */
   .hero{display:grid;grid-template-columns:1fr 1fr;min-height:60vh;padding-top:64px;}
-  .hero-left{background:white;padding:5rem 5vw;display:flex;flex-direction:column;justify-content:center;}
-  .hero-right{background:var(--parchment);padding:5rem 5vw;display:flex;flex-direction:column;justify-content:center;}
+  .hero-left{background:white;padding:4rem 5vw 4rem 8vw;display:flex;flex-direction:column;justify-content:center;}
+  .hero-right{background:var(--wine);padding:4rem 5vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+  .hero-right::after{content:'';position:absolute;right:-2rem;bottom:-3rem;width:280px;height:280px;border-radius:50%;border:1px solid rgba(255,255,255,0.06);}
   .breadcrumb{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light);margin-bottom:1.5rem;display:flex;gap:0.5rem;}
   .breadcrumb a{color:var(--gold);text-decoration:none;}
   h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:300;line-height:1.05;margin-bottom:1rem;}
   h1 em{font-style:italic;color:var(--wine);}
   .hero-sub{font-size:0.92rem;color:var(--muted);line-height:1.8;}
-  .hero-link{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1.5rem;border:1px solid var(--border);padding:0.7rem 1.25rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:border-color 0.2s,color 0.2s;}
-  .hero-link:hover{border-color:var(--wine);color:var(--wine);}
+  .hero-link{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1.5rem;border:1px solid rgba(255,255,255,0.3);padding:0.7rem 1.25rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:border-color 0.2s,color 0.2s;}
+  .hero-link:hover{border-color:var(--gold);color:var(--gold);}
 
   /* CHIFFRES pleine largeur */
   .chiffres{background:var(--wine);padding:3rem 5vw;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;}
@@ -37,7 +38,7 @@
   .chiffre-label{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
 
   /* SECTIONS */
-  section{padding:5rem 5vw;}
+  section{padding:4rem 5vw;}
   .sec-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
   h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.1;margin-bottom:2.5rem;}
   h2 em{font-style:italic;color:var(--wine);}
@@ -49,10 +50,10 @@
   .prog-link{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1rem;border:1px solid var(--border);padding:0.7rem 1.25rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:border-color 0.2s,color 0.2s;}
   .prog-link:hover{border-color:var(--wine);color:var(--wine);}
   .parcours-list{list-style:none;}
-  .parcours-list li{padding:0.65rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;color:var(--muted);display:flex;align-items:center;gap:0.75rem;}
-  .parcours-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--border);flex-shrink:0;}
-  .parcours-list li.active{color:var(--charcoal);font-weight:500;}
-  .parcours-list li.active::before{background:var(--wine);}
+  .parcours-list li{padding:0.65rem 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:0.88rem;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:0.75rem;}
+  .parcours-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.3);flex-shrink:0;}
+  .parcours-list li.active{color:white;font-weight:500;}
+  .parcours-list li.active::before{background:var(--gold);}
 
   /* COMPÉTENCES grille 3 colonnes */
   .comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
@@ -130,7 +131,7 @@
     <a href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-1-licence-professionnelle-bachelor-universitaire-de-technologie-g-nie-biologique-29013.pdf" target="_blank" class="hero-link">↗ Programme officiel</a>
   </div>
   <div class="hero-right">
-    <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Les 5 parcours du BUT GB</p>
+    <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:1rem;">Les 5 parcours du BUT GB</p>
     <ul class="parcours-list">
       <li>Sciences de l'environnement et écotechnologies</li>
       <li>Agronomie</li>
@@ -159,7 +160,7 @@
       <a href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-1-licence-professionnelle-bachelor-universitaire-de-technologie-g-nie-biologique-29013.pdf" target="_blank" class="prog-link">↗ Consulter le programme officiel</a>
     </div>
     <div class="col">
-      <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">5 compétences visées</p>
+      <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:1rem;">5 compétences visées</p>
       <ul class="parcours-list">
         <li class="active">Réaliser des analyses biologiques</li>
         <li class="active">Expérimenter dans le génie biologique</li>
