@@ -18,7 +18,10 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { background: var(--cream); color: var(--charcoal); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; }
+  .page-wrapper { max-width: 1200px; margin: 0 auto; }
+  section, .semestre, .sae-intro, .chiffres, .acces, .nav-pages, .retour, .hero, .formation, .competences, .matieres, .ressenti, .debouches, .stages-section, .annee-section, .sae-explainer, .fonctionnement, .definition { width: 100%; }
+  section > *, .semestre > *, .hero > *, .formation > *, .competences > *, .matieres > *, .ressenti > *, .debouches > *, .stages-section > *, .annee-section > *, .sae-explainer > *, .fonctionnement > *, .definition > * { max-width: 1100px; margin-left: auto; margin-right: auto; width: 100%; }
+  body { background: var(--cream); color: var(--charcoal); max-width: 1400px; margin: 0 auto; font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; }
 
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(247,244,239,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 64px; }
   .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; letter-spacing: 0.08em; color: var(--wine); text-transform: uppercase; text-decoration: none; }
@@ -26,7 +29,7 @@
   nav a { text-decoration: none; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
   nav a:hover, nav a.active { color: var(--wine); }
 
-  .hero { min-height: 52vh; display: flex; align-items: flex-end; padding: 8rem 3rem 4rem; border-bottom: 1px solid var(--border); background: white; }
+  .hero { min-height: 52vh; display: flex; align-items: flex-end; padding: 8rem 3rem 4rem; justify-content: center; border-bottom: 1px solid var(--border); background: white; }
   .breadcrumb { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
   .breadcrumb a { color: var(--gold); text-decoration: none; }
   .breadcrumb a:hover { color: var(--wine); }
@@ -35,18 +38,18 @@
   .hero-sub { font-size: 0.95rem; color: var(--text-muted); max-width: 520px; }
 
   .chiffres { background: var(--wine); padding: 3rem; }
-  .chiffres-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.15); max-width: 900px; }
+  .chiffres-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.15); max-width: 900px; margin-left: auto; margin-right: auto; }
   .chiffre-block { background: var(--wine); padding: 2rem 1.5rem; text-align: center; }
   .chiffre-nb { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
   .chiffre-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
 
-  section { padding: 5rem 3rem; }
+  section { padding: 5rem 3rem; display: flex; flex-direction: column; align-items: center; }
   .section-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
   h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 2rem; }
   h2 em { font-style: italic; color: var(--wine); }
 
   .formation { background: white; }
-  .formation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; }
+  .formation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
   .formation-desc p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
   .programme-link { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 1rem; border: 1px solid var(--border); padding: 0.7rem 1.25rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
   .programme-link:hover { border-color: var(--wine); color: var(--wine); }
@@ -57,7 +60,7 @@
   .parcours-list li.active::before { background: var(--wine); }
 
   .competences { background: var(--cream); }
-  .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; max-width: 1000px; }
+  .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
   .comp-card { background: white; border: 1px solid var(--border); padding: 1.75rem; position: relative; transition: border-color 0.2s; }
   .comp-card:hover { border-color: var(--gold); }
   .comp-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--border); position: absolute; top: 1rem; right: 1.25rem; }
@@ -66,7 +69,7 @@
   .comp-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; }
 
   .matieres { background: white; }
-  .year-block { margin-bottom: 3rem; max-width: 1000px; }
+  .year-block { margin-bottom: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
   .year-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wine); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
   .year-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
   .matieres-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 0.75rem; }
@@ -76,22 +79,22 @@
   .mat-card p { font-size: 0.76rem; color: var(--text-light); }
 
   .ressenti { background: var(--parchment); }
-  .ressenti-quote { max-width: 720px; border-left: 3px solid var(--gold); padding: 2rem 2.5rem; background: white; margin-bottom: 2.5rem; position: relative; }
+  .ressenti-quote { max-width: 720px; margin-left: auto; margin-right: auto; border-left: 3px solid var(--gold); padding: 2rem 2.5rem; background: white; margin-bottom: 2.5rem; position: relative; }
   .placeholder-tag { position: absolute; top: -11px; left: 1.5rem; background: var(--gold); color: white; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.2rem 0.75rem; }
   .ressenti-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; font-style: italic; color: var(--text-light); line-height: 1.8; }
-  .ressenti-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; max-width: 1000px; }
+  .ressenti-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
   .ressenti-card { background: white; border: 1px solid var(--border); padding: 1.5rem; position: relative; }
   .ressenti-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; margin-bottom: 0.4rem; }
   .ressenti-card p { font-size: 0.82rem; color: var(--text-light); font-style: italic; }
 
   .debouches { background: white; }
-  .debouches-list { display: flex; flex-wrap: wrap; gap: 0.75rem; max-width: 900px; }
+  .debouches-list { display: flex; flex-wrap: wrap; gap: 0.75rem; max-width: 900px; margin-left: auto; margin-right: auto; }
   .debouche-pill { border: 1px solid var(--border); padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--text-muted); transition: border-color 0.2s, color 0.2s; }
   .debouche-pill:hover { border-color: var(--wine); color: var(--wine); }
   .debouche-pill.highlight { border-color: var(--wine); color: var(--wine); background: rgba(107,45,62,0.04); }
 
   .nav-pages { background: var(--charcoal); padding: 4rem 3rem; }
-  .nav-pages-inner { max-width: 1000px; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .nav-pages-inner { max-width: 1000px; margin-left: auto; margin-right: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .nav-page-card { border: 1px solid rgba(255,255,255,0.12); padding: 2rem 2.25rem; text-decoration: none; display: block; transition: border-color 0.2s, background 0.2s; position: relative; overflow: hidden; }
   .nav-page-card:hover { border-color: var(--gold); background: rgba(255,255,255,0.03); }
   .nav-page-card::after { content: '→'; position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 1.2rem; transition: right 0.2s; }
