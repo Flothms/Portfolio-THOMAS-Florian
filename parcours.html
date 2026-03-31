@@ -108,11 +108,22 @@
   .retour a{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);text-decoration:none;transition:color 0.2s;}
   .retour a:hover{color:var(--wine);}
 
+  /* ÉTABLISSEMENT */
+  .etablissement{display:grid;grid-template-columns:1fr 1fr;}
+  .etab-photo{position:relative;overflow:hidden;min-height:400px;}
+  .etab-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .etab-photo-caption{position:absolute;bottom:0;left:0;right:0;background:rgba(42,40,37,0.7);color:rgba(255,255,255,0.7);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.6rem 1rem;}
+  .etab-info{background:white;padding:4rem 5vw;display:flex;flex-direction:column;justify-content:center;}
+  .etab-logos{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+  .etab-logos img{height:50px;width:auto;object-fit:contain;opacity:0.85;}
+  .etab-logos img:last-child{height:60px;}
+
   @media(max-width:900px){
     nav ul{display:none;}
     .hero,.two-col,.comp-grid,.ressenti-cards,.nav-pages{grid-template-columns:1fr;}
     .chiffres{grid-template-columns:repeat(2,1fr);}
     .mat-grid{grid-template-columns:repeat(2,1fr);}
+    .etablissement{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -151,6 +162,24 @@
   <div class="chiffre-block"><div class="chiffre-nb">180</div><div class="chiffre-label">Crédits ECTS</div></div>
   <div class="chiffre-block"><div class="chiffre-nb">2000h</div><div class="chiffre-label">D'enseignements</div></div>
   <div class="chiffre-block"><div class="chiffre-nb">40%</div><div class="chiffre-label">De travaux pratiques</div></div>
+</div>
+
+<!-- ÉTABLISSEMENT -->
+<div class="etablissement">
+  <div class="etab-photo">
+    <img src="iut-photo.png" alt="IUT Nancy-Brabois — Vue aérienne du campus de Villers-lès-Nancy">
+    <div class="etab-photo-caption">Campus de Villers-lès-Nancy</div>
+  </div>
+  <div class="etab-info">
+    <div class="sec-label">Mon établissement</div>
+    <h2 style="margin-bottom:1rem;">IUT <em>Nancy-Brabois</em></h2>
+    <p style="font-size:0.95rem;color:var(--muted);line-height:1.85;margin-bottom:2rem;">J'étudie depuis septembre 2023 à l'IUT Nancy-Brabois, composante de l'Université de Lorraine, situé sur le campus de Villers-lès-Nancy. Le département Génie Biologique Agro-Alimentaire (GB2A) y propose le parcours Sciences de l'Aliment et Biotechnologie dans un environnement alliant rigueur académique et proximité avec le monde professionnel.</p>
+    <div class="etab-logos">
+      <img src="logo-iut.png" alt="Logo IUT Nancy-Brabois — Université de Lorraine">
+      <img src="logo-gbaa.png" alt="Logo Génie Biologique Agro-Alimentaire">
+      <img src="logo-gbaa-cercle.png" alt="Icône GB2A">
+    </div>
+  </div>
 </div>
 
 <section class="formation" id="formation">
