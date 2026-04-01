@@ -3,131 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Florian Thomas — Parcours BUT</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Florian Thomas — Mon Parcours BUT</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root { --cream:#F7F4EF; --parchment:#EDE8DE; --wine:#6B2D3E; --wine-light:#8B3D52; --gold:#B8966A; --charcoal:#2A2825; --muted:#6E6A62; --light:#9E9A92; --border:#D8D2C6; }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;width:100%;}
+:root{--cream:#F7F4EF;--parchment:#EDE8DE;--wine:#6B2D3E;--gold:#B8966A;--charcoal:#2A2825;--muted:#6E6A62;--light:#9E9A92;--border:#D8D2C6;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;}
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.08em;color:var(--wine);text-transform:uppercase;text-decoration:none;}
-  nav ul{list-style:none;display:flex;gap:2.5rem;}
-  nav a{text-decoration:none;font-size:0.8rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
-  nav a:hover,nav a.active{color:var(--wine);}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;letter-spacing:0.08em;color:var(--wine);text-transform:uppercase;text-decoration:none;}
+nav ul{list-style:none;display:flex;gap:2.5rem;}
+nav a{text-decoration:none;font-size:0.78rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+nav a:hover,nav a.active{color:var(--wine);}
 
-  /* HERO deux colonnes */
-  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:60vh;padding-top:64px;}
-  .hero-left{background:white;padding:4rem 5vw 4rem 8vw;display:flex;flex-direction:column;justify-content:center;}
-  .hero-right{background:var(--wine);padding:4rem 5vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
-  .hero-right::after{content:'';position:absolute;right:-2rem;bottom:-3rem;width:280px;height:280px;border-radius:50%;border:1px solid rgba(255,255,255,0.06);}
-  .breadcrumb{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light);margin-bottom:1.5rem;display:flex;gap:0.5rem;}
-  .breadcrumb a{color:var(--gold);text-decoration:none;}
-  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:300;line-height:1.05;margin-bottom:1rem;}
-  h1 em{font-style:italic;color:var(--wine);}
-  .hero-sub{font-size:0.92rem;color:var(--muted);line-height:1.8;}
-  .hero-link{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1.5rem;border:1px solid rgba(255,255,255,0.3);padding:0.7rem 1.25rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:border-color 0.2s,color 0.2s;}
-  .hero-link:hover{border-color:var(--gold);color:var(--gold);}
+/* ═══════════════════════════════
+   HERO — photo pleine largeur
+═══════════════════════════════ */
+.hero{position:relative;height:75vh;min-height:500px;padding-top:64px;overflow:hidden;display:flex;align-items:flex-end;}
+.hero-bg{position:absolute;inset:0;background-image:url('iut-photo.png');background-size:cover;background-position:center 35%;filter:brightness(0.38);}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(42,40,37,0.9) 0%,transparent 60%);}
+.hero-content{position:relative;z-index:1;padding:4rem 5vw;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;}
+.hero-tag{display:inline-block;background:var(--gold);color:white;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.3rem 0.9rem;margin-bottom:1.25rem;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,5.5rem);font-weight:300;color:white;line-height:0.95;margin-bottom:0.75rem;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.55);max-width:420px;}
+.hero-stats{display:flex;gap:2.5rem;flex-shrink:0;}
+.hero-stat{text-align:right;}
+.hero-stat-nb{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:white;line-height:1;}
+.hero-stat-label{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
 
-  /* CHIFFRES pleine largeur */
-  .chiffres{background:var(--wine);padding:3rem 5vw;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;}
-  .chiffre-block{padding:2rem;text-align:center;border-right:1px solid rgba(255,255,255,0.1);}
-  .chiffre-block:last-child{border-right:none;}
-  .chiffre-nb{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:0.3rem;}
-  .chiffre-label{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+/* ═══════════════════════════════
+   BANDE BORDEAUX — intro + logos
+═══════════════════════════════ */
+.intro-band{background:var(--wine);padding:3rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center;}
+.intro-text{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:white;line-height:1.7;font-style:italic;}
+.intro-logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:flex-end;}
+.logo-iut-wrap{background:white;padding:0.6rem 1rem;display:flex;align-items:center;}
+.logo-iut-wrap img{height:38px;width:auto;}
+.logo-free{height:44px;width:auto;object-fit:contain;}
+.logos-sep{width:1px;height:36px;background:rgba(255,255,255,0.2);}
 
-  /* SECTIONS */
-  section{padding:4rem 5vw;}
-  .sec-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
-  h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.1;margin-bottom:2.5rem;}
-  h2 em{font-style:italic;color:var(--wine);}
+/* ═══════════════════════════════
+   SECTION GÉNÉRIQUE
+═══════════════════════════════ */
+.sec-label{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;line-height:1.1;margin-bottom:1.5rem;}
+h2 em{font-style:italic;color:var(--wine);}
+p{font-size:0.93rem;color:var(--muted);line-height:1.75;margin-bottom:1rem;}
+p strong{color:var(--charcoal);font-weight:500;}
 
-  /* FORMATION deux colonnes */
-  .formation{background:white;}
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:5rem;}
-  .col p{color:var(--muted);font-size:0.95rem;margin-bottom:1rem;line-height:1.8;}
-  .prog-link{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1rem;border:1px solid var(--border);padding:0.7rem 1.25rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:border-color 0.2s,color 0.2s;}
-  .prog-link:hover{border-color:var(--wine);color:var(--wine);}
-  .parcours-list{list-style:none;}
-  .parcours-list li{padding:0.65rem 0;border-bottom:1px solid rgba(255,255,255,0.15);font-size:0.88rem;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:0.75rem;}
-  .parcours-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.3);flex-shrink:0;}
-  .parcours-list li.active{color:white;font-weight:500;}
-  .parcours-list li.active::before{background:var(--gold);}
-  /* liste sur fond blanc dans section formation */
-  .col .parcours-list li{border-bottom:1px solid var(--border);color:var(--muted);}
-  .col .parcours-list li::before{background:var(--border);}
-  .col .parcours-list li.active{color:var(--charcoal);}
-  .col .parcours-list li.active::before{background:var(--wine);}
+/* ═══════════════════════════════
+   FORMATION + PARCOURS — 2 col
+═══════════════════════════════ */
+.two-col{display:grid;grid-template-columns:1fr 1fr;}
+.col-white{padding:4rem 4vw 4rem 5vw;background:white;border-right:1px solid var(--border);}
+.col-cream{padding:4rem 5vw 4rem 4vw;background:var(--cream);}
 
-  /* COMPÉTENCES grille 3 colonnes */
-  .comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-  .comp-card{background:white;border:1px solid var(--border);padding:2rem;position:relative;transition:border-color 0.2s,transform 0.2s;}
-  .comp-card:hover{border-color:var(--gold);transform:translateY(-2px);}
-  .comp-num{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--border);position:absolute;top:1rem;right:1.25rem;line-height:1;}
-  .comp-tag{display:inline-block;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;background:var(--parchment);color:var(--wine);padding:0.2rem 0.6rem;margin-bottom:0.75rem;}
-  .comp-card h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;margin-bottom:0.5rem;}
-  .comp-card p{font-size:0.82rem;color:var(--muted);line-height:1.7;}
+.prog-link{display:inline-flex;align-items:center;gap:0.5rem;margin-top:0.5rem;margin-bottom:1.5rem;border:1px solid var(--border);padding:0.6rem 1rem;font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:border-color 0.2s,color 0.2s;}
+.prog-link:hover{border-color:var(--wine);color:var(--wine);}
 
-  /* MATIÈRES */
-  .matieres{background:white;}
-  .year-label{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--wine);margin:2rem 0 1rem;display:flex;align-items:center;gap:1rem;}
-  .year-label::after{content:'';flex:1;height:1px;background:var(--border);}
-  .mat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;}
-  .mat-card{border:1px solid var(--border);padding:1rem 1.25rem;transition:border-color 0.2s,background 0.2s;}
-  .mat-card:hover{border-color:var(--gold);background:var(--cream);}
-  .mat-card h3{font-size:0.85rem;font-weight:500;margin-bottom:0.2rem;}
-  .mat-card p{font-size:0.76rem;color:var(--light);}
+/* Compétences dans col-white */
+.comp-list{list-style:none;margin-top:0.5rem;}
+.comp-item{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--border);align-items:flex-start;}
+.comp-num{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--border);line-height:1;flex-shrink:0;width:24px;padding-top:3px;}
+.comp-body h3{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;margin-bottom:0.2rem;line-height:1.3;}
+.comp-body p{font-size:0.82rem!important;margin-bottom:0!important;color:var(--light)!important;line-height:1.6;}
+.comp-tag{display:inline-block;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.1rem 0.45rem;margin-bottom:0.25rem;font-weight:500;}
+.ta{background:rgba(192,57,43,0.1);color:#C0392B;}
+.te{background:rgba(214,138,58,0.1);color:#D68A3A;}
+.tan{background:rgba(184,150,42,0.1);color:#B8962A;}
+.tp{background:rgba(90,138,60,0.1);color:#5A8A3C;}
+.ti{background:rgba(58,110,168,0.1);color:#3A6EA8;}
 
-  /* RESSENTI */
-  .ressenti{background:var(--parchment);}
-  .ressenti-quote{border-left:3px solid var(--gold);padding:2rem 2.5rem;background:white;margin-bottom:2.5rem;position:relative;}
-  .placeholder-tag{position:absolute;top:-10px;left:1.5rem;background:var(--gold);color:white;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.15rem 0.65rem;}
-  .ressenti-quote p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--light);line-height:1.8;}
-  .ressenti-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-  .ressenti-card{background:white;border:1px solid var(--border);padding:1.75rem;position:relative;}
-  .ressenti-card h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;margin-bottom:0.4rem;}
-  .ressenti-card p{font-size:0.82rem;color:var(--light);font-style:italic;}
+/* Parcours dans col-cream */
+.parcours-list{list-style:none;margin:1.25rem 0;}
+.parcours-list li{padding:0.75rem 1rem;border:1px solid var(--border);margin-bottom:0.4rem;font-size:0.87rem;color:var(--muted);display:flex;align-items:center;gap:0.75rem;background:white;}
+.parcours-list li.active{border-color:var(--wine);color:var(--charcoal);font-weight:500;background:var(--cream);}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--border);flex-shrink:0;}
+.parcours-list li.active .dot{background:var(--wine);}
 
-  /* DÉBOUCHÉS */
-  .debouches{background:white;}
-  .pills-wrap{display:flex;flex-wrap:wrap;gap:0.75rem;}
-  .dpill{border:1px solid var(--border);padding:0.45rem 1rem;font-size:0.82rem;color:var(--muted);}
-  .dpill.hl{border-color:var(--wine);color:var(--wine);background:rgba(107,45,62,0.04);}
+.expl-list{list-style:none;margin:1rem 0;display:flex;flex-direction:column;gap:0.6rem;}
+.expl-list li{font-size:0.9rem;color:var(--muted);line-height:1.6;padding:0.6rem 0.9rem;border-left:2px solid var(--border);}
+.expl-list li strong{color:var(--charcoal);font-weight:500;}
 
-  /* NAV PAGES bas */
-  .nav-pages{background:var(--charcoal);padding:4rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-  .np-card{border:1px solid rgba(255,255,255,0.12);padding:2rem;text-decoration:none;display:block;position:relative;transition:border-color 0.2s,background 0.2s;}
-  .np-card:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
-  .np-card::after{content:'→';position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.2rem;}
-  .np-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
-  .np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:white;margin-bottom:0.3rem;}
-  .np-card p{font-size:0.82rem;color:rgba(255,255,255,0.4);}
+/* ═══════════════════════════════
+   PROGRAMME — pleine largeur
+═══════════════════════════════ */
+.programme{padding:4rem 5vw;background:white;}
+.prog-header{display:grid;grid-template-columns:1fr 1fr;gap:5vw;margin-bottom:2.5rem;align-items:end;}
+.legende{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem;}
+.legende span{font-size:0.72rem;color:var(--muted);display:flex;align-items:center;gap:0.5rem;}
+.legende span::before{content:'';display:block;width:12px;height:12px;border:1px solid;}
+.l-commun::before{border-color:var(--border);background:var(--cream);}
+.l-sab::before{border-color:var(--gold);background:rgba(184,150,106,0.08);}
+.l-stage::before{border-color:var(--wine);background:rgba(107,45,62,0.05);}
+.sem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.sem-block{}
+.sem-head{background:var(--charcoal);color:white;padding:0.8rem 1.1rem;display:flex;justify-content:space-between;align-items:center;}
+.sem-head h3{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;}
+.sem-meta{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+.sem-body{background:var(--cream);border:1px solid var(--border);border-top:none;padding:0.75rem;display:flex;flex-direction:column;gap:0.35rem;}
+.mp{border:1px solid var(--border);padding:0.35rem 0.65rem;font-size:0.76rem;color:var(--muted);background:white;}
+.mp.sab{border-color:var(--gold);color:var(--charcoal);background:rgba(184,150,106,0.05);}
+.mp.stage{border-color:var(--wine);color:var(--wine);font-weight:500;background:rgba(107,45,62,0.04);}
 
-  .retour{padding:2rem 5vw;background:var(--cream);border-top:1px solid var(--border);}
-  .retour a{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);text-decoration:none;transition:color 0.2s;}
-  .retour a:hover{color:var(--wine);}
+/* ═══════════════════════════════
+   RESSENTI + DÉBOUCHÉS — 2 col
+═══════════════════════════════ */
+.bottom-two{display:grid;grid-template-columns:1fr 1fr;}
+.col-parchment{padding:4rem 4vw 4rem 5vw;background:var(--parchment);border-right:1px solid var(--border);}
+.col-white2{padding:4rem 5vw 4rem 4vw;background:white;}
 
-  /* ÉTABLISSEMENT */
-  .etablissement{display:grid;grid-template-columns:1fr 1fr;}
-  .etab-photo{position:relative;overflow:hidden;min-height:400px;}
-  .etab-photo img{width:100%;height:100%;object-fit:cover;display:block;}
-  .etab-photo-caption{position:absolute;bottom:0;left:0;right:0;background:rgba(42,40,37,0.7);color:rgba(255,255,255,0.7);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.6rem 1rem;}
-  .etab-info{background:white;padding:4rem 5vw;display:flex;flex-direction:column;justify-content:center;}
-  .etab-logos{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-top:0.5rem;}
-  .etab-logos img{height:50px;width:auto;object-fit:contain;}
-  .etab-logos img:last-child{height:65px;}
+.ressenti-block{border-left:3px solid var(--gold);padding:1.5rem 1.75rem;background:white;position:relative;margin-top:1rem;}
+.placeholder-tag{position:absolute;top:-10px;left:1rem;background:var(--gold);color:white;font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.12rem 0.6rem;}
+.ressenti-block p{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--light)!important;line-height:1.8;margin-bottom:0!important;}
 
-  @media(max-width:900px){
-    nav ul{display:none;}
-    .hero,.two-col,.comp-grid,.ressenti-cards,.nav-pages{grid-template-columns:1fr;}
-    .chiffres{grid-template-columns:repeat(2,1fr);}
-    .mat-grid{grid-template-columns:repeat(2,1fr);}
-    .etablissement{grid-template-columns:1fr;}
-  }
+/* Débouchés en 2 sous-catégories */
+.deb-cat-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:1.5rem;margin-bottom:0.6rem;}
+.deb-cat-label:first-of-type{margin-top:1rem;}
+.deb-list{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.deb-item{padding:0.65rem 0.9rem;border:1px solid var(--border);font-size:0.85rem;color:var(--muted);display:flex;align-items:center;gap:0.6rem;background:var(--parchment);}
+.deb-item.pro{border-color:var(--wine);color:var(--charcoal);background:white;}
+.deb-item::before{content:'→';color:var(--border);font-size:0.78rem;flex-shrink:0;}
+.deb-item.pro::before{color:var(--wine);}
+
+/* NAV BAS */
+.nav-pages{background:var(--charcoal);padding:3rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.np-card{border:1px solid rgba(255,255,255,0.1);padding:1.75rem;text-decoration:none;display:flex;flex-direction:column;gap:0.3rem;position:relative;transition:border-color 0.2s,background 0.2s;}
+.np-card:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
+.np-card::after{content:'→';position:absolute;right:1.25rem;top:50%;transform:translateY(-50%);color:var(--gold);}
+.np-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+.np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:white;}
+.np-card p{font-size:0.75rem;color:rgba(255,255,255,0.35);}
+.retour{padding:1.5rem 5vw;background:var(--cream);border-top:1px solid var(--border);}
+.retour a{font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);text-decoration:none;}
+.retour a:hover{color:var(--wine);}
+
+@media(max-width:900px){
+  nav ul{display:none;}
+  .hero h1{font-size:2.5rem;}
+  .hero-content{flex-direction:column;align-items:flex-start;gap:1.5rem;}
+  .hero-stats{gap:2rem;}
+  .intro-band,.two-col,.bottom-two,.nav-pages{grid-template-columns:1fr;}
+  .col-white{border-right:none;border-bottom:1px solid var(--border);}
+  .col-parchment{border-right:none;border-bottom:1px solid var(--border);}
+  .intro-logos{justify-content:flex-start;}
+  .prog-header{grid-template-columns:1fr;}
+  .sem-grid{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
+
 <nav>
   <a href="portfolio_florian_thomas.html" class="nav-logo">Florian Thomas</a>
   <ul>
@@ -139,209 +168,235 @@
   </ul>
 </nav>
 
+<!-- ═══ HERO ═══ -->
 <div class="hero">
-  <div class="hero-left">
-    <div class="breadcrumb"><a href="portfolio_florian_thomas.html">Accueil</a> <span>/</span> Mon parcours</div>
-    <h1>BUT Génie<br><em>Biologique</em></h1>
-    <p class="hero-sub">Parcours Sciences de l'Aliment et Biotechnologies — IUT Nancy-Brabois · 2023–2026</p>
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-tag">IUT Nancy-Brabois · 2023–2026</div>
+      <h1>BUT Génie<br><em>Biologique</em></h1>
+      <p class="hero-sub">Parcours Sciences de l'Aliment et Biotechnologies — Campus de Villers-lès-Nancy</p>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-nb">3</div><div class="hero-stat-label">Années</div></div>
+      <div class="hero-stat"><div class="hero-stat-nb">180</div><div class="hero-stat-label">Crédits ECTS</div></div>
+      <div class="hero-stat"><div class="hero-stat-nb">2000h</div><div class="hero-stat-label">Enseignements</div></div>
+      <div class="hero-stat"><div class="hero-stat-nb">40%</div><div class="hero-stat-label">Travaux pratiques</div></div>
+    </div>
   </div>
-  <div class="hero-right">
-    <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:1rem;">Les 5 parcours du BUT GB</p>
-    <ul class="parcours-list">
-      <li>Sciences de l'environnement et écotechnologies</li>
-      <li>Agronomie</li>
-      <li>Biologie médicale et biotechnologie</li>
-      <li>Diététique et nutrition</li>
-      <li class="active">Sciences de l'aliment et biotechnologie — mon parcours</li>
+</div>
+
+<!-- ═══ BANDE BORDEAUX ═══ -->
+<div class="intro-band">
+  <p class="intro-text">Depuis septembre 2023, j'étudie à l'IUT Nancy-Brabois dans le département Génie Biologique — une formation en 3 ans alliant sciences du vivant, alimentation et biotechnologies.</p>
+  <div class="intro-logos">
+    <div class="logo-iut-wrap"><img src="logo-iut.png" alt="Logo IUT Nancy-Brabois"></div>
+    <div class="logos-sep"></div>
+    <img class="logo-free" src="logo-gbaa.png" alt="GB2A" style="mix-blend-mode:screen;opacity:0.9;">
+    <img class="logo-free" src="logo-gbaa-cercle.png" alt="Icône GB2A">
+  </div>
+</div>
+
+<!-- ═══ FORMATION + PARCOURS ═══ -->
+<div class="two-col">
+
+  <!-- COL GAUCHE : La formation -->
+  <div class="col-white">
+    <div class="sec-label">La formation</div>
+    <h2>Une formation <em>pluridisciplinaire</em></h2>
+    <p>Le <strong>BUT Génie Biologique</strong> est un diplôme national de niveau bac+3 (grade licence, 180 ECTS) qui forme des techniciens supérieurs et assistants ingénieurs dans les domaines de la biologie appliquée, de l'alimentation et des biotechnologies.</p>
+    <p>La formation totalise <strong>2000 heures</strong> en cours magistraux, travaux dirigés et travaux pratiques en petits groupes (12 étudiants en TP, 24 en TD). Elle inclut plus de <strong>600 heures de SAé</strong> — des projets en situation professionnelle réelle — et 3 stages progressifs tout au long du cursus.</p>
+    <a href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-1-licence-professionnelle-bachelor-universitaire-de-technologie-g-nie-biologique-29013.pdf" target="_blank" class="prog-link">↗ Programme officiel national</a>
+    <p>Les 5 compétences visées :</p>
+    <ul class="comp-list">
+      <li class="comp-item"><div class="comp-num">01</div><div class="comp-body"><span class="comp-tag ta">Analyser</span><h3>Réaliser des analyses biologiques</h3><p>Protocoles d'analyse sur matières premières et produits finis, dans une démarche qualité.</p></div></li>
+      <li class="comp-item"><div class="comp-num">02</div><div class="comp-body"><span class="comp-tag te">Expérimenter</span><h3>Expérimenter dans le génie biologique</h3><p>Concevoir et conduire des expériences avec rigueur scientifique.</p></div></li>
+      <li class="comp-item"><div class="comp-num">03</div><div class="comp-body"><span class="comp-tag tan">Animer</span><h3>Manager la qualité et la sécurité (QHSE)</h3><p>Démarches QHSE dans les industries alimentaires et biotechnologiques.</p></div></li>
+      <li class="comp-item"><div class="comp-num">04</div><div class="comp-body"><span class="comp-tag tp">Produire</span><h3>Organiser la production alimentaire</h3><p>Conduire une ligne de production et suivre ses indicateurs qualité et rendement.</p></div></li>
+      <li class="comp-item"><div class="comp-num">05</div><div class="comp-body"><span class="comp-tag ti">Innover</span><h3>Innover en sciences des aliments</h3><p>Participer à des projets R&D et développer de nouveaux produits.</p></div></li>
     </ul>
   </div>
-</div>
 
-<div class="chiffres">
-  <div class="chiffre-block"><div class="chiffre-nb">3</div><div class="chiffre-label">Années de formation</div></div>
-  <div class="chiffre-block"><div class="chiffre-nb">180</div><div class="chiffre-label">Crédits ECTS</div></div>
-  <div class="chiffre-block"><div class="chiffre-nb">2000h</div><div class="chiffre-label">D'enseignements</div></div>
-  <div class="chiffre-block"><div class="chiffre-nb">40%</div><div class="chiffre-label">De travaux pratiques</div></div>
-</div>
-
-<!-- ÉTABLISSEMENT -->
-<div class="etablissement">
-  <div class="etab-photo">
-    <img src="iut-photo.png" alt="IUT Nancy-Brabois — Vue aérienne du campus de Villers-lès-Nancy">
-    <div class="etab-photo-caption">Campus de Villers-lès-Nancy</div>
+  <!-- COL DROITE : Le parcours SAB -->
+  <div class="col-cream">
+    <div class="sec-label">Le parcours</div>
+    <h2>Pourquoi le <em>parcours SAB ?</em></h2>
+    <p>Le BUT GB propose <strong>5 spécialisations</strong>. Chaque étudiant en choisit une dès la 1ère année — elle oriente toutes les matières, les SAé et les stages sur les 3 années.</p>
+    <ul class="parcours-list">
+      <li><span class="dot"></span>Sciences de l'environnement et écotechnologies</li>
+      <li><span class="dot"></span>Agronomie</li>
+      <li><span class="dot"></span>Biologie médicale et biotechnologie</li>
+      <li><span class="dot"></span>Diététique et nutrition</li>
+      <li class="active"><span class="dot"></span>Sciences de l'aliment et biotechnologie — <strong>mon parcours</strong></li>
+    </ul>
+    <p>Le parcours <strong>SAB (Sciences de l'Aliment et Biotechnologie)</strong> est centré sur tout ce qui touche à la fabrication, l'analyse et la qualité des aliments et des bioproduits. Concrètement, on apprend à :</p>
+    <ul class="expl-list">
+      <li>🔬 Réaliser des <strong>analyses en laboratoire</strong> — chimiques, microbiologiques, physico-chimiques — pour vérifier qu'un aliment est conforme et sûr</li>
+      <li>🏭 Comprendre et piloter une <strong>ligne de production industrielle</strong> — yaourt, fromage, jus de fruit, charcuterie...</li>
+      <li>📋 Mettre en place des démarches <strong>qualité et hygiène (QHSE)</strong> dans une entreprise agroalimentaire</li>
+      <li>💡 Participer à des projets <strong>R&D et innovation</strong> — concevoir de nouveaux produits, tester des formules, améliorer des procédés</li>
+    </ul>
+    <p style="margin-top:1rem;">Trois stages jalonnent le cursus : <strong>2 à 4 semaines</strong> en 1ère année, <strong>2 mois</strong> en 2ème année, <strong>3 mois</strong> en 3ème année — pour acquérir une vraie expérience terrain dans des secteurs comme l'agroalimentaire, la cosmétique, le pharmaceutique ou les biotechnologies.</p>
   </div>
-  <div class="etab-info">
-    <div class="sec-label">Mon établissement</div>
-    <h2 style="margin-bottom:1rem;">IUT <em>Nancy-Brabois</em></h2>
-    <p style="font-size:0.95rem;color:var(--muted);line-height:1.85;margin-bottom:2rem;">J'étudie depuis septembre 2023 à l'IUT Nancy-Brabois, composante de l'Université de Lorraine, situé sur le campus de Villers-lès-Nancy. Le département Génie Biologique Agro-Alimentaire (GB2A) y propose le parcours Sciences de l'Aliment et Biotechnologie dans un environnement alliant rigueur académique et proximité avec le monde professionnel.</p>
-    <div class="etab-logos">
-      <img src="logo-iut.png" alt="Logo IUT Nancy-Brabois — Université de Lorraine">
-      <img src="logo-gbaa.png" alt="Logo Génie Biologique Agro-Alimentaire">
-      <img src="logo-gbaa-cercle.png" alt="Icône GB2A">
+
+</div>
+
+<!-- ═══ PROGRAMME ═══ -->
+<div class="programme">
+  <div class="prog-header">
+    <div>
+      <div class="sec-label">Programme officiel</div>
+      <h2>Les matières <em>semestre par semestre</em></h2>
+    </div>
+    <div>
+      <p>La formation dure 3 ans (6 semestres). Les ressources communes à tous les parcours GB côtoient des matières spécifiques au SAB.</p>
+      <div class="legende">
+        <span class="l-commun">Tronc commun GB</span>
+        <span class="l-sab">Spécifique SAB</span>
+        <span class="l-stage">Stage</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sem-grid">
+    <div class="sem-block">
+      <div class="sem-head"><h3>Semestre 1</h3><span class="sem-meta">1ère année</span></div>
+      <div class="sem-body">
+        <div class="mp">Chimie générale et organique</div>
+        <div class="mp">Biochimie structurale</div>
+        <div class="mp">Méthodologie de laboratoire</div>
+        <div class="mp">Microbiologie</div>
+        <div class="mp">Biologie cellulaire</div>
+        <div class="mp">Biologie et physiologie</div>
+        <div class="mp">Physique · Mathématiques · Statistiques</div>
+        <div class="mp">Anglais · Communication · PPP</div>
+        <div class="mp sab">Qualité et Microbiologie alimentaire</div>
+        <div class="mp sab">Biochimie et physico-chimie alimentaire</div>
+        <div class="mp sab">Génie Alimentaire et Cosmétique</div>
+        <div class="mp sab">Physique Industrielle</div>
+      </div>
+    </div>
+    <div class="sem-block">
+      <div class="sem-head"><h3>Semestre 2</h3><span class="sem-meta">1ère année</span></div>
+      <div class="sem-body">
+        <div class="mp">Chimie générale et organique</div>
+        <div class="mp">Biochimie structurale et analytique</div>
+        <div class="mp">Microbiologie</div>
+        <div class="mp">Biologie cellulaire et Physiologie</div>
+        <div class="mp">Physique · Biochimie métabolique</div>
+        <div class="mp">Statistiques</div>
+        <div class="mp">Anglais · Communication · PPP</div>
+        <div class="mp sab">Qualité et Sécurité des Aliments</div>
+        <div class="mp sab">Microbiologie alimentaire</div>
+        <div class="mp sab">Biochimie et physico-chimie alimentaire</div>
+        <div class="mp sab">Génie Alimentaire et Cosmétique</div>
+        <div class="mp sab">Physique Industrielle</div>
+        <div class="mp stage">Stage BUT 1 — 2 à 4 semaines</div>
+      </div>
+    </div>
+    <div class="sem-block">
+      <div class="sem-head"><h3>Semestre 3</h3><span class="sem-meta">2ème année</span></div>
+      <div class="sem-body">
+        <div class="mp">Anglais · Communication · PPP</div>
+        <div class="mp sab">Qualité, hygiène et microbiologie alimentaire</div>
+        <div class="mp sab">Biochimie analytique</div>
+        <div class="mp sab">Biotechnologie</div>
+        <div class="mp sab">Génie des Procédés Alimentaires</div>
+        <div class="mp sab">Physique Industrielle</div>
+        <div class="mp sab">Chimie et biochimie des bioproduits</div>
+        <div class="mp sab">Méthodes d'optimisation et de validation</div>
+      </div>
+    </div>
+    <div class="sem-block">
+      <div class="sem-head"><h3>Semestre 4</h3><span class="sem-meta">2ème année</span></div>
+      <div class="sem-body">
+        <div class="mp">Anglais · Communication · PPP</div>
+        <div class="mp sab">Qualité et hygiène en industrie alimentaire</div>
+        <div class="mp sab">Immuno-détection et Biologie Moléculaire</div>
+        <div class="mp sab">Biochimie analytique</div>
+        <div class="mp sab">Biotechnologie</div>
+        <div class="mp sab">Management de la production</div>
+        <div class="mp sab">Biologie et Nutrition — produits innovants</div>
+        <div class="mp sab">Chimie et biochimie des bioproduits</div>
+        <div class="mp stage">Stage BUT 2 — 2 mois</div>
+      </div>
+    </div>
+    <div class="sem-block">
+      <div class="sem-head"><h3>Semestre 5</h3><span class="sem-meta">3ème année</span></div>
+      <div class="sem-body">
+        <div class="mp">Anglais · Communication</div>
+        <div class="mp sab">Management de la qualité</div>
+        <div class="mp sab">Qualité et Sécurité sanitaire des aliments</div>
+        <div class="mp sab">Sécurité au travail, ergonomie, environnement</div>
+        <div class="mp sab">Gestion de la production alimentaire</div>
+        <div class="mp sab">Outils statistiques et informatiques</div>
+        <div class="mp sab">Management de l'innovation</div>
+        <div class="mp sab">Technologies innovantes de bioproduction</div>
+      </div>
+    </div>
+    <div class="sem-block">
+      <div class="sem-head"><h3>Semestre 6</h3><span class="sem-meta">3ème année</span></div>
+      <div class="sem-body">
+        <div class="mp">Anglais · Communication</div>
+        <div class="mp sab">Management qualité, sécurité et environnement</div>
+        <div class="mp sab">Gestion et optimisation de la production</div>
+        <div class="mp sab">Management et technologie de l'innovation</div>
+        <div class="mp sab">Portfolio de compétences</div>
+        <div class="mp stage">Stage BUT 3 — 3 mois</div>
+      </div>
     </div>
   </div>
 </div>
 
-<section class="formation" id="formation">
-  <div class="sec-label">La formation</div>
-  <h2>Une formation <em>pluridisciplinaire</em></h2>
-  <div class="two-col">
-    <div class="col">
-      <p>Le BUT Génie Biologique est un bachelor universitaire de technologie en 3 ans (bac+3, grade licence) qui forme des techniciens supérieurs et assistants ingénieurs polyvalents dans les domaines de la biologie appliquée, de l'alimentation et des biotechnologies.</p>
-      <p>Le parcours <strong>Sciences de l'Aliment et Biotechnologie (SAB)</strong> forme à la réalisation d'analyses biologiques, microbiologiques et physico-chimiques, au contrôle qualité, à la gestion de la sécurité alimentaire et à l'innovation dans les procédés industriels.</p>
-      <p>La formation alterne cours magistraux, travaux dirigés et travaux pratiques en petits groupes (12 étudiants en TP), avec une forte dimension professionnalisante.</p>
-      <a href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-1-licence-professionnelle-bachelor-universitaire-de-technologie-g-nie-biologique-29013.pdf" target="_blank" class="prog-link">↗ Consulter le programme officiel</a>
-    </div>
-    <div class="col">
-      <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">5 compétences visées</p>
-      <ul class="parcours-list">
-        <li class="active">Réaliser des analyses biologiques</li>
-        <li class="active">Expérimenter dans le génie biologique</li>
-        <li class="active">Manager la qualité et la sécurité (QHSE)</li>
-        <li class="active">Organiser la production alimentaire</li>
-        <li class="active">Innover en sciences des aliments</li>
-      </ul>
+<!-- ═══ RESSENTI + DÉBOUCHÉS ═══ -->
+<div class="bottom-two">
+
+  <!-- COL GAUCHE : Ressenti -->
+  <div class="col-parchment">
+    <div class="sec-label">Mon ressenti</div>
+    <h2>Ce que cette formation <em>m'apporte</em></h2>
+    <div class="ressenti-block">
+      <span class="placeholder-tag">À compléter</span>
+      <p>« Décrivez ici pourquoi vous avez choisi ce parcours, ce qu'il représente pour vous, ce que vous y appréciez le plus... »</p>
     </div>
   </div>
-</section>
 
-<section id="competences" style="background:var(--cream);">
-  <div class="sec-label">Compétences visées</div>
-  <h2>5 compétences <em>clés</em></h2>
-  <div class="comp-grid">
-    <div class="comp-card"><span class="comp-num">01</span><span class="comp-tag">Analyses</span><h3>Réaliser des analyses biologiques</h3><p>Préparer et mettre en œuvre des protocoles sur des matières premières, produits intermédiaires et finis dans une démarche qualité et de traçabilité.</p></div>
-    <div class="comp-card"><span class="comp-num">02</span><span class="comp-tag">Expérimentation</span><h3>Expérimenter dans le génie biologique</h3><p>Concevoir et conduire des expérimentations en adoptant une démarche éthique et scientifique rigoureuse.</p></div>
-    <div class="comp-card"><span class="comp-num">03</span><span class="comp-tag">Qualité</span><h3>Manager la qualité et la sécurité</h3><p>Mettre en place et animer des démarches QHSE dans les industries alimentaires et biotechnologiques.</p></div>
-    <div class="comp-card"><span class="comp-num">04</span><span class="comp-tag">Production</span><h3>Organiser la production alimentaire</h3><p>Maîtriser la conduite d'une ligne de production et suivre les indicateurs qualité, rendement et productivité.</p></div>
-    <div class="comp-card"><span class="comp-num">05</span><span class="comp-tag">Innovation</span><h3>Innover en sciences des aliments</h3><p>Participer à des projets R&D, s'approprier des techniques innovantes et évaluer leur faisabilité.</p></div>
-  </div>
-</section>
+  <!-- COL DROITE : Débouchés -->
+  <div class="col-white2">
+    <div class="sec-label">Et après ?</div>
+    <h2>Les <em>débouchés</em></h2>
+    <p>Le BUT SAB permet une <strong>insertion directe à bac+3</strong> dans les industries agroalimentaires, pharmaceutiques, cosmétiques ou biotechnologiques, ou une poursuite d'études.</p>
 
-<section class="matieres" id="matieres">
-  <div class="sec-label">Programme</div>
-  <h2>Les matières <em>enseignées</em></h2>
-  <div class="year-label">Semestre 1 — Tronc commun + SAB</div>
-  <div class="mat-grid">
-    <div class="mat-card"><h3>Chimie générale et organique</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Biochimie structurale</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Méthodologie de labo & techniques analytiques</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Microbiologie</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Biologie cellulaire</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Biologie et physiologie</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Physique</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Mathématiques</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Statistiques</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Outils informatiques</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Qualité et Microbiologie alimentaire</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Biochimie et physico-chimie alimentaire</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Génie Alimentaire et Cosmétique</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Physique Industrielle</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Anglais · Communication · PPP</h3><p>Transversal</p></div>
-  </div>
-  <div class="year-label">Semestre 2 — Tronc commun + SAB</div>
-  <div class="mat-grid">
-    <div class="mat-card"><h3>Chimie générale et organique</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Biochimie structurale et techniques analytiques</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Microbiologie</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Biologie cellulaire</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Biologie et Physiologie</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Physique</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Biochimie Métabolique</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Statistiques</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Qualité et Sécurité des Aliments</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Microbiologie alimentaire</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Biochimie et physico-chimie alimentaire</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Génie Alimentaire et Cosmétique</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Physique Industrielle</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Anglais · Communication · PPP</h3><p>Transversal</p></div>
-    <div class="mat-card" style="border-color:var(--wine);"><h3>Stage BUT 1 — 2 à 4 semaines</h3><p>Laboratoire ou entreprise agroalimentaire</p></div>
-  </div>
-  <div class="year-label">Semestre 3 — Tronc commun + SAB</div>
-  <div class="mat-grid">
-    <div class="mat-card"><h3>Microbiologie</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Cinétique chimique et enzymatique</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Génétique et biologie moléculaire</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Biochimie métabolique</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Qualité, hygiène et microbiologie alimentaire</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Biochimie analytique</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Biotechnologie</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Génie des Procédés Alimentaires</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Physique Industrielle</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Chimie et biochimie appliquées aux bioproduits</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Méthodes d'optimisation et de validation</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Anglais · Communication · PPP</h3><p>Transversal</p></div>
-  </div>
-  <div class="year-label">Semestre 4 — Tronc commun + SAB</div>
-  <div class="mat-grid">
-    <div class="mat-card"><h3>Méthodes d'analyses en biologie</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Traitement des données expérimentales et statistiques</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Qualité et hygiène en industrie alimentaire</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Immuno-détection et Biologie Moléculaire</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Biochimie analytique</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Biotechnologie</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Management de la production</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Biologie et Nutrition appliquées aux produits innovants</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Chimie et biochimie appliquées aux bioproduits</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Anglais · Communication · PPP</h3><p>Transversal</p></div>
-    <div class="mat-card" style="border-color:var(--wine);"><h3>Stage BUT 2 — 2 mois</h3><p>Laboratoire ou entreprise agroalimentaire</p></div>
-  </div>
-  <div class="year-label">Semestre 5 — SAB</div>
-  <div class="mat-grid">
-    <div class="mat-card"><h3>Méthodes d'investigation et de contrôle en biologie</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Management de la qualité</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Qualité et Sécurité sanitaire des aliments</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Sécurité au travail, ergonomie, environnement</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Gestion de la production des aliments et des bioproduits</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Outils statistiques et informatiques</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Management de l'innovation</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Technologies innovantes de bioproduction</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Anglais · Communication</h3><p>Transversal</p></div>
-  </div>
-  <div class="year-label">Semestre 6 — SAB</div>
-  <div class="mat-grid">
-    <div class="mat-card"><h3>Méthodes d'investigation et de contrôle en biologie</h3><p>Tronc commun</p></div>
-    <div class="mat-card"><h3>Management de la qualité, sécurité et environnement</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Gestion et optimisation de la production</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card"><h3>Management et technologie de l'innovation</h3><p>Spécifique SAB</p></div>
-    <div class="mat-card" style="border-color:var(--wine);"><h3>Stage BUT 3 — 3 mois</h3><p>Entreprise ou laboratoire agroalimentaire</p></div>
-    <div class="mat-card"><h3>Portfolio de compétences</h3><p>Bilan réflexif 3 ans</p></div>
-    <div class="mat-card"><h3>Anglais · Communication</h3><p>Transversal</p></div>
-  </div>
-</section>
+    <div class="deb-cat-label">Métiers accessibles</div>
+    <ul class="deb-list">
+      <li class="deb-item pro">Technicien de laboratoire d'analyses</li>
+      <li class="deb-item pro">Technicien contrôle qualité</li>
+      <li class="deb-item pro">Assistant ingénieur R&D</li>
+      <li class="deb-item pro">Animateur / Responsable QHSE</li>
+      <li class="deb-item">Chef d'équipe en production</li>
+      <li class="deb-item">Technico-commercial bio-industries</li>
+    </ul>
 
-<section class="ressenti" id="ressenti">
-  <div class="sec-label">Mon ressenti</div>
-  <h2>Ce que cette formation<br><em>m'a apporté</em></h2>
-  <div class="ressenti-quote"><span class="placeholder-tag">À compléter</span><p>« Écrivez ici votre ressenti général sur la formation — pourquoi vous l'avez choisie, ce qu'elle représente pour vous... »</p></div>
-  <div class="ressenti-cards">
-    <div class="ressenti-card"><span class="placeholder-tag">À compléter</span><h3>Ce que j'ai préféré</h3><p>Ex : les TP en laboratoire, la diversité des matières…</p></div>
-    <div class="ressenti-card"><span class="placeholder-tag">À compléter</span><h3>Ce que j'ai appris</h3><p>Ex : la rigueur scientifique, l'autonomie…</p></div>
-    <div class="ressenti-card"><span class="placeholder-tag">À compléter</span><h3>Ce qui m'a surpris</h3><p>Ex : la richesse du programme, les débouchés…</p></div>
+    <div class="deb-cat-label">Poursuites d'études</div>
+    <ul class="deb-list">
+      <li class="deb-item pro">ENSAIA Nancy — agronomie et industries alimentaires</li>
+      <li class="deb-item pro">AgroParisTech — sciences et industries du vivant</li>
+      <li class="deb-item">Oniris Nantes — agroalimentaire</li>
+      <li class="deb-item">AgroSup Dijon / Institut Agro</li>
+      <li class="deb-item">Master Sciences des aliments</li>
+      <li class="deb-item">Licence générale biologie</li>
+    </ul>
   </div>
-</section>
 
-<section class="debouches" id="debouches">
-  <div class="sec-label">Débouchés</div>
-  <h2>Ce que prépare <em>ce diplôme</em></h2>
-  <p style="color:var(--muted);font-size:0.95rem;max-width:600px;margin-bottom:2rem;">Le BUT SAB ouvre sur de nombreux métiers dans l'agroalimentaire, le pharmaceutique, la cosmétique et les biotechnologies.</p>
-  <div class="pills-wrap">
-    <span class="dpill hl">Technicien de laboratoire</span>
-    <span class="dpill hl">Technicien contrôle qualité</span>
-    <span class="dpill hl">Assistant R&D agroalimentaire</span>
-    <span class="dpill">Responsable qualité</span>
-    <span class="dpill">Chef d'équipe en production</span>
-    <span class="dpill">Consultant QHSE</span>
-    <span class="dpill">Technico-commercial bio-industries</span>
-    <span class="dpill">Master Sciences des aliments</span>
-    <span class="dpill">École d'ingénieurs (ENSAIA…)</span>
-    <span class="dpill hl">Diplôme National d'Œnologue</span>
-  </div>
-</section>
+</div>
 
+<!-- ═══ NAV BAS ═══ -->
 <div class="nav-pages">
   <a href="stages.html" class="np-card"><div class="np-label">Découvrir</div><h3>Mes stages</h3><p>R&D, Qualité, Fromagerie — 3 expériences de terrain</p></a>
-  <a href="projets_intro.html" class="np-card"><div class="np-label">Découvrir</div><h3>Mes projets</h3><p>Travaux pratiques et SAé réalisés en BUT</p></a>
+  <a href="projets_intro.html" class="np-card"><div class="np-label">Découvrir</div><h3>Mes projets SAé</h3><p>Travaux pratiques et projets réalisés en BUT</p></a>
 </div>
 <div class="retour"><a href="portfolio_florian_thomas.html">← Retour à l'accueil</a></div>
+
 </body>
 </html>
