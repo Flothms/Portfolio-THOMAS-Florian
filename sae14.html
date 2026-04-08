@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florian Thomas — SAé 1.4</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F7F4EF;--parchment:#EDE8DE;--wine:#6B2D3E;--gold:#B8966A;--charcoal:#2A2825;--muted:#6E6A62;--light:#9E9A92;--border:#D8D2C6;--comp:#5A8A3C;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;font-size:18px;line-height:1.8;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;letter-spacing:0.08em;color:var(--wine);text-transform:uppercase;text-decoration:none;}
+nav ul{list-style:none;display:flex;gap:3rem;}
+nav a{text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+nav a:hover,nav a.active{color:var(--wine);}
+.hero{position:relative;height:100vh;padding-top:72px;overflow:hidden;display:flex;align-items:flex-end;}
+.hero-bg{position:absolute;inset:0;background:var(--charcoal);}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(42,40,37,0.98) 0%,rgba(42,40,37,0.15) 60%,transparent 100%);}
+.hero-content{position:relative;z-index:1;padding:5rem 7vw;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:4rem;}
+.hero-tag{display:inline-block;background:var(--comp);color:white;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;padding:0.4rem 1.1rem;margin-bottom:1.5rem;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,4.5rem);font-weight:300;color:white;line-height:1.05;margin-bottom:0.75rem;}
+.hero-sub{font-size:0.95rem;color:rgba(255,255,255,0.45);letter-spacing:0.04em;}
+.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:0.5rem;flex-shrink:0;padding-bottom:0.5rem;}
+.hero-scroll span{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);}
+.hero-scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.3));}
+.sec-label{font-size:0.7rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.05;margin-bottom:2rem;}
+h2 em{font-style:italic;color:var(--wine);}
+p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.25rem;}
+p strong{color:var(--charcoal);font-weight:500;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;min-height:60vh;}
+.col-left{padding:7vw 4vw 7vw 7vw;display:flex;flex-direction:column;justify-content:center;background:white;border-right:1px solid var(--border);}
+.col-right{padding:7vw 7vw 7vw 4vw;display:flex;flex-direction:column;justify-content:center;background:var(--cream);}
+.comp-badge{display:inline-flex;align-items:center;gap:0.75rem;border:1px solid var(--comp);padding:0.6rem 1.25rem;margin-bottom:2rem;}
+.comp-dot{width:9px;height:9px;border-radius:50%;background:var(--comp);flex-shrink:0;}
+.comp-text{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--comp);font-weight:500;}
+.obj-list{list-style:none;margin:1.25rem 0;}
+.obj-list li{padding:0.8rem 0;border-bottom:1px solid var(--border);font-size:0.95rem;color:var(--muted);display:flex;align-items:flex-start;gap:1rem;line-height:1.7;}
+.obj-list li::before{content:'—';color:var(--gold);flex-shrink:0;}
+.mat-grid{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
+.mat-tag{border:1px solid var(--border);padding:0.4rem 0.9rem;font-size:0.82rem;color:var(--muted);background:white;}
+.photos-section{padding:7vw;background:var(--parchment);}
+.photos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem;}
+.photo-card{position:relative;overflow:hidden;aspect-ratio:3/4;}
+.photo-card img{width:100%;height:100%;object-fit:cover;filter:brightness(0.9);transition:filter 0.3s;}
+.photo-card:hover img{filter:brightness(1);}
+.photo-caption{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(to top,rgba(42,40,37,0.85) 0%,transparent 100%);font-size:0.78rem;color:rgba(255,255,255,0.85);}
+.bottom-two{display:grid;grid-template-columns:1fr 1fr;min-height:50vh;}
+.col-wine{padding:7vw 4vw 7vw 7vw;background:var(--wine);border-right:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;justify-content:center;}
+.col-wine .sec-label{color:rgba(255,255,255,0.4);}
+.col-wine h2{color:white;}
+.col-wine p{color:rgba(255,255,255,0.65);}
+.col-parch{padding:7vw 7vw 7vw 4vw;background:var(--parchment);display:flex;flex-direction:column;justify-content:center;gap:2rem;}
+.ressenti-block{border-left:4px solid var(--gold);padding:2rem;background:rgba(255,255,255,0.6);}
+.ressenti-block p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--muted)!important;line-height:1.9;margin-bottom:0!important;}
+.quote-label{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.nav-pages{background:var(--charcoal);padding:5rem 7vw;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.np-card{border:1px solid rgba(255,255,255,0.1);padding:2.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.4rem;position:relative;transition:border-color 0.2s,background 0.2s;}
+.np-card:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
+.np-card::after{content:'→';position:absolute;right:2rem;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.25rem;}
+.np-label{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
+.np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:white;}
+.np-card p{font-size:0.82rem;color:rgba(255,255,255,0.35);}
+.retour{padding:2rem 7vw;background:var(--cream);border-top:1px solid var(--border);}
+.retour a{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--light);text-decoration:none;}
+.retour a:hover{color:var(--wine);}
+@media(max-width:1100px){nav ul{display:none;}.two-col,.bottom-two,.nav-pages{grid-template-columns:1fr;}.photos-grid{grid-template-columns:repeat(2,1fr);}.hero-scroll{display:none;}.col-left,.col-right,.col-wine,.col-parch{padding:5vw;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="portfolio_florian_thomas.html" class="nav-logo">Florian Thomas</a>
+  <ul>
+    <li><a href="portfolio_florian_thomas.html">Accueil</a></li>
+    <li><a href="parcours.html">Parcours BUT</a></li>
+    <li><a href="stages.html">Stages</a></li>
+    <li><a href="projets_intro.html" class="active">Projets SAé</a></li>
+    <li><a href="portfolio_florian_thomas.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <div>
+      <span class="hero-tag">Compétence Produire — Semestre 1 · 2023–2024 · IUT Nancy-Brabois</span>
+      <h1>SAé 1.4 — Préparer et mettre en œuvre une production alimentaire</h1>
+      <p class="hero-sub">BUT Génie Biologique SAB · 2023–2024</p>
+    </div>
+    <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Défiler</span></div>
+  </div>
+</div>
+
+<div class="two-col">
+  <div class="col-left">
+    <div class="sec-label">Présentation</div>
+    <h2>Contexte <em>&amp; objectifs</em></h2>
+    <div class="comp-badge"><div class="comp-dot"></div><div class="comp-text">Produire — Semestre 1 · 2023–2024</div></div>
+    <p><strong>But :</strong> Découvrir les spécialités d'un yaourt, ses qualités ainsi que sa fabrication.</p>
+    <p><strong>Principe :</strong> Comprendre la dénomination d'un yaourt et ses spécialités pour pouvoir en produire. En plus de la production, des tests de texture, pH et viscosité ont été réalisés afin d'évaluer la qualité du produit.</p>
+    <ul class="obj-list"><li>Produire un yaourt en respectant un protocole de fabrication</li><li>Réaliser des tests de texture avec le Texture Analyser</li><li>Mesurer le pH et la viscosité du produit fini</li><li>Évaluer la couleur par colorimétrie (Konica-Minolta)</li></ul>
+  </div>
+  <div class="col-right">
+    <div class="sec-label">Paramètres &amp; matériel</div>
+    <h2>Moyens <em>mis en œuvre</em></h2>
+    <div class="sec-label">Notions travaillées</div>
+    <div class="mat-grid"><span class="mat-tag">Production yaourt</span><span class="mat-tag">Texture</span><span class="mat-tag">pH</span><span class="mat-tag">Viscosité</span><span class="mat-tag">Colorimétrie</span><span class="mat-tag">Fermentation</span></div>
+    <div class="sec-label" style="margin-top:1.5rem;">Matériel utilisé</div>
+    <div class="mat-grid"><span class="mat-tag">Agitateur magnétique chauffant</span><span class="mat-tag">Pots à yaourt</span><span class="mat-tag">pH-mètre</span><span class="mat-tag">Texture Analyser</span><span class="mat-tag">Colorimètre Konica-Minolta CIE L*a*b*</span><span class="mat-tag">Viscosimètre</span></div>
+  </div>
+</div>
+
+
+
+<div class="bottom-two">
+  <div class="col-wine">
+    <div class="sec-label">Bilan</div>
+    <h2>Bilan <em>&amp; conclusion</em></h2>
+    <p>Cette SAé était la première et nous a permis d'avoir un avant-goût de la filière SAB et de ce BUT. Une première confrontation avec la production alimentaire réelle.</p>
+    <div class="mat-grid" style="margin-top:1.5rem;"><span class="mat-tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;">Production yaourt</span><span class="mat-tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;">Texture</span><span class="mat-tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;">pH</span></div>
+  </div>
+  <div class="col-parch">
+    <div class="quote-label">Mon ressenti</div>
+    <div class="ressenti-block"><p>« À compléter — décrivez ici ce que vous avez apprécié, ce qui a été difficile, ce que cette SAé vous a apporté personnellement... »</p></div>
+  </div>
+</div>
+
+<div class="nav-pages"><a href="sae13.html" class="np-card"><div class="np-label">Précédent</div><h3>SAé 1.3 — Contrôler l'hygiène</h3><p>Compétence Animer · Semestre 1</p></a><a href="sae21.html" class="np-card"><div class="np-label">Suivant</div><h3>SAé 2.1 — Extraction et purification</h3><p>Compétence Analyser · Semestre 2</p></a></div>
+<div class="retour"><a href="projets.html">← Retour aux projets 1ère année</a></div>
+</body>
+</html>
