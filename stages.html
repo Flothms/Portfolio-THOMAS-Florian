@@ -4,83 +4,105 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Florian Thomas — Mes Stages</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--cream:#F7F4EF;--parchment:#EDE8DE;--wine:#6B2D3E;--gold:#B8966A;--charcoal:#2A2825;--muted:#6E6A62;--light:#9E9A92;--border:#D8D2C6;}
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;width:100%;}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.08em;color:var(--wine);text-transform:uppercase;text-decoration:none;}
-  nav ul{list-style:none;display:flex;gap:2.5rem;}
-  nav a{text-decoration:none;font-size:0.8rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
-  nav a:hover,nav a.active{color:var(--wine);}
+:root{--cream:#F7F4EF;--parchment:#EDE8DE;--wine:#6B2D3E;--gold:#B8966A;--charcoal:#2A2825;--muted:#6E6A62;--light:#9E9A92;--border:#D8D2C6;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;font-size:18px;line-height:1.8;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;letter-spacing:0.08em;color:var(--wine);text-transform:uppercase;text-decoration:none;}
+nav ul{list-style:none;display:flex;gap:3rem;}
+nav a{text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+nav a:hover,nav a.active{color:var(--wine);}
 
-  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:55vh;padding-top:64px;}
-  .hero-left{background:white;padding:4rem 5vw 4rem 8vw;display:flex;flex-direction:column;justify-content:center;}
-  .hero-right{background:var(--wine);padding:5rem 5vw;display:flex;flex-direction:column;justify-content:center;gap:2.5rem;position:relative;overflow:hidden;}
-  .hero-right::before{content:'3';font-family:'Cormorant Garamond',serif;font-size:20rem;font-weight:300;color:rgba(255,255,255,0.05);position:absolute;right:-1rem;bottom:-3rem;line-height:1;}
-  .breadcrumb{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light);margin-bottom:1.5rem;display:flex;gap:0.5rem;}
-  .breadcrumb a{color:var(--gold);text-decoration:none;}
-  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:300;line-height:1.05;margin-bottom:1rem;}
-  h1 em{font-style:italic;color:var(--wine);}
-  .hero-sub{font-size:0.92rem;color:var(--muted);line-height:1.8;}
-  .stat{border-left:2px solid rgba(255,255,255,0.2);padding-left:1.5rem;position:relative;z-index:1;}
-  .stat-nb{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:white;line-height:1;}
-  .stat-label{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+/* HERO */
+.hero{position:relative;padding-top:72px;background:var(--charcoal);overflow:hidden;}
+.hero-inner{padding:7rem 7vw 5rem;position:relative;z-index:1;}
+.hero-bc{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.breadcrumb-sep{margin:0 0.5em;color:var(--light);}
+.hero-t{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5rem);font-weight:300;line-height:1.05;color:white;margin-bottom:1.5rem;}
+.hero-t em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:0.95rem;color:rgba(255,255,255,0.5);max-width:600px;margin-bottom:3rem;}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,0.08);}
+.h-stat{padding:2rem;border-right:1px solid rgba(255,255,255,0.08);}
+.h-stat:last-child{border-right:none;}
+.h-stat-n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--gold);line-height:1;}
+.h-stat-l{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:0.3rem;}
 
-  section{padding:4rem 5vw;}
-  .sec-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
-  h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.1;margin-bottom:2.5rem;}
-  h2 em{font-style:italic;color:var(--wine);}
+/* SECTION */
+.section{padding:6rem 7vw;}
+.sec-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.15;margin-bottom:2.5rem;}
+h2 em{font-style:italic;color:var(--wine);}
 
-  /* STAGES grille */
-  .stages-section{background:white;}
-  .stage-card{display:grid;grid-template-columns:260px 1fr;border:1px solid var(--border);margin-bottom:2rem;transition:border-color 0.2s;}
-  .stage-card:hover{border-color:var(--gold);}
-  .stage-sidebar{background:var(--parchment);padding:2rem;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:space-between;}
-  .stage-date{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
-  .stage-lieu{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;line-height:1.4;}
-  .stage-pays{font-size:0.8rem;color:var(--light);margin-top:0.3rem;}
-  .stage-badge{display:inline-block;margin-top:1.5rem;background:var(--wine);color:white;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.3rem 0.75rem;align-self:flex-start;}
-  .stage-body{padding:2rem;}
-  .stage-body h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;margin-bottom:0.75rem;}
-  .stage-body p{font-size:0.9rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.8;}
-  .tags{display:flex;flex-wrap:wrap;gap:0.5rem;}
-  .tag{border:1px solid var(--border);font-size:0.74rem;padding:0.2rem 0.7rem;color:var(--muted);}
+/* STAGE CARDS */
+.stages-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.stage-card{display:grid;grid-template-columns:200px 1fr auto;align-items:center;gap:3rem;padding:3rem 0;border-bottom:1px solid var(--border);position:relative;}
+.stage-card:last-child{border-bottom:none;}
+.stage-meta{display:flex;flex-direction:column;gap:0.4rem;}
+.stage-date{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:400;color:var(--wine);}
+.stage-year{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light);}
+.stage-badge{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.25rem 0.7rem;margin-top:0.5rem;width:fit-content;}
+.stage-badge.encours{background:rgba(107,45,62,0.08);color:var(--wine);border:1px solid rgba(107,45,62,0.2);}
+.stage-badge.termine{background:rgba(184,150,106,0.1);color:var(--gold);border:1px solid rgba(184,150,106,0.25);}
+.stage-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;}
+.stage-body{flex:1;}
+.stage-body h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;margin-bottom:0.3rem;color:var(--charcoal);}
+.stage-company{font-size:0.8rem;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.3rem;}
+.stage-location{font-size:0.75rem;color:var(--light);margin-bottom:1rem;}
+.stage-desc{font-size:0.9rem;color:var(--muted);line-height:1.7;max-width:640px;}
+.stage-tags{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:1rem;}
+.stage-tag{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.7rem;border:1px solid var(--border);color:var(--light);}
+.stage-action{display:flex;align-items:center;}
+.btn-voir{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--wine);text-decoration:none;padding:0.8rem 1.5rem;border:1px solid var(--wine);transition:all 0.25s;white-space:nowrap;}
+.btn-voir:hover{background:var(--wine);color:white;}
+.btn-voir-disabled{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--light);padding:0.8rem 1.5rem;border:1px solid var(--border);white-space:nowrap;cursor:default;}
 
-  /* BILAN compétences */
-  .bilan{background:var(--cream);}
-  .bilan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
-  .bilan-item{border-left:2px solid var(--gold);padding:0.75rem 1rem;}
-  .bilan-item h3{font-size:0.9rem;font-weight:500;margin-bottom:0.2rem;}
-  .bilan-item p{font-size:0.8rem;color:var(--muted);}
+/* COMPETENCES */
+.comp-section{background:var(--parchment);padding:6rem 7vw;}
+.comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem;}
+.comp-item{background:white;padding:2rem;border-top:2px solid var(--gold);}
+.comp-item h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;margin-bottom:0.5rem;}
+.comp-item p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
 
-  /* RESSENTI */
-  .ressenti{background:var(--parchment);}
-  .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-  .res-card{background:white;border:1px solid var(--border);padding:1.75rem;position:relative;}
-  .placeholder-tag{position:absolute;top:-10px;left:1rem;background:var(--gold);color:white;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.15rem 0.65rem;}
-  .res-card h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;margin-bottom:0.4rem;}
-  .res-card p{font-size:0.82rem;color:var(--light);font-style:italic;}
+/* RESSENTI */
+.ressenti-section{background:var(--charcoal);color:white;padding:6rem 7vw;}
+.ressenti-section h2{color:white;}
+.ressenti-section h2 em{color:var(--gold);}
+.ressenti-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem;}
+.ressenti-item{border-left:2px solid rgba(184,150,106,0.3);padding-left:1.5rem;}
+.ressenti-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.ressenti-text{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:rgba(255,255,255,0.55);line-height:1.65;}
 
-  .nav-pages{background:var(--charcoal);padding:4rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-  .np-card{border:1px solid rgba(255,255,255,0.12);padding:2rem;text-decoration:none;display:block;position:relative;transition:border-color 0.2s,background 0.2s;}
-  .np-card:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
-  .np-card::after{content:'→';position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.2rem;}
-  .np-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
-  .np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:white;margin-bottom:0.3rem;}
-  .np-card p{font-size:0.82rem;color:rgba(255,255,255,0.4);}
-  .retour{padding:2rem 5vw;background:var(--cream);border-top:1px solid var(--border);}
-  .retour a{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);text-decoration:none;transition:color 0.2s;}
-  .retour a:hover{color:var(--wine);}
+/* FOOTER NAV */
+.nav-pages{background:var(--charcoal);padding:4rem 7vw;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;border-top:1px solid rgba(255,255,255,0.06);}
+.np-card{border:1px solid rgba(255,255,255,0.08);padding:2rem;text-decoration:none;display:block;position:relative;transition:border-color 0.2s,background 0.2s;}
+.np-card:hover{border-color:var(--gold);background:rgba(255,255,255,0.02);}
+.np-card::after{content:'→';position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.2rem;}
+.np-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+.np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:white;}
+.np-card p{font-size:0.82rem;color:rgba(255,255,255,0.35);}
+.retour{padding:2rem 7vw;background:var(--cream);border-top:1px solid var(--border);}
+.retour a{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--light);text-decoration:none;}
+.retour a:hover{color:var(--wine);}
 
-  @media(max-width:900px){nav ul{display:none;}.hero,.nav-pages{grid-template-columns:1fr;}.stage-card{grid-template-columns:1fr;}.stage-sidebar{border-right:none;border-bottom:1px solid var(--border);}.bilan-grid,.res-grid{grid-template-columns:1fr;}}
+@media(max-width:900px){
+  nav ul{display:none;}
+  .stage-card{grid-template-columns:1fr;gap:1rem;padding:2rem 0;}
+  .stage-meta{flex-direction:row;align-items:center;gap:1rem;flex-wrap:wrap;}
+  .comp-grid,.ressenti-grid,.hero-stats{grid-template-columns:1fr 1fr;}
+  .nav-pages{grid-template-columns:1fr;}
+  .h-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);}
+}
+@media(max-width:600px){
+  .comp-grid,.ressenti-grid,.hero-stats{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
+
 <nav>
-  <a href="portfolio_florian_thomas.html" class="nav-logo">Florian Thomas</a>
+  <a class="nav-logo" href="portfolio_florian_thomas.html">Florian Thomas</a>
   <ul>
     <li><a href="portfolio_florian_thomas.html">Accueil</a></li>
     <li><a href="parcours.html">Parcours BUT</a></li>
@@ -90,87 +112,177 @@
   </ul>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-left">
-    <div class="breadcrumb"><a href="portfolio_florian_thomas.html">Accueil</a><span>/</span>Mes stages</div>
-    <h1>Mes<br><em>Stages</em></h1>
+  <div class="hero-inner">
+    <div class="hero-bc">
+      <a href="portfolio_florian_thomas.html" style="color:var(--gold);text-decoration:none;">Accueil</a>
+      <span class="breadcrumb-sep">/</span>Mes stages
+    </div>
+    <h1 class="hero-t">Mes <em>Stages</em></h1>
     <p class="hero-sub">Trois expériences professionnelles en R&D, qualité et analyse — de la France à la Belgique.</p>
-  </div>
-  <div class="hero-right">
-    <div class="stat"><div class="stat-nb">3</div><div class="stat-label">Stages réalisés</div></div>
-    <div class="stat"><div class="stat-nb">2</div><div class="stat-label">Pays</div></div>
-    <div class="stat"><div class="stat-nb">R&D</div><div class="stat-label">Dominante</div></div>
+    <div class="hero-stats">
+      <div class="h-stat"><div class="h-stat-n">3</div><div class="h-stat-l">Stages réalisés</div></div>
+      <div class="h-stat"><div class="h-stat-n">2</div><div class="h-stat-l">Pays</div></div>
+      <div class="h-stat"><div class="h-stat-n">R&D</div><div class="h-stat-l">Dominante</div></div>
+    </div>
   </div>
 </div>
 
-<section class="stages-section" id="stages">
+<!-- LISTE DES STAGES -->
+<div class="section">
   <div class="sec-label">Expériences</div>
-  <h2>Trois stages,<br><em>trois univers</em></h2>
+  <h2>Trois stages, <em>trois univers</em></h2>
 
-  <div class="stage-card">
-    <div class="stage-sidebar">
-      <div><div class="stage-date">Mars – Juin 2026</div><div class="stage-lieu">AGRONUTRIS</div><div class="stage-pays">Rethel, Ardennes (08) · France</div></div>
-      <span class="stage-badge">R&D · En cours</span>
+  <div class="stages-list">
+
+    <!-- STAGE 1 — AGRONUTRIS -->
+    <div class="stage-card">
+      <div class="stage-meta">
+        <div>
+          <div class="stage-date">Mars – Juin 2026</div>
+          <div class="stage-year">3ème année</div>
+          <span class="stage-badge encours">En cours</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <h3>Stage en Recherche &amp; Développement</h3>
+        <div class="stage-company">AGRONUTRIS</div>
+        <div class="stage-location">Rethel, Ardennes (08) · France</div>
+        <p class="stage-desc">Au sein du laboratoire R&amp;D d'Agronutris, spécialisé dans l'élevage d'insectes, j'ai travaillé sur le test de nouvelles formules d'attractants sur les performances reproductives des mouches soldats noires (<em>Hermetia illucens</em>). Conception et suivi de protocoles expérimentaux rigoureux en recherche appliquée.</p>
+        <div class="stage-tags">
+          <span class="stage-tag">Protocoles expérimentaux</span>
+          <span class="stage-tag">Analyses biologiques</span>
+          <span class="stage-tag">R&amp;D appliquée</span>
+          <span class="stage-tag">Hermetia illucens</span>
+        </div>
+      </div>
+      <div class="stage-action">
+        <a href="stage_agronutris.html" class="btn-voir">Voir en détail →</a>
+      </div>
     </div>
-    <div class="stage-body">
-      <h3>Stage en Recherche & Développement</h3>
-      <p>Au sein du laboratoire R&D d'Agronutris, spécialisé dans l'élevage d'insectes, j'ai travaillé sur le test de nouvelles formules d'attractants sur les performances reproductives des mouches soldats noires (<em>Hermetia illucens</em>). Conception et suivi de protocoles expérimentaux rigoureux en recherche appliquée.</p>
-      <div class="tags"><span class="tag">Protocoles expérimentaux</span><span class="tag">Analyses biologiques</span><span class="tag">R&D appliquée</span><span class="tag">Hermetia illucens</span></div>
+
+    <!-- STAGE 2 — FROMAGERIE D'ORVAL -->
+    <div class="stage-card">
+      <div class="stage-meta">
+        <div>
+          <div class="stage-date">Mai – Juin 2025</div>
+          <div class="stage-year">2ème année</div>
+          <span class="stage-badge termine">Terminé</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <h3>Stage en Recherche &amp; Développement</h3>
+        <div class="stage-company">Fromagerie d'Orval — Abbaye d'Orval</div>
+        <div class="stage-location">Province de Luxembourg · Belgique</div>
+        <p class="stage-desc">Étude comparative de deux méthodes d'analyse du fromage (SCiO et FoodScan) : extrait sec, taux de matière grasse, taux de protéine, gras/sec, HFD. Objectif : trouver une alternative moins coûteuse au FoodScan. Rédaction d'un rapport technique argumenté avec bibliographie.</p>
+        <div class="stage-tags">
+          <span class="stage-tag">Analyse comparative</span>
+          <span class="stage-tag">SCiO / FoodScan</span>
+          <span class="stage-tag">Contrôle qualité</span>
+          <span class="stage-tag">Rapport technique</span>
+        </div>
+      </div>
+      <div class="stage-action">
+        <a href="stage_orval.html" class="btn-voir">Voir en détail →</a>
+      </div>
     </div>
+
+    <!-- STAGE 3 — LE MARVILLOIS -->
+    <div class="stage-card">
+      <div class="stage-meta">
+        <div>
+          <div class="stage-date">Juin – Juillet 2024</div>
+          <div class="stage-year">1ère année</div>
+          <span class="stage-badge termine">Terminé</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <h3>Stage en Qualité Hygiène et Sécurité</h3>
+        <div class="stage-company">Le Marvillois — Charcuterie-Salaison</div>
+        <div class="stage-location">Montmédy, Meuse (55) · France</div>
+        <p class="stage-desc">Première immersion professionnelle en QHSE dans une charcuterie-salaison : fiches préventives, fiches TACT (Température, Action mécanique, Chimie, Temps d'action), fiches recettes. Découverte des normes sanitaires, de la traçabilité et des procédures d'hygiène en industrie alimentaire.</p>
+        <div class="stage-tags">
+          <span class="stage-tag">QHSE</span>
+          <span class="stage-tag">Fiches TACT</span>
+          <span class="stage-tag">Traçabilité</span>
+          <span class="stage-tag">Normes sanitaires</span>
+        </div>
+      </div>
+      <div class="stage-action">
+        <a href="stage_marvillois.html" class="btn-voir">Voir en détail →</a>
+      </div>
+    </div>
+
   </div>
+</div>
 
-  <div class="stage-card">
-    <div class="stage-sidebar">
-      <div><div class="stage-date">Mai – Juin 2025</div><div class="stage-lieu">Fromagerie d'Orval<br>Abbaye d'Orval</div><div class="stage-pays">Province de Luxembourg · Belgique</div></div>
-      <span class="stage-badge">R&D · Analyse</span>
-    </div>
-    <div class="stage-body">
-      <h3>Stage en Recherche & Développement</h3>
-      <p>Étude comparative de deux méthodes d'analyse du fromage (SCiO et FoodScan) : extrait sec, taux de matière grasse, taux de protéine, gras/sec, HFD. Objectif : trouver une alternative moins coûteuse au FoodScan. Rédaction d'un rapport technique argumenté avec bibliographie.</p>
-      <div class="tags"><span class="tag">Analyse comparative</span><span class="tag">SCiO / FoodScan</span><span class="tag">Contrôle qualité</span><span class="tag">Rapport technique</span></div>
-    </div>
-  </div>
-
-  <div class="stage-card">
-    <div class="stage-sidebar">
-      <div><div class="stage-date">Juin – Juillet 2024</div><div class="stage-lieu">Le Marvillois<br>Charcuterie-Salaison</div><div class="stage-pays">Montmédy, Meuse (55) · France</div></div>
-      <span class="stage-badge">QHSE</span>
-    </div>
-    <div class="stage-body">
-      <h3>Stage en Qualité Hygiène et Sécurité</h3>
-      <p>Première immersion professionnelle en QHSE dans une charcuterie-salaison : fiches préventives, fiches TACT (Température, Action mécanique, Chimie, Temps d'action), fiches recettes. Découverte des normes sanitaires, de la traçabilité et des procédures d'hygiène en industrie alimentaire.</p>
-      <div class="tags"><span class="tag">QHSE</span><span class="tag">Fiches TACT</span><span class="tag">Traçabilité</span><span class="tag">Normes sanitaires</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="bilan" id="bilan">
+<!-- COMPETENCES -->
+<div class="comp-section">
   <div class="sec-label">Bilan</div>
   <h2>Compétences <em>acquises</em></h2>
-  <div class="bilan-grid">
-    <div class="bilan-item"><h3>Conception de protocoles</h3><p>Mise en place et suivi d'expériences en laboratoire</p></div>
-    <div class="bilan-item"><h3>Analyses comparatives</h3><p>Comparaison de méthodes, rédaction de conclusions</p></div>
-    <div class="bilan-item"><h3>Contrôle qualité</h3><p>Normes QHSE, traçabilité, hygiène alimentaire</p></div>
-    <div class="bilan-item"><h3>Rédaction scientifique</h3><p>Rapports techniques avec bibliographie</p></div>
-    <div class="bilan-item"><h3>Adaptation terrain</h3><p>Intégration rapide dans des structures variées</p></div>
-    <div class="bilan-item"><h3>Rigueur analytique</h3><p>Collecte et interprétation de données biologiques</p></div>
+  <div class="comp-grid">
+    <div class="comp-item">
+      <h4>Conception de protocoles</h4>
+      <p>Mise en place et suivi d'expériences en laboratoire — du cahier des charges à la restitution des résultats.</p>
+    </div>
+    <div class="comp-item">
+      <h4>Analyses comparatives</h4>
+      <p>Comparaison de méthodes analytiques, rédaction de conclusions argumentées avec bibliographie.</p>
+    </div>
+    <div class="comp-item">
+      <h4>Contrôle qualité</h4>
+      <p>Normes QHSE, traçabilité, hygiène alimentaire et procédures sanitaires en industrie.</p>
+    </div>
+    <div class="comp-item">
+      <h4>Rédaction scientifique</h4>
+      <p>Rapports techniques avec bibliographie — rigueur, clarté et mise en forme professionnelle.</p>
+    </div>
+    <div class="comp-item">
+      <h4>Adaptation terrain</h4>
+      <p>Intégration rapide dans des structures variées : abbaye, start-up, PME agroalimentaire.</p>
+    </div>
+    <div class="comp-item">
+      <h4>Rigueur analytique</h4>
+      <p>Collecte, traitement et interprétation de données biologiques et statistiques.</p>
+    </div>
   </div>
-</section>
+</div>
 
-<section class="ressenti" id="ressenti">
+<!-- RESSENTI -->
+<div class="ressenti-section">
   <div class="sec-label">Mon ressenti</div>
-  <h2>Ce que ces stages<br><em>m'ont apporté</em></h2>
-  <div class="res-grid">
-    <div class="res-card"><span class="placeholder-tag">À compléter</span><h3>Ce que j'ai préféré</h3><p>Ex : le travail en labo, les environnements variés…</p></div>
-    <div class="res-card"><span class="placeholder-tag">À compléter</span><h3>Ce que j'ai appris</h3><p>Ex : l'autonomie, la rigueur en entreprise…</p></div>
-    <div class="res-card"><span class="placeholder-tag">À compléter</span><h3>Ce qui m'a le plus marqué</h3><p>Ex : le stage à l'abbaye d'Orval…</p></div>
+  <h2>Ce que ces stages <em>m'ont apporté</em></h2>
+  <div class="ressenti-grid">
+    <div class="ressenti-item">
+      <div class="ressenti-label">Ce que j'ai préféré</div>
+      <p class="ressenti-text">Le travail en laboratoire, les environnements variés et la diversité des sujets — chaque stage m'a amené dans un monde différent.</p>
+    </div>
+    <div class="ressenti-item">
+      <div class="ressenti-label">Ce que j'ai appris</div>
+      <p class="ressenti-text">L'autonomie, la rigueur en entreprise, et surtout l'importance de bien poser les questions avant de commencer à travailler.</p>
+    </div>
+    <div class="ressenti-item">
+      <div class="ressenti-label">Ce qui m'a le plus marqué</div>
+      <p class="ressenti-text">Le stage à l'abbaye d'Orval — un contexte hors du commun, une mission vraiment utile à l'équipe, et une autonomie totale.</p>
+    </div>
   </div>
-</section>
+</div>
 
+<!-- NAV FOOTER -->
 <div class="nav-pages">
-  <a href="parcours.html" class="np-card"><div class="np-label">Découvrir</div><h3>Mon parcours BUT</h3><p>Formation, matières et compétences académiques</p></a>
-  <a href="projets_intro.html" class="np-card"><div class="np-label">Découvrir</div><h3>Mes projets SAé</h3><p>Travaux pratiques et projets tuteurés en BUT</p></a>
+  <a href="parcours.html" class="np-card">
+    <div class="np-label">Découvrir</div>
+    <h3>Mon parcours BUT</h3>
+    <p>Formation, matières et compétences académiques</p>
+  </a>
+  <a href="projets_intro.html" class="np-card">
+    <div class="np-label">Découvrir</div>
+    <h3>Mes projets SAé</h3>
+    <p>Travaux pratiques et projets tuteurés en BUT</p>
+  </a>
 </div>
 <div class="retour"><a href="portfolio_florian_thomas.html">← Retour à l'accueil</a></div>
+
 </body>
 </html>
