@@ -74,34 +74,31 @@
     h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:300;line-height:1.1;margin-bottom:2.5rem;}
     h2.section-title em{font-style:italic;color:var(--wine);}
 
-    /* CARTE */
+    /* CARTE — CSS identique à projets.html */
     .sae-card{display:grid;grid-template-columns:3fr 2fr;border:1px solid var(--border);margin-bottom:2rem;background:white;transition:border-color 0.2s;}
     .sae-card:hover{border-color:var(--gold);}
     .sae-top{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:0.75rem;}
     .sae-title-wrap{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;}
     .sae-num{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--light);}
-    .sae-title-wrap h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--charcoal);}
-    .sae-top-right{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;}
+    .sae-top h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;line-height:1.2;}
+    .sae-badges{display:flex;gap:0.4rem;flex-wrap:wrap;align-items:center;}
     .stage-lieu{font-size:0.75rem;color:var(--muted);font-style:italic;}
-    .sae-left{padding:1.5rem 1.75rem 2rem;border-right:1px solid var(--border);display:flex;flex-direction:column;}
-    .sae-right{display:flex;flex-direction:column;}
+    .sae-info{padding:1.5rem;border-right:1px solid var(--border);}
+    .sae-media{padding:1.5rem;display:flex;flex-direction:column;gap:1rem;}
     .sae-h{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;margin-top:1.25rem;}
     .sae-h:first-child{margin-top:0;}
     .sae-p{font-size:0.9rem;color:var(--muted);line-height:1.7;}
-    .tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.75rem;}
+    .tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;}
     .tag{font-size:0.7rem;border:1px solid var(--border);padding:0.15rem 0.55rem;color:var(--light);}
 
-    /* RESSENTI */
-    .res-block{border:1.5px dashed var(--border);padding:1.25rem;margin-top:1.25rem;}
-    .res-h{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.65rem;}
-    .res-quote{font-family:'Cormorant Garamond',serif;font-size:0.97rem;font-style:italic;color:var(--muted);line-height:1.7;margin-bottom:0.65rem;padding-left:0.75rem;border-left:2px solid var(--parchment);}
-    .res-quote:last-child{margin-bottom:0;}
-    .res-quote::before{content:'"';color:var(--gold);}
-    .res-quote::after{content:'"';color:var(--gold);}
+    /* RESSENTI — identique à projets.html */
+    .res-block{border:1.5px dashed var(--border);padding:1.25rem;position:relative;}
+    .res-h{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+    .res-block p{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--light);line-height:1.7;}
 
-    /* PHOTO */
-    .sae-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--parchment);}
-    .conclu{background:var(--parchment);padding:1rem 1.5rem;border-top:1px solid var(--border);font-size:0.84rem;color:var(--muted);font-style:italic;flex:1;}
+    /* PHOTO & CONCLU — identique à projets.html */
+    .sae-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+    .conclu{background:var(--parchment);padding:1rem 1.5rem;grid-column:1/-1;border-top:1px solid var(--border);font-size:0.84rem;color:var(--muted);font-style:italic;}
     .conclu::before{content:'« ';color:var(--gold);}
     .conclu::after{content:' »';color:var(--gold);}
 
@@ -118,6 +115,21 @@
     .retour{padding:1.5rem 5vw;background:var(--cream);border-top:1px solid var(--border);}
     .retour a{font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);text-decoration:none;}
     .retour a:hover{color:var(--wine);}
+
+    /* ── LARGE SCREEN : cap the content ──────────── */
+    @media(min-width:1280px){
+      /* Hero : stop stretching past 1400px */
+      .hero{max-width:1400px;margin-top:64px;margin-left:auto;margin-right:auto;}
+      /* Sections : center cards with a max-width */
+      .semestre{padding:3rem max(5vw, calc((100vw - 1300px) / 2));}
+      .intro-but-inner{max-width:1200px;margin:0 auto;}
+      .nav-pages{padding:4rem max(5vw, calc((100vw - 1300px) / 2));}
+      .retour{padding:1.5rem max(5vw, calc((100vw - 1300px) / 2));}
+    }
+    @media(min-width:1400px){
+      /* Hero: fix split at comfortable widths */
+      .hero{grid-template-columns:560px 1fr;}
+    }
 
     @media(max-width:768px){
       .hero{grid-template-columns:1fr;}
@@ -188,17 +200,14 @@
         Le BUT Génie Biologique parcours Sciences de l'Aliment et Biotechnologie intègre trois stages sur les trois années du cursus. Chacun correspond à un niveau de compétences du référentiel national et vise à placer l'étudiant en situation professionnelle réelle.
       </p>
       <p>
-        Le stage de 1ère année (jusqu'à 4 semaines) est une première découverte du milieu professionnel. Celui de 2ème année (8 à 12 semaines) constitue une immersion plus longue où l'étudiant mobilise les compétences acquises en cours sur une mission confiée par l'entreprise. Le stage de 3ème année (14 à 16 semaines) est le plus exigeant : l'étudiant est quasi-autonome, responsable d'un projet sur toute sa durée.
-      </p>
-      <p>
-        Chaque stage est évalué par un rapport et une soutenance, et vise à développer une ou plusieurs compétences du référentiel BUT GB SAB : analyser, expérimenter, animer la qualité, organiser la production, ou innover.
+        Le stage de 1ère année (4 semaines) est une première découverte du milieu professionnel. Celui de 2ème année (8 semaines) constitue une immersion plus longue avec une mission confiée par l'entreprise. Le stage de 3ème année (12 semaines) est le plus exigeant : l'étudiant est quasi-autonome et responsable d'un projet sur toute sa durée.
       </p>
     </div>
     <div>
       <div class="sec-label" style="margin-bottom:1rem;">Les trois niveaux du cursus</div>
       <div class="stages-timeline">
         <div class="timeline-item">
-          <div class="timeline-annee">1ère année<br><em>jusqu'à 4 sem.</em></div>
+          <div class="timeline-annee">1ère année<br><em>4 sem.</em></div>
           <div class="timeline-content">
             <h4>Découverte professionnelle</h4>
             <p>Première confrontation avec le terrain. L'objectif est de comprendre le fonctionnement d'une entreprise agroalimentaire de l'intérieur, ses enjeux réglementaires et ses exigences du quotidien.</p>
@@ -206,7 +215,7 @@
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-annee">2ème année<br><em>8 à 12 sem.</em></div>
+          <div class="timeline-annee">2ème année<br><em>8 sem.</em></div>
           <div class="timeline-content">
             <h4>Mission encadrée</h4>
             <p>Immersion plus longue, avec une mission définie. L'étudiant mobilise les compétences acquises et apprend à travailler en autonomie sur un cas concret avec des objectifs fixés par l'entreprise.</p>
@@ -214,7 +223,7 @@
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-annee">3ème année<br><em>14 à 16 sem.</em></div>
+          <div class="timeline-annee">3ème année<br><em>12 sem.</em></div>
           <div class="timeline-content">
             <h4>Projet en autonomie</h4>
             <p>Le stage le plus long du cursus. L'étudiant est responsable d'un projet de bout en bout — du protocole à la restitution — dans des conditions proches du monde professionnel réel.</p>
@@ -228,7 +237,7 @@
 
 <!-- STAGE 1 — AGRONUTRIS (le plus récent en haut) -->
 <section class="semestre">
-  <div class="sec-label">Mars – Juin 2026 · 16 semaines · En cours</div>
+  <div class="sec-label">Mars – Juin 2026 · 12 semaines · En cours</div>
   <h2 class="section-title">Stage chez <em>Agronutris</em></h2>
 
   <div class="sae-card">
@@ -237,16 +246,14 @@
         <span class="sae-num">3ème année</span>
         <h3>AGRONUTRIS — Rethel, Ardennes (08)</h3>
       </div>
-      <div class="sae-top-right">
-        <div class="ue-pills" style="margin:0;">
+      <div class="sae-badges">
           <span class="ue-pill rd">R&amp;D</span>
           <span class="ue-pill encours">En cours</span>
-        </div>
         <span class="stage-lieu">France</span>
       </div>
     </div>
 
-    <div class="sae-left">
+    <div class="sae-info">
       <div class="sae-h">Mission</div>
       <p class="sae-p">Au sein du laboratoire R&amp;D d'Agronutris, spécialisé dans la production industrielle de mouches soldats noires (<em>Hermetia illucens</em>), j'ai travaillé sur le test de nouvelles formules d'attractants pour optimiser les performances reproductives. Conception et suivi de protocoles expérimentaux rigoureux en conditions réelles d'industrie.</p>
 
@@ -263,16 +270,15 @@
 
       <div class="res-block">
         <div class="res-h">Mon ressenti</div>
-        <p class="res-quote">Ce qui m'a le plus frappé, c'est l'importance d'un système documentaire bien construit — des templates accessibles qui permettent à tout le monde d'écrire de la même façon et de retrouver l'information facilement.</p>
-        <p class="res-quote">Les réunions hebdomadaires de R&amp;D m'ont montré à quel point partager l'avancement de chacun change tout — on répartit mieux le travail, on évite les impasses, et les points de vue des autres font souvent avancer plus vite que ce qu'on aurait trouvé seul.</p>
-        <p class="res-quote">C'est le stage où j'ai le plus progressé humainement — autant dans ma façon de communiquer que dans ma façon de travailler avec les autres.</p>
+        <p>Ce qui m'a le plus frappé, c'est l'importance d'un système documentaire bien construit — des templates accessibles qui permettent à tout le monde d'écrire de la même façon et de retrouver l'information facilement. Les réunions hebdomadaires de R&amp;D m'ont montré à quel point partager l'avancement de chacun change tout. C'est le stage où j'ai le plus progressé humainement — autant dans ma façon de communiquer que de travailler avec les autres.</p>
       </div>
     </div>
 
-    <div class="sae-right">
+    <div class="sae-media">
+      <div class="sae-h">Photo</div>
       <img id="img-agronutris" class="sae-photo" alt="Bâtiment Agronutris — Rethel">
-      <div class="conclu">Recherche appliquée sur les insectes — un lien direct entre le labo et la production industrielle.</div>
     </div>
+    <div class="conclu">Recherche appliquée sur les insectes — un lien direct entre le labo et la production industrielle.</div>
   </div>
 </section>
 
@@ -287,16 +293,14 @@
         <span class="sae-num">2ème année</span>
         <h3>Fromagerie d'Orval — Abbaye d'Orval</h3>
       </div>
-      <div class="sae-top-right">
-        <div class="ue-pills" style="margin:0;">
+      <div class="sae-badges">
           <span class="ue-pill rd">R&amp;D</span>
           <span class="ue-pill analyse">Analyse</span>
-        </div>
         <span class="stage-lieu">Province de Luxembourg · Belgique</span>
       </div>
     </div>
 
-    <div class="sae-left">
+    <div class="sae-info">
       <div class="sae-h">Mission</div>
       <p class="sae-p">Étude comparative de deux méthodes d'analyse du fromage (SCiO et FoodScan) : extrait sec, taux de matière grasse, taux de protéine, gras/sec, HFD. Objectif : évaluer si le SCiO portable peut remplacer le FoodScan (plus de pièces de rechange disponibles) pour le contrôle qualité des lots. Plus de 80 fromages analysés à J+1 et J+21 avec les deux appareils.</p>
 
@@ -313,16 +317,15 @@
 
       <div class="res-block">
         <div class="res-h">Mon ressenti</div>
-        <p class="res-quote">Ce stage m'a fait comprendre l'importance de bien formuler ses questions pour obtenir les bonnes informations auprès des équipes. Savoir poser la bonne question au bon moment auprès des bonnes personnes — la coopération avec le personnel de la fromagerie a été essentielle.</p>
-        <p class="res-quote">J'ai aussi beaucoup progressé sur le travail en autonomie. Être seul face à un protocole, devoir prendre des décisions sans qu'on me guide à chaque étape, gérer mon planning d'analyses au jour le jour — c'est très différent du cadre de l'IUT où tout est encadré.</p>
-        <p class="res-quote">Enfin, j'ai réalisé à quel point un cahier des charges bien défini en amont facilite tout le reste du travail — sans objectifs clairs, impossible de savoir si les résultats répondent vraiment à la question posée.</p>
+        <p>Ce stage m'a fait comprendre l'importance de bien formuler ses questions — la coopération avec le personnel de la fromagerie a été essentielle. J'ai beaucoup progressé sur le travail en autonomie : gérer mon planning d'analyses au jour le jour, c'est très différent du cadre de l'IUT. J'ai aussi réalisé à quel point un cahier des charges bien défini en amont facilite tout le reste du travail.</p>
       </div>
     </div>
 
-    <div class="sae-right">
+    <div class="sae-media">
+      <div class="sae-h">Photo</div>
       <img id="img-orval" class="sae-photo" alt="Abbaye d'Orval — vue aérienne">
-      <div class="conclu">La rigueur scientifique au cœur d'une abbaye trappiste — un cadre exceptionnel pour une mission concrète.</div>
     </div>
+    <div class="conclu">La rigueur scientifique au cœur d'une abbaye trappiste — un cadre exceptionnel pour une mission concrète.</div>
   </div>
 </section>
 
@@ -337,15 +340,13 @@
         <span class="sae-num">1ère année</span>
         <h3>Le Marvillois — Charcuterie-Salaison</h3>
       </div>
-      <div class="sae-top-right">
-        <div class="ue-pills" style="margin:0;">
+      <div class="sae-badges">
           <span class="ue-pill qhse">QHSE</span>
-        </div>
         <span class="stage-lieu">Montmédy, Meuse (55) · France</span>
       </div>
     </div>
 
-    <div class="sae-left">
+    <div class="sae-info">
       <div class="sae-h">Mission</div>
       <p class="sae-p">Première immersion professionnelle dans une charcuterie-salaison artisanale : participation à la mise à jour et à la création de documents qualité (fiches préventives, fiches TACT, fiches recettes), observation des bonnes pratiques d'hygiène en atelier, vérification des températures de stockage et compréhension du circuit de traçabilité.</p>
 
@@ -362,16 +363,15 @@
 
       <div class="res-block">
         <div class="res-h">Mon ressenti</div>
-        <p class="res-quote">J'ai vraiment appréhendé ce qu'est la qualité sur le terrain — l'importance de tout justifier par des documents, de ne rien laisser au hasard.</p>
-        <p class="res-quote">Les formations sécurité m'ont aussi fait prendre conscience de l'importance de l'hygiène et des protocoles, des choses qu'on survole en cours mais qu'on intègre vraiment quand on les applique.</p>
-        <p class="res-quote">Ce qui m'a le plus surpris, c'est l'importance de la communication — savoir s'adresser aux gens, comprendre comment fonctionne une équipe. C'est ce stage qui m'a vraiment fait progresser de ce côté-là.</p>
+        <p>J'ai vraiment appréhendé ce qu'est la qualité sur le terrain — l'importance de tout justifier par des documents, de ne rien laisser au hasard. Les formations sécurité m'ont fait prendre conscience de choses qu'on survole en cours mais qu'on intègre vraiment quand on les applique. Ce qui m'a le plus surpris, c'est l'importance de la communication — c'est ce stage qui m'a vraiment fait progresser de ce côté-là.</p>
       </div>
     </div>
 
-    <div class="sae-right">
+    <div class="sae-media">
+      <div class="sae-h">Photo</div>
       <img id="img-marvillois" class="sae-photo" alt="Le Marvillois — façade de la charcuterie">
-      <div class="conclu">Première confrontation avec le terrain — rigueur, traçabilité et travail en équipe au quotidien.</div>
     </div>
+    <div class="conclu">Première confrontation avec le terrain — rigueur, traçabilité et travail en équipe au quotidien.</div>
   </div>
 </section>
 
