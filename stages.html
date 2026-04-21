@@ -74,8 +74,8 @@
 
     /* SECTIONS */
     .semestre{padding:3rem 5vw;}
-    .semestre:nth-child(odd){background:var(--cream);}
-    .semestre:nth-child(even){background:white;}
+    .semestre:nth-child(odd){background:white;}
+    .semestre:nth-child(even){background:var(--cream);}
     h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:300;line-height:1.1;margin-bottom:2.5rem;}
     h2.section-title em{font-style:italic;color:var(--wine);}
 
@@ -99,7 +99,8 @@
     /* RESSENTI — identique à projets.html */
     .res-block{border:1.5px dashed var(--border);padding:1.25rem;position:relative;}
     .res-h{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
-    .res-block p{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--light);line-height:1.7;}
+    .res-block p{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--light);line-height:1.7;margin-bottom:0.75rem;}
+    .res-block p:last-child{margin-bottom:0;}
 
     /* VOIR PLUS — bouton mis en valeur */
     .voir-plus{display:inline-flex;align-items:center;gap:0.5rem;background:var(--charcoal);border:1px solid var(--charcoal);padding:0.45rem 1.1rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:white;text-decoration:none;transition:background 0.2s,border-color 0.2s;white-space:nowrap;}
@@ -107,9 +108,6 @@
 
     /* PHOTO & CONCLU — identique à projets.html */
     .sae-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;max-height:380px;}
-    .conclu{background:var(--parchment);padding:1rem 1.5rem;grid-column:1/-1;border-top:1px solid var(--border);font-size:0.84rem;color:var(--muted);font-style:italic;}
-    .conclu::before{content:'« ';color:var(--gold);}
-    .conclu::after{content:' »';color:var(--gold);}
 
     /* NAV PAGES */
     .nav-pages{background:var(--charcoal);padding:4rem 5vw;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
@@ -280,7 +278,9 @@
 
       <div class="res-block">
         <div class="res-h">Mon ressenti</div>
-        <p>Ce qui m'a le plus frappé, c'est l'importance d'un système documentaire bien construit — des templates accessibles qui permettent à tout le monde d'écrire de la même façon et de retrouver l'information facilement. Les réunions hebdomadaires de R&amp;D m'ont montré à quel point partager l'avancement de chacun change tout. C'est le stage où j'ai le plus progressé humainement — autant dans ma façon de communiquer que de travailler avec les autres.</p>
+        <p>Ce qui m'a le plus frappé, c'est l'importance d'un système documentaire bien construit — des templates accessibles qui permettent à tout le monde d'écrire de la même façon et de retrouver l'information facilement.</p>
+        <p>Les réunions hebdomadaires de R&amp;D m'ont montré à quel point partager l'avancement de chacun change tout — on répartit mieux le travail, on évite les impasses, et les points de vue des autres font souvent avancer plus vite que ce qu'on aurait trouvé seul.</p>
+        <p>C'est le stage où j'ai le plus progressé humainement — autant dans ma façon de communiquer que dans ma façon de travailler avec les autres.</p>
       </div>
     </div>
 
@@ -288,7 +288,6 @@
       <div class="sae-h">Photo</div>
       <img id="img-agronutris" class="sae-photo" alt="Bâtiment Agronutris — Rethel">
     </div>
-    <div class="conclu">Recherche appliquée sur les insectes — un lien direct entre le labo et la production industrielle.</div>
   </div>
 </section>
 
@@ -328,7 +327,9 @@
 
       <div class="res-block">
         <div class="res-h">Mon ressenti</div>
-        <p>Ce stage m'a fait comprendre l'importance de bien formuler ses questions — la coopération avec le personnel de la fromagerie a été essentielle. J'ai beaucoup progressé sur le travail en autonomie : gérer mon planning d'analyses au jour le jour, c'est très différent du cadre de l'IUT. J'ai aussi réalisé à quel point un cahier des charges bien défini en amont facilite tout le reste du travail.</p>
+        <p>Ce stage m'a fait comprendre l'importance de bien formuler ses questions pour obtenir les bonnes informations auprès des équipes. Savoir poser la bonne question au bon moment auprès des bonnes personnes — la coopération avec le personnel de la fromagerie a été essentielle.</p>
+        <p>J'ai aussi beaucoup progressé sur le travail en autonomie. Être seul face à un protocole, devoir prendre des décisions sans qu'on me guide à chaque étape, gérer mon planning d'analyses au jour le jour — c'est très différent du cadre de l'IUT où tout est encadré. Ça m'a appris à m'organiser, à anticiper les problèmes et à me faire confiance.</p>
+        <p>Enfin, j'ai réalisé à quel point un cahier des charges bien défini en amont facilite tout le reste du travail — sans objectifs clairs, impossible de savoir si les résultats répondent vraiment à la question posée.</p>
       </div>
     </div>
 
@@ -336,7 +337,6 @@
       <div class="sae-h">Photo</div>
       <img id="img-orval" class="sae-photo" alt="Abbaye d'Orval — vue aérienne">
     </div>
-    <div class="conclu">La rigueur scientifique au cœur d'une abbaye trappiste — un cadre exceptionnel pour une mission concrète.</div>
   </div>
 </section>
 
@@ -375,7 +375,9 @@
 
       <div class="res-block">
         <div class="res-h">Mon ressenti</div>
-        <p>J'ai vraiment appréhendé ce qu'est la qualité sur le terrain — l'importance de tout justifier par des documents, de ne rien laisser au hasard. Les formations sécurité m'ont fait prendre conscience de choses qu'on survole en cours mais qu'on intègre vraiment quand on les applique. Ce qui m'a le plus surpris, c'est l'importance de la communication — c'est ce stage qui m'a vraiment fait progresser de ce côté-là.</p>
+        <p>J'ai vraiment appréhendé ce qu'est la qualité sur le terrain — l'importance de tout justifier par des documents, de ne rien laisser au hasard.</p>
+        <p>Les formations sécurité m'ont aussi fait prendre conscience de l'importance de l'hygiène et des protocoles, des choses qu'on survole en cours mais qu'on intègre vraiment quand on les applique.</p>
+        <p>Ce qui m'a le plus surpris, c'est l'importance de la communication — savoir s'adresser aux gens, comprendre comment fonctionne une équipe. C'est ce stage qui m'a vraiment fait progresser de ce côté-là.</p>
       </div>
     </div>
 
@@ -383,7 +385,6 @@
       <div class="sae-h">Photo</div>
       <img id="img-marvillois" class="sae-photo" alt="Le Marvillois — façade de la charcuterie">
     </div>
-    <div class="conclu">Première confrontation avec le terrain — rigueur, traçabilité et travail en équipe au quotidien.</div>
   </div>
 </section>
 
