@@ -29,7 +29,7 @@
 
     /* HERO */
     .hero{display:grid;grid-template-columns:1fr 1fr;min-height:45vh;padding-top:64px;}
-    .hero-left{background:white;padding:4rem 5vw 4rem 8vw;display:flex;flex-direction:column;justify-content:center;}
+    .hero-left{background:white;padding:4rem 5vw;display:flex;flex-direction:column;justify-content:center;}
     .hero-right{background:var(--wine);padding:4rem 5vw;display:flex;flex-direction:column;justify-content:center;gap:1.25rem;}
     .breadcrumb{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light);margin-bottom:1.5rem;display:flex;gap:0.5rem;flex-wrap:wrap;}
     .breadcrumb a{color:var(--gold);text-decoration:none;}
@@ -44,19 +44,24 @@
 
     /* INTRO BUT */
     .intro-but{background:white;border-bottom:1px solid var(--border);}
-    .intro-but-inner{max-width:1200px;margin:0 auto;padding:3.5rem 5vw;display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start;}
-    .sec-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
-    .intro-but h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:300;line-height:1.15;margin-bottom:1rem;}
+    .intro-but-inner{padding:4rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+    .sec-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+    .intro-but h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.6rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem;}
     .intro-but h2 em{font-style:italic;color:var(--wine);}
-    .intro-but p{font-size:0.9rem;color:var(--muted);line-height:1.8;margin-bottom:0.85rem;}
+    .intro-but p{font-size:0.92rem;color:var(--muted);line-height:1.9;margin-bottom:0.9rem;}
+    .intro-but p:last-child{margin-bottom:0;}
+    .intro-chiffres{display:flex;gap:2.5rem;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border);}
+    .intro-chiffre{display:flex;flex-direction:column;gap:0.15rem;}
+    .intro-chiffre-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--wine);line-height:1;}
+    .intro-chiffre-label{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light);}
 
     /* Timeline stages BUT */
     .stages-timeline{display:flex;flex-direction:column;gap:0;}
-    .timeline-item{display:grid;grid-template-columns:80px 1fr;gap:1.25rem;align-items:start;padding:1rem 0;border-bottom:1px solid var(--border);}
+    .timeline-item{display:grid;grid-template-columns:70px 1fr;gap:1.25rem;align-items:start;padding:1.25rem 0;border-bottom:1px solid var(--border);}
     .timeline-item:last-child{border-bottom:none;}
-    .timeline-annee{font-family:'Cormorant Garamond',serif;font-size:0.8rem;color:var(--gold);font-weight:500;letter-spacing:0.05em;padding-top:0.15rem;}
-    .timeline-content h4{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--charcoal);margin-bottom:0.2rem;}
-    .timeline-content p{font-size:0.82rem;color:var(--muted);line-height:1.55;}
+    .timeline-annee{font-family:'Cormorant Garamond',serif;font-size:0.78rem;color:var(--gold);font-weight:500;letter-spacing:0.05em;padding-top:0.2rem;line-height:1.5;}
+    .timeline-content h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;color:var(--charcoal);margin-bottom:0.3rem;}
+    .timeline-content p{font-size:0.82rem;color:var(--muted);line-height:1.65;margin-bottom:0.4rem;}
     .timeline-content em{font-style:italic;color:var(--light);font-size:0.78rem;}
 
     /* PILLS */
@@ -96,8 +101,12 @@
     .res-h{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
     .res-block p{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--light);line-height:1.7;}
 
+    /* VOIR PLUS — bouton mis en valeur */
+    .voir-plus{display:inline-flex;align-items:center;gap:0.5rem;background:var(--charcoal);border:1px solid var(--charcoal);padding:0.45rem 1.1rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:white;text-decoration:none;transition:background 0.2s,border-color 0.2s;white-space:nowrap;}
+    .voir-plus:hover{background:var(--wine);border-color:var(--wine);}
+
     /* PHOTO & CONCLU — identique à projets.html */
-    .sae-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+    .sae-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;max-height:380px;}
     .conclu{background:var(--parchment);padding:1rem 1.5rem;grid-column:1/-1;border-top:1px solid var(--border);font-size:0.84rem;color:var(--muted);font-style:italic;}
     .conclu::before{content:'« ';color:var(--gold);}
     .conclu::after{content:' »';color:var(--gold);}
@@ -116,28 +125,14 @@
     .retour a{font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);text-decoration:none;}
     .retour a:hover{color:var(--wine);}
 
-    /* ── LARGE SCREEN : cap the content ──────────── */
-    @media(min-width:1280px){
-      /* Hero : stop stretching past 1400px */
-      .hero{max-width:1400px;margin-top:64px;margin-left:auto;margin-right:auto;}
-      /* Sections : center cards with a max-width */
-      .semestre{padding:3rem max(5vw, calc((100vw - 1300px) / 2));}
-      .intro-but-inner{max-width:1200px;margin:0 auto;}
-      .nav-pages{padding:4rem max(5vw, calc((100vw - 1300px) / 2));}
-      .retour{padding:1.5rem max(5vw, calc((100vw - 1300px) / 2));}
-    }
-    @media(min-width:1400px){
-      /* Hero: fix split at comfortable widths */
-      .hero{grid-template-columns:560px 1fr;}
-    }
-
+    /* ── MOBILE ───────────────────────────────────────── */
     @media(max-width:768px){
       .hero{grid-template-columns:1fr;}
       .hero-left{padding:3rem 6vw;}
       .hero-right{padding:2.5rem 6vw;}
       .intro-but-inner{grid-template-columns:1fr;gap:2rem;}
       .sae-card{grid-template-columns:1fr;}
-      .sae-left{border-right:none;border-bottom:1px solid var(--border);}
+      .sae-info{border-right:none;border-bottom:1px solid var(--border);}
       .nav-pages{grid-template-columns:1fr;}
     }
   </style>
@@ -202,6 +197,20 @@
       <p>
         Le stage de 1ère année (4 semaines) est une première découverte du milieu professionnel. Celui de 2ème année (8 semaines) constitue une immersion plus longue avec une mission confiée par l'entreprise. Le stage de 3ème année (12 semaines) est le plus exigeant : l'étudiant est quasi-autonome et responsable d'un projet sur toute sa durée.
       </p>
+      <div class="intro-chiffres">
+        <div class="intro-chiffre">
+          <span class="intro-chiffre-num">3</span>
+          <span class="intro-chiffre-label">Stages</span>
+        </div>
+        <div class="intro-chiffre">
+          <span class="intro-chiffre-num">24</span>
+          <span class="intro-chiffre-label">Semaines terrain</span>
+        </div>
+        <div class="intro-chiffre">
+          <span class="intro-chiffre-num">2</span>
+          <span class="intro-chiffre-label">Pays</span>
+        </div>
+      </div>
     </div>
     <div>
       <div class="sec-label" style="margin-bottom:1rem;">Les trois niveaux du cursus</div>
@@ -250,6 +259,7 @@
           <span class="ue-pill rd">R&amp;D</span>
           <span class="ue-pill encours">En cours</span>
         <span class="stage-lieu">France</span>
+        <a href="stage_agronutris.html" class="voir-plus">Voir en détail →</a>
       </div>
     </div>
 
@@ -297,6 +307,7 @@
           <span class="ue-pill rd">R&amp;D</span>
           <span class="ue-pill analyse">Analyse</span>
         <span class="stage-lieu">Province de Luxembourg · Belgique</span>
+        <a href="stage_orval.html" class="voir-plus">Voir en détail →</a>
       </div>
     </div>
 
@@ -343,6 +354,7 @@
       <div class="sae-badges">
           <span class="ue-pill qhse">QHSE</span>
         <span class="stage-lieu">Montmédy, Meuse (55) · France</span>
+        <a href="stage_marvillois.html" class="voir-plus">Voir en détail →</a>
       </div>
     </div>
 
