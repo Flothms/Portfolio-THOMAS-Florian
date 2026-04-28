@@ -118,8 +118,8 @@ p strong{color:var(--charcoal);font-weight:500;}
    RESSENTI + DÉBOUCHÉS — 2 col
 ═══════════════════════════════ */
 .bottom-two{display:grid;grid-template-columns:1fr 1fr;}
-.col-parchment{padding:4rem 4vw 4rem 5vw;background:var(--parchment);border-right:1px solid var(--border);}
-.col-white2{padding:4rem 5vw 4rem 4vw;background:white;}
+.col-parchment{padding:4rem 4vw 2rem 5vw;background:var(--parchment);border-right:1px solid var(--border);}
+.col-white2{padding:4rem 5vw 2rem 4vw;background:white;}
 
 .ressenti-block{border-left:3px solid var(--gold);padding:1.5rem 1.75rem;background:white;position:relative;margin-top:1rem;}
 .placeholder-tag{position:absolute;top:-10px;left:1rem;background:var(--gold);color:white;font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.12rem 0.6rem;}
@@ -129,10 +129,10 @@ p strong{color:var(--charcoal);font-weight:500;}
 .deb-cat-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:1.5rem;margin-bottom:0.6rem;}
 .deb-cat-label:first-of-type{margin-top:1rem;}
 .deb-list{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
-.deb-item{padding:0.65rem 0.9rem;border:1px solid var(--border);font-size:0.85rem;color:var(--muted);display:flex;align-items:center;gap:0.6rem;background:var(--parchment);}
-.deb-item.pro{border-color:var(--wine);color:var(--charcoal);background:white;}
-.deb-item::before{content:'→';color:var(--border);font-size:0.78rem;flex-shrink:0;}
-.deb-item.pro::before{color:var(--wine);}
+.deb-item{padding:0.75rem 1rem;border:1px solid var(--border);font-size:0.85rem;color:var(--muted);display:flex;align-items:center;gap:0.75rem;background:white;}
+.deb-item::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--border);flex-shrink:0;}
+.deb-item.pro{border-left:3px solid var(--wine);color:var(--charcoal);padding-left:0.85rem;}
+.deb-item.pro::before{background:var(--wine);}
 
 /* NAV BAS */
 .nav-pages{background:var(--charcoal);padding:3rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
@@ -362,35 +362,25 @@ p strong{color:var(--charcoal);font-weight:500;}
     <div class="sec-label">Mon ressenti</div>
     <h2>Ce que cette formation <em>m'apporte</em></h2>
     <div class="ressenti-block">
-      <span class="placeholder-tag">À compléter</span>
-      <p>« Décrivez ici pourquoi vous avez choisi ce parcours, ce qu'il représente pour vous, ce que vous y appréciez le plus... »</p>
+      <p>Ce BUT m'a permis d'apprendre beaucoup de choses, mais ce qui m'a le plus marqué c'est grâce aux nombreuses heures de TP. Que ce soit en binôme ou en groupe plus large, elles m'ont appris à travailler ensemble de manière efficace, à me coordonner, et surtout à savoir rendre compte selon un cahier des charges de manière détaillée et scientifique — ce qui n'est pas aussi évident qu'il n'y paraît au départ.</p>
+      <p>Les stages ont été une autre dimension. En situation professionnelle réelle, j'ai appris à communiquer différemment — adapter mon vocabulaire selon que je parle à un technicien, un responsable qualité ou un encadrant R&D. Le travail en équipe prend aussi un autre sens quand les enjeux sont concrets, et rendre compte correctement de son travail devient une vraie exigence, pas juste un exercice noté.</p>
+      <p>Je ne regrette pas de m'être tourné vers cette formation. Elle m'a donné des bases solides, autant sur le plan technique que sur la façon de travailler, et je repars avec des réflexes que je n'avais clairement pas en arrivant.</p>
     </div>
   </div>
 
-  <!-- COL DROITE : Débouchés -->
+  <!-- COL DROITE : Métiers -->
   <div class="col-white2">
     <div class="sec-label">Et après ?</div>
-    <h2>Les <em>débouchés</em></h2>
-    <p>Le BUT SAB permet une <strong>insertion directe à bac+3</strong> dans les industries agroalimentaires, pharmaceutiques, cosmétiques ou biotechnologiques, ou une poursuite d'études.</p>
+    <h2>Métiers <em>accessibles</em></h2>
+    <p>Le BUT SAB ouvre la porte à une <strong>insertion directe à bac+3</strong> dans les industries agroalimentaires, pharmaceutiques, cosmétiques ou biotechnologiques.</p>
 
-    <div class="deb-cat-label">Métiers accessibles</div>
-    <ul class="deb-list">
-      <li class="deb-item pro">Technicien de laboratoire d'analyses</li>
-      <li class="deb-item pro">Technicien contrôle qualité</li>
-      <li class="deb-item pro">Assistant ingénieur R&D</li>
-      <li class="deb-item pro">Animateur / Responsable QHSE</li>
-      <li class="deb-item">Chef d'équipe en production</li>
-      <li class="deb-item">Technico-commercial bio-industries</li>
-    </ul>
-
-    <div class="deb-cat-label">Poursuites d'études</div>
-    <ul class="deb-list">
-      <li class="deb-item pro">ENSAIA Nancy — agronomie et industries alimentaires</li>
-      <li class="deb-item pro">AgroParisTech — sciences et industries du vivant</li>
-      <li class="deb-item">Oniris Nantes — agroalimentaire</li>
-      <li class="deb-item">AgroSup Dijon / Institut Agro</li>
-      <li class="deb-item">Master Sciences des aliments</li>
-      <li class="deb-item">Licence générale biologie</li>
+    <ul class="deb-list" style="margin-top:1.25rem;">
+      <li class="deb-item pro">Responsable d'atelier de production / Chef d'équipe</li>
+      <li class="deb-item pro">Assistant ingénieur de recherche — analyses biochimiques & microbiologiques</li>
+      <li class="deb-item pro">Responsable / Animateur QHSE — audits, formations, sensibilisation</li>
+      <li class="deb-item pro">Assistant chef de projet en innovation biotechnologique</li>
+      <li class="deb-item pro">Assistant chef de projet R&D agroalimentaire</li>
+      <li class="deb-item pro">Assistant ingénieur de recherche</li>
     </ul>
   </div>
 
