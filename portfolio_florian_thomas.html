@@ -125,10 +125,36 @@
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
+  /* HAMBURGER MENU */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { display: block; width: 22px; height: 1px; background: var(--charcoal); transition: all 0.3s; }
+  .nav-mobile { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(247,244,239,0.98); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); z-index: 99; padding: 1.5rem 5vw; flex-direction: column; gap: 1.25rem; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { text-decoration: none; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+  .nav-mobile a:hover { color: var(--wine); }
+
   @media (max-width: 900px) {
-    
-    .about-grid, .skills-grid, .quick-grid, .contact-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .skills-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .quick-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 1rem; }
     nav ul { display: none; }
+    .nav-hamburger { display: flex; }
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: clamp(2.8rem, 10vw, 4rem); }
+    h2 { font-size: clamp(1.75rem, 6vw, 2.5rem); margin-bottom: 2rem; }
+    section { padding: 3rem 5vw; }
+    .hero-content { padding-bottom: 2rem; }
+    .hero-desc { font-size: 0.9rem; margin-bottom: 1.75rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .skill-card { padding: 1.5rem; }
+    .quick-card { padding: 1.75rem; }
+    .contact-card { padding: 1.5rem; }
+    .cv-inner p { font-size: 0.9rem; }
+    .hero-scroll { padding: 1.5rem 0 2rem; }
+    .timeline-item { padding-left: 2rem; }
   }
 </style>
 </head>
@@ -143,7 +169,17 @@
     <li><a href="projets_intro.html">Projets</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-mobile').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
+<div class="nav-mobile">
+  <a href="#about" onclick="this.closest('.nav-mobile').classList.remove('open')">À propos</a>
+  <a href="parcours.html">Parcours BUT</a>
+  <a href="stages.html">Stages</a>
+  <a href="projets_intro.html">Projets</a>
+  <a href="#contact" onclick="this.closest('.nav-mobile').classList.remove('open')">Contact</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
