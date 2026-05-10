@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florian Thomas — SAé 1ère année</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F7F4EF;--parchment:#EDE8DE;--wine:#6B2D3E;--gold:#B8966A;--charcoal:#2A2825;--muted:#6E6A62;--light:#9E9A92;--border:#D8D2C6;--analyser:#C0392B;--experimenter:#D68A3A;--animer:#B8962A;--produire:#5A8A3C;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;width:100%;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.08em;color:var(--wine);text-transform:uppercase;text-decoration:none;}
+  nav ul{list-style:none;display:flex;gap:2.5rem;}
+  nav a{text-decoration:none;font-size:0.8rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+  nav a:hover,nav a.active{color:var(--wine);}
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:45vh;padding-top:64px;}
+  .hero-left{background:white;padding:4rem 5vw 4rem 8vw;display:flex;flex-direction:column;justify-content:center;}
+  .hero-right{background:var(--wine);padding:4rem 5vw;display:flex;flex-direction:column;justify-content:center;gap:1rem;}
+  .breadcrumb{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light);margin-bottom:1.5rem;display:flex;gap:0.5rem;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--gold);text-decoration:none;}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;line-height:1.05;margin-bottom:1rem;}
+  h1 em{font-style:italic;color:var(--wine);}
+  .hero-sub{font-size:0.92rem;color:var(--muted);line-height:1.8;}
+  .ue-pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
+  .ue-pill{font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.25rem 0.75rem;font-weight:500;}
+  .ue-pill.analyser{background:rgba(192,57,43,0.1);color:var(--analyser);border:1px solid rgba(192,57,43,0.25);}
+  .ue-pill.experimenter{background:rgba(214,138,58,0.1);color:var(--experimenter);border:1px solid rgba(214,138,58,0.25);}
+  .ue-pill.animer{background:rgba(184,150,42,0.1);color:var(--animer);border:1px solid rgba(184,150,42,0.25);}
+  .ue-pill.produire{background:rgba(90,138,60,0.1);color:var(--produire);border:1px solid rgba(90,138,60,0.25);}
+  .semestre{padding:3rem 5vw;}
+  .semestre:nth-child(even){background:white;}
+  .sec-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+  h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:300;line-height:1.1;margin-bottom:2.5rem;}
+  h2 em{font-style:italic;color:var(--wine);}
+  .sae-card{display:grid;grid-template-columns:3fr 2fr;border:1px solid var(--border);margin-bottom:2rem;background:white;transition:border-color 0.2s;}
+  .sae-card:hover{border-color:var(--gold);}
+  .sae-card.hl{border-color:var(--gold);}
+  .sae-top{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);}
+  .sae-title-wrap{display:flex;align-items:baseline;gap:1rem;}
+  .sae-num{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--light);}
+  .sae-top h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;line-height:1.2;}
+  .sae-badges{display:flex;gap:0.4rem;flex-wrap:wrap;align-items:center;}
+  .sbadge{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.6rem;font-weight:500;}
+  .sbadge.analyser{background:rgba(192,57,43,0.1);color:var(--analyser);}
+  .sbadge.experimenter{background:rgba(214,138,58,0.1);color:var(--experimenter);}
+  .sbadge.animer{background:rgba(184,150,42,0.1);color:var(--animer);}
+  .sbadge.produire{background:rgba(90,138,60,0.1);color:var(--produire);}
+  .voir-plus{display:inline-flex;align-items:center;gap:0.5rem;background:var(--wine);border:1px solid var(--wine);padding:0.45rem 1.1rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:white;text-decoration:none;transition:background 0.2s,border-color 0.2s;white-space:nowrap;font-weight:500;}
+  .voir-plus:hover{background:var(--charcoal);border-color:var(--charcoal);}
+  .sae-info{padding:1.5rem 1.5rem 1.25rem;border-right:1px solid var(--border);}
+  .sae-media{display:flex;flex-direction:column;}
+  .info-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
+  .info-block{margin-bottom:1.25rem;}
+  .info-block:last-child{margin-bottom:0;}
+  .info-block p{font-size:0.88rem;color:var(--muted);line-height:1.7;}
+  .tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;}
+  .tag{font-size:0.7rem;border:1px solid var(--border);padding:0.15rem 0.55rem;color:var(--light);}
+  .res-block{border:1.5px dashed var(--border);padding:1.25rem;position:relative;}
+  .res-block p{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--light);line-height:1.7;}
+  .sae-photo{width:100%;flex:1;object-fit:cover;display:block;min-height:180px;}
+  .sae-photo-wrap{flex:1;min-height:180px;background:var(--parchment);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;color:var(--light);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin:0.75rem 1.5rem 1.5rem;}
+  .nav-pages{background:var(--charcoal);padding:4rem 5vw;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+  .np-card{border:1px solid rgba(255,255,255,0.12);padding:1.75rem;text-decoration:none;display:block;position:relative;transition:border-color 0.2s,background 0.2s;}
+  .np-card:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
+  .np-card::after{content:'→';position:absolute;right:1.25rem;top:50%;transform:translateY(-50%);color:var(--gold);}
+  .np-card.current{border-color:rgba(184,150,42,0.4);}
+  .np-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+  .np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:white;margin-bottom:0.3rem;}
+  .np-card p{font-size:0.8rem;color:rgba(255,255,255,0.4);}
+  .retour{padding:1.5rem 5vw;background:var(--cream);border-top:1px solid var(--border);}
+  .retour a{font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);text-decoration:none;}
+  .retour a:hover{color:var(--wine);}
+</style>
+</head>
+<body>
+<nav>
+  <a href="portfolio_florian_thomas.html" class="nav-logo">Florian Thomas</a>
+  <ul>
+    <li><a href="portfolio_florian_thomas.html">Accueil</a></li>
+    <li><a href="parcours.html">Parcours BUT</a></li>
+    <li><a href="stages.html">Stages</a></li>
+    <li><a href="projets_intro.html" class="active">Projets SAé</a></li>
+    <li><a href="portfolio_florian_thomas.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="breadcrumb"><a href="projets_intro.html">Projets SAé</a><span>/</span><span>1ère année</span></div>
+    <h1>SAé <em>1ère année</em></h1>
+    <p class="hero-sub">Semestres 1 et 2 · 2023–2024 · IUT Nancy-Brabois</p>
+    <p class="hero-sub" style="margin-top:0.75rem;">Les SAé (Situations d'Apprentissage et d'Évaluation) sont des projets concrets permettant de mettre en pratique les compétences du BUT en conditions réelles.</p>
+  </div>
+  <div class="hero-right">
+    <div class="sec-label" style="color:rgba(255,255,255,0.4);">Compétences travaillées</div>
+    <div class="ue-pills">
+      <span class="ue-pill analyser">Analyser</span>
+      <span class="ue-pill experimenter">Expérimenter</span>
+      <span class="ue-pill animer">Animer</span>
+      <span class="ue-pill produire">Produire</span>
+    </div>
+  </div>
+</div>
+
+<div class="semestre" id="s1"><div class="sec-label">Semestre 1</div><h2>Premier <em>semestre</em></h2>
+
+  <div class="sae-card">
+    <div class="sae-top">
+      <div class="sae-title-wrap"><span class="sae-num">SAé 1.1</span><h3>Réaliser des analyses dans le domaine de la biologie</h3></div>
+      <div class="sae-badges"><span class="sbadge analyser">Analyser</span></div>
+    </div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Apprendre de nouvelles techniques d'analyse. Mesure des paramètres chimiques d'un yaourt, tels que l'acidité Dornic.</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>Titrage acido-basique, pesée sur balance Sartorius, utilisation de la burette graduée pour dosage à la soude NaOH.</p><div class="tags"><span class="tag">Titrage</span><span class="tag">Acidité Dornic</span><span class="tag">Yaourt</span><span class="tag">Balance Sartorius</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><p>Cette SAé, complémentaire de la 1.4, a été ma première vraie confrontation aux techniques analytiques du BUT. Manipuler la burette, réaliser un dosage en conditions de laboratoire sur un produit aussi concret que le yaourt — c'était une entrée en matière idéale pour comprendre ce que signifie la rigueur en génie industriel agroalimentaire.</p></div></div>
+    </div>
+    <div class="sae-media">
+      <div class="info-label" style="padding:1rem 1.5rem 0;">Photo</div>
+      <img src="img/sae11.jpg" alt="SAé 1.1" class="sae-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="sae-photo-wrap" style="display:none">Photo à venir</div>
+    </div>
+  </div>
+  <div class="sae-card">
+    <div class="sae-top">
+      <div class="sae-title-wrap"><span class="sae-num">SAé 1.2</span><h3>Explorer la place d'une cellule</h3></div>
+      <div class="sae-badges"><span class="sbadge experimenter">Expérimenter</span></div>
+    </div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Comprendre et reconnaître des cellules spécifiques à un organe en préparant une coupe histologique.</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>Paraffinage d'un pancréas de rat, coupe au microtome Leica, coloration Hématoxyline-Éosine et Trichome de Masson, observation microscopique.</p><div class="tags"><span class="tag">Histologie</span><span class="tag">Microtome</span><span class="tag">Pancréas</span><span class="tag">Îlots de Langerhans</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><p>Une SAé qui m'a ouvert à une discipline que je ne connaissais pas — l'histologie. Travailler sur du tissu animal, maîtriser des techniques de préparation et de coloration spécifiques, observer au microscope des structures cellulaires précises : c'est une approche du laboratoire très différente de ce qu'on fait habituellement en SAB, et ça m'a donné une vision plus large de ce que recouvre le génie biologique.</p></div></div>
+    </div>
+    <div class="sae-media">
+      <div class="info-label" style="padding:1rem 1.5rem 0;">Photo</div>
+      <img src="img/sae12.jpg" alt="SAé 1.2" class="sae-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="sae-photo-wrap" style="display:none">Photo à venir</div>
+    </div>
+  </div>
+  <div class="sae-card">
+    <div class="sae-top">
+      <div class="sae-title-wrap"><span class="sae-num">SAé 1.3</span><h3>Contrôler l'hygiène lors d'une production</h3></div>
+      <div class="sae-badges"><span class="sbadge animer">Animer</span><a href="sae13__3_ (1).html" class="voir-plus">Voir en détail →</a></div>
+    </div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Utiliser les connaissances de microbiologie dans un cas concret : prélèvements à l'EHPAD Le Parc (Nancy).</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>Prélèvements d'air (bio-impacteur) et de surfaces (écouvillons, boîtes contact), ensemencement sur milieux TA/CGA/RODAC, ATP-métrie.</p><div class="tags"><span class="tag">Microbiologie</span><span class="tag">EHPAD</span><span class="tag">Bio-impacteur</span><span class="tag">NFEN 14.476</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><p>C'est probablement la SAé qui m'a le plus appris en première année — pas tant sur le plan technique, mais sur l'organisation et l'autonomie. On devait tout gérer nous-mêmes : trouver le lieu, prendre contact, planifier les prélèvements en dehors des cours. Travailler dans un EHPAD a aussi donné un sens concret à tout ça : là, l'hygiène ce n'est pas juste une note, ça a de vraies conséquences.</p></div></div>
+    </div>
+    <div class="sae-media">
+      <div class="info-label" style="padding:1rem 1.5rem 0;">Photo</div>
+      <img src="img/sae13.jpg" alt="SAé 1.3" class="sae-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="sae-photo-wrap" style="display:none">Photo à venir</div>
+    </div>
+  </div>
+  <div class="sae-card hl">
+    <div class="sae-top">
+      <div class="sae-title-wrap"><span class="sae-num">SAé 1.4</span><h3>Préparer et mettre en œuvre une production alimentaire</h3></div>
+      <div class="sae-badges"><span class="sbadge produire">Produire</span></div>
+    </div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Découvrir les spécialités d'un yaourt, ses qualités ainsi que sa fabrication en conditions semi-industrielles.</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>Production de yaourt avec tests de texture (Texture Analyser), de pH et de viscosité. Colorimètre Konica-Minolta.</p><div class="tags"><span class="tag">Production yaourt</span><span class="tag">Texture</span><span class="tag">pH</span><span class="tag">Viscosité</span><span class="tag">Colorimétrie</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><p>C'était ma première SAé du BUT, et la première fois que je produisais un aliment dans un cadre professionnel. On est passés assez vite de "faire du yaourt" à mesurer la texture, le pH, la viscosité — et c'est là que j'ai commencé à comprendre la différence entre cuisiner et produire. Un bon avant-goût de ce que la filière allait demander.</p></div></div>
+    </div>
+    <div class="sae-media">
+      <div class="info-label" style="padding:1rem 1.5rem 0;">Photo</div>
+      <img src="img/sae14.jpg" alt="SAé 1.4" class="sae-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="sae-photo-wrap" style="display:none">Photo à venir</div>
+    </div>
+  </div></div>
+
+<div class="semestre" id="s2"><div class="sec-label">Semestre 2</div><h2>Deuxième <em>semestre</em></h2>
+
+  <div class="sae-card">
+    <div class="sae-top">
+      <div class="sae-title-wrap"><span class="sae-num">SAé 2.1</span><h3>Extraction, purification et dosage spectrophotométrique</h3></div>
+      <div class="sae-badges"><span class="sbadge analyser">Analyser</span></div>
+    </div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Comprendre les composantes biochimiques d'un œuf et les mesurer. Lipides dans le jaune, protéines dans le blanc.</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>Résine échangeuse d'ion DEAE, dosage spectrophotométrique de Bradford, électrophorèse SDS-PAGE.</p><div class="tags"><span class="tag">Bradford</span><span class="tag">SDS-Page</span><span class="tag">DEAE</span><span class="tag">Spectrophotométrie</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><p>Cette SAé m'a appris que caractériser un aliment ne se résume pas à une seule mesure — il faut combiner plusieurs techniques pour avoir une image complète de ce qui le compose. Le fait de se répartir entre lipides et protéines au sein du groupe m'a aussi montré à quel point le résultat final dépend de la coordination entre équipes autant que du travail individuel.</p></div></div>
+    </div>
+    <div class="sae-media">
+      <div class="info-label" style="padding:1rem 1.5rem 0;">Photo</div>
+      <img src="img/sae21.jpg" alt="SAé 2.1" class="sae-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="sae-photo-wrap" style="display:none">Photo à venir</div>
+    </div>
+  </div>
+  <div class="sae-card">
+    <div class="sae-top">
+      <div class="sae-title-wrap"><span class="sae-num">SAé 2.2</span><h3>Mesurer la réponse d'un paramètre physiologique</h3></div>
+      <div class="sae-badges"><span class="sbadge experimenter">Expérimenter</span></div>
+    </div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Mesurer la réponse d'un végétal et d'un organe animal à différents paramètres physiologiques.</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>Volet végétal : influence de la lumière sur la chlorophylle. Volet animal : contractions d'intestin de rat en bain d'organe.</p><div class="tags"><span class="tag">Physiologie végétale</span><span class="tag">Chlorophylle</span><span class="tag">Bain d'organe</span><span class="tag">Intestin de rat</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><p>Cette SAé était bien construite parce qu'elle couvrait deux sujets vraiment différents. La partie végétale était assez libre, ce qui nous forçait à prendre des décisions par nous-mêmes. La partie animale — mesurer les contractions d'un intestin de rat en bain d'organe — c'était la première fois qu'on travaillait sur du tissu vivant, et ça change vraiment la façon d'aborder une expérience.</p></div></div>
+    </div>
+    <div class="sae-media">
+      <div class="info-label" style="padding:1rem 1.5rem 0;">Photo</div>
+      <img src="img/sae22.jpg" alt="SAé 2.2" class="sae-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="sae-photo-wrap" style="display:none">Photo à venir</div>
+    </div>
+  </div>
+  <div class="sae-card hl">
+    <div class="sae-top">
+      <div class="sae-title-wrap"><span class="sae-num">SAé 2.3</span><h3>Analyse des composants du vin</h3></div>
+      <div class="sae-badges"><span class="sbadge experimenter">Expérimenter</span><a href="sae23.html" class="voir-plus">Voir en détail →</a></div>
+    </div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Comprendre les étapes de fabrication du vin et analyser ses composants pour vérifier la conformité aux cahiers des charges.</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>Dosage des sucres (DNS, HPLC), de l'alcool (réfractométrie, aérométrie), des sulfites (iodométrie), des acides organiques (CLHP).</p><div class="tags"><span class="tag">Vin</span><span class="tag">HPLC</span><span class="tag">Sulfites</span><span class="tag">Réfractométrie</span><span class="tag">Acides organiques</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><p>Le vin est un produit complexe — et cette SAé l'a démontré en nous faisant dérouler un ensemble complet d'analyses complémentaires pour caractériser un même échantillon. Jongler entre DNS, HPLC, réfractométrie et iodométrie sur trois vins différents a considérablement renforcé ma rigueur méthodologique et ma capacité à choisir l'outil adapté à la grandeur mesurée.</p></div></div>
+    </div>
+    <div class="sae-media">
+      <div class="info-label" style="padding:1rem 1.5rem 0;">Photo</div>
+      <img src="img/sae23.jpg" alt="SAé 2.3" class="sae-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="sae-photo-wrap" style="display:none">Photo à venir</div>
+    </div>
+  </div>
+  <div class="sae-card">
+    <div class="sae-top">
+      <div class="sae-title-wrap"><span class="sae-num">SAé 2.4</span><h3>Présenter un équipement de production alimentaire</h3></div>
+      <div class="sae-badges"><span class="sbadge produire">Produire</span></div>
+    </div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Se familiariser avec l'équipement permettant la production d'un aliment. Visite du Cépal à Artem (Nancy).</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>Découverte du matériel de charcuterie et de panification : poussoir à saucisse, four, pétrisseuse industrielle.</p><div class="tags"><span class="tag">Panification</span><span class="tag">Charcuterie</span><span class="tag">Équipements industriels</span><span class="tag">Cépal Artem</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><p>Plutôt que des TP en labo, cette SAé nous a emmenés voir du matériel de production réel au Cépal. Des pétrisseuses industrielles, des fours, du matériel de charcuterie — c'est difficile à se représenter sur un schéma, mais très parlant quand on est physiquement devant. C'est là que j'ai réalisé qu'on apprend plus en une heure sur le terrain qu'en plusieurs séances de cours sur le même sujet.</p></div></div>
+    </div>
+    <div class="sae-media">
+      <div class="info-label" style="padding:1rem 1.5rem 0;">Photo</div>
+      <img src="img/sae24.jpg" alt="SAé 2.4" class="sae-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="sae-photo-wrap" style="display:none">Photo à venir</div>
+    </div>
+  </div></div>
+
+<div class="nav-pages">
+  <div class="np-card current"><div class="np-label">Vous êtes ici</div><h3>SAé 1ère année</h3><p>Semestres 1 & 2 · 2023–2024</p></div>
+  <a href="projets_annee2.html" class="np-card"><div class="np-label">Suivant</div><h3>SAé 2ème année</h3><p>Semestres 3 & 4 · 2024–2025</p></a>
+  <a href="stages.html" class="np-card"><div class="np-label">Découvrir</div><h3>Mes stages</h3><p>3 expériences de terrain</p></a>
+</div>
+<div class="retour"><a href="portfolio_florian_thomas.html">← Retour à l'accueil</a></div>
+</body>
+</html>
