@@ -9,66 +9,124 @@
 :root{--cream:#F7F4EF;--parchment:#EDE8DE;--wine:#6B2D3E;--gold:#B8966A;--charcoal:#2A2825;--muted:#6E6A62;--light:#9E9A92;--border:#D8D2C6;--comp:#D68A3A;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;font-size:18px;line-height:1.8;}
+
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;letter-spacing:0.08em;color:var(--wine);text-transform:uppercase;text-decoration:none;}
 nav ul{list-style:none;display:flex;gap:3rem;}
-nav a{text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+nav a{text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
 nav a:hover,nav a.active{color:var(--wine);}
+
 .hero{position:relative;height:100vh;padding-top:72px;overflow:hidden;display:flex;align-items:flex-end;}
 .hero-bg{position:absolute;inset:0;background:var(--charcoal);}
-.hero-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(42,40,37,0.98) 0%,rgba(42,40,37,0.15) 60%,transparent 100%);}
+.hero-img{position:absolute;inset:0;background:url('sae12.png') center/cover no-repeat;opacity:.28;}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(42,40,37,.97) 0%,rgba(42,40,37,.3) 55%,transparent 100%);}
 .hero-content{position:relative;z-index:1;padding:5rem 7vw;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:4rem;}
-.hero-tag{display:inline-block;background:var(--comp);color:white;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;padding:0.4rem 1.1rem;margin-bottom:1.5rem;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,4.5rem);font-weight:300;color:white;line-height:1.05;margin-bottom:0.75rem;}
-.hero-sub{font-size:0.95rem;color:rgba(255,255,255,0.45);letter-spacing:0.04em;}
-.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:0.5rem;flex-shrink:0;padding-bottom:0.5rem;}
-.hero-scroll span{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);}
-.hero-scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.3));}
-.sec-label{font-size:0.7rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.hero-tag{display:inline-block;background:var(--comp);color:white;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;padding:.4rem 1.1rem;margin-bottom:1.5rem;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,4.5rem);font-weight:300;color:white;line-height:1.05;margin-bottom:.75rem;}
+.hero-sub{font-size:.9rem;color:rgba(255,255,255,.4);letter-spacing:.06em;}
+.hero-loc{font-size:.82rem;color:rgba(255,255,255,.28);letter-spacing:.04em;margin-top:.35rem;}
+.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:.5rem;flex-shrink:0;padding-bottom:.5rem;}
+.hero-scroll span{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.hero-scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.3));}
+
+.sec-label{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
 h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.05;margin-bottom:2rem;}
 h2 em{font-style:italic;color:var(--wine);}
+h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:.75rem;margin-top:.4rem;}
+.info-method-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--charcoal);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
 p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.25rem;}
+p:last-child{margin-bottom:0;}
 p strong{color:var(--charcoal);font-weight:500;}
-.two-col{display:grid;grid-template-columns:1fr 1fr;min-height:60vh;}
-.col-left{padding:7vw 4vw 7vw 7vw;display:flex;flex-direction:column;justify-content:center;background:white;border-right:1px solid var(--border);}
-.col-right{padding:7vw 7vw 7vw 4vw;display:flex;flex-direction:column;justify-content:center;background:var(--cream);}
-.comp-badge{display:inline-flex;align-items:center;gap:0.75rem;border:1px solid var(--comp);padding:0.6rem 1.25rem;margin-bottom:2rem;}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;}
+.col-left{padding:7vw 4vw 7vw 7vw;display:flex;flex-direction:column;justify-content:flex-start;background:white;border-right:1px solid var(--border);}
+.col-right{padding:7vw 7vw 7vw 4vw;display:flex;flex-direction:column;justify-content:flex-start;background:var(--cream);}
+
+.comp-badge{display:inline-flex;align-items:center;gap:.75rem;border:1px solid var(--comp);padding:.6rem 1.25rem;margin-bottom:2rem;}
 .comp-dot{width:9px;height:9px;border-radius:50%;background:var(--comp);flex-shrink:0;}
-.comp-text{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--comp);font-weight:500;}
-.obj-list{list-style:none;margin:1.25rem 0;}
-.obj-list li{padding:0.8rem 0;border-bottom:1px solid var(--border);font-size:0.95rem;color:var(--muted);display:flex;align-items:flex-start;gap:1rem;line-height:1.7;}
-.obj-list li::before{content:'—';color:var(--gold);flex-shrink:0;}
-.mat-grid{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
-.mat-tag{border:1px solid var(--border);padding:0.4rem 0.9rem;font-size:0.82rem;color:var(--muted);background:white;}
-.photos-section{padding:7vw;background:var(--parchment);}
-.photos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem;}
+.comp-text{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--comp);font-weight:500;}
+
+.bullet-list{list-style:none;margin:.5rem 0 0;}
+.bullet-list li{padding:.7rem 0;border-bottom:1px solid var(--border);font-size:.95rem;color:var(--muted);display:flex;align-items:flex-start;gap:1rem;line-height:1.6;}
+.bullet-list li:last-child{border-bottom:none;}
+.bullet-list li::before{content:'—';color:var(--gold);flex-shrink:0;}
+
+.ac-list{list-style:none;margin:.5rem 0 0;}
+.ac-list li{padding:.9rem 0;border-bottom:1px solid var(--border);font-size:.95rem;color:var(--muted);display:flex;align-items:flex-start;gap:1.25rem;line-height:1.6;}
+.ac-list li:last-child{border-bottom:none;}
+.ac-list li::before{content:'—';color:var(--gold);flex-shrink:0;}
+.ac-code{font-size:.9rem;font-weight:500;color:var(--charcoal);flex-shrink:0;}
+
+.tag-grid{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem;}
+.tag{border:1px solid var(--border);padding:.35rem .85rem;font-size:.8rem;color:var(--muted);background:white;}
+
+.context-list{display:flex;flex-direction:column;gap:1rem;margin-top:1rem;}
+.context-item{border-left:3px solid var(--comp);padding:1rem 1.25rem;background:white;}
+.context-type{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--comp);margin-bottom:.2rem;}
+.context-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--charcoal);}
+
+.group-header{grid-column:1 / -1;display:flex;align-items:center;gap:1.5rem;padding:1.75rem 0 1rem;border-bottom:1px solid var(--border);}
+.group-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;font-style:italic;color:var(--comp);line-height:1;flex-shrink:0;}
+.group-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);line-height:1.1;}
+.group-sub{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--light);margin-top:.2rem;}
+.info-block--wide{grid-column:1 / -1;}
+.info-block-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+
+.methods-section{padding:7vw;background:var(--parchment);}
+.methods-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;}
+.info-block{background:white;padding:2.5rem;}
+.info-block:last-child{margin-bottom:0;}
+.info-block h3{margin-bottom:1.25rem;}
+.info-block p{margin-bottom:1rem;}
+.info-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;margin-top:1.25rem;}
+
+.photos-section{padding:7vw;background:var(--charcoal);}
+.photos-section .sec-label{color:rgba(255,255,255,.35);}
+.photos-section h2{color:white;}
+.photos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem;}
 .photo-card{position:relative;overflow:hidden;aspect-ratio:3/4;}
-.photo-card img{width:100%;height:100%;object-fit:cover;filter:brightness(0.9);transition:filter 0.3s;}
+.photo-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.85);transition:filter .3s;}
 .photo-card:hover img{filter:brightness(1);}
-.photo-caption{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(to top,rgba(42,40,37,0.85) 0%,transparent 100%);font-size:0.78rem;color:rgba(255,255,255,0.85);}
+.photo-placeholder{width:100%;height:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;}
+.photo-placeholder span:first-child{font-family:'Cormorant Garamond',serif;font-size:2rem;font-style:italic;color:rgba(255,255,255,.2);}
+.photo-placeholder span:last-child{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);}
+.photo-caption{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(to top,rgba(42,40,37,.85) 0%,transparent 100%);font-size:.78rem;color:rgba(255,255,255,.75);}
+
 .bottom-two{display:grid;grid-template-columns:1fr 1fr;min-height:50vh;}
-.col-wine{padding:7vw 4vw 7vw 7vw;background:var(--wine);border-right:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;justify-content:center;}
-.col-wine .sec-label{color:rgba(255,255,255,0.4);}
+.col-wine{padding:7vw 4vw 7vw 7vw;background:var(--wine);border-right:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;justify-content:center;}
+.col-wine .sec-label{color:rgba(255,255,255,.4);}
 .col-wine h2{color:white;}
-.col-wine p{color:rgba(255,255,255,0.65);}
-.col-parch{padding:7vw 7vw 7vw 4vw;background:var(--parchment);display:flex;flex-direction:column;justify-content:center;gap:2rem;}
-.ressenti-block{border-left:4px solid var(--gold);padding:2rem;background:rgba(255,255,255,0.6);}
-.ressenti-block p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--muted)!important;line-height:1.9;margin-bottom:0!important;}
-.quote-label{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.col-wine p{color:rgba(255,255,255,.65);}
+.col-wine .tag{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.45);background:transparent;}
+.col-parch{padding:7vw 7vw 7vw 4vw;background:var(--parchment);display:flex;flex-direction:column;justify-content:center;}
+.quote-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
+.ressenti-block{border-left:4px solid var(--gold);padding:2rem;background:rgba(255,255,255,.6);}
+.ressenti-block p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--muted)!important;line-height:1.9;margin-bottom:0!important;}
+
 .nav-pages{background:var(--charcoal);padding:5rem 7vw;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-.np-card{border:1px solid rgba(255,255,255,0.1);padding:2.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.4rem;position:relative;transition:border-color 0.2s,background 0.2s;}
-.np-card:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
+.np-card{border:1px solid rgba(255,255,255,.1);padding:2.5rem;text-decoration:none;display:flex;flex-direction:column;gap:.4rem;position:relative;transition:border-color .2s,background .2s;}
+.np-card:hover{border-color:var(--gold);background:rgba(255,255,255,.03);}
 .np-card::after{content:'→';position:absolute;right:2rem;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.25rem;}
-.np-label{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
-.np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:white;}
-.np-card p{font-size:0.82rem;color:rgba(255,255,255,0.35);}
+.np-label{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+.np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:white;margin-bottom:0;}
+.np-card p{font-size:.82rem;color:rgba(255,255,255,.35);margin-bottom:0;}
 .retour{padding:2rem 7vw;background:var(--cream);border-top:1px solid var(--border);}
-.retour a{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--light);text-decoration:none;}
+.retour a{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--light);text-decoration:none;}
 .retour a:hover{color:var(--wine);}
-@media(max-width:1100px){nav ul{display:none;}.two-col,.bottom-two,.nav-pages{grid-template-columns:1fr;}.photos-grid{grid-template-columns:repeat(2,1fr);}.hero-scroll{display:none;}.col-left,.col-right,.col-wine,.col-parch{padding:5vw;}}
+
+@media(max-width:1100px){
+  nav ul{display:none;}
+  .two-col,.bottom-two,.nav-pages,.methods-grid{grid-template-columns:1fr;}
+  .photos-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-scroll{display:none;}
+  .col-left,.col-right,.col-wine,.col-parch{padding:5vw;}
+  .methods-section,.photos-section{padding:5vw;}
+  .info-block-inner{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
+
 <nav>
   <a href="portfolio_florian_thomas.html" class="nav-logo">Florian Thomas</a>
   <ul>
@@ -82,12 +140,14 @@ p strong{color:var(--charcoal);font-weight:500;}
 
 <div class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-img"></div>
   <div class="hero-gradient"></div>
   <div class="hero-content">
     <div>
-      <span class="hero-tag">Compétence Expérimenter — Semestre 1 · 2023–2024 · IUT Nancy-Brabois</span>
-      <h1>SAé 1.2 — Explorer la place d'une cellule</h1>
+      <span class="hero-tag">Compétence Expérimenter — Niveau 1 · Semestre 1 · IUT Nancy-Brabois</span>
+      <h1>SAé 1.2 — Explorer la place<br>d'une cellule</h1>
       <p class="hero-sub">BUT Génie Biologique SAB · 2023–2024</p>
+      <p class="hero-loc">Coupe histologique · Pancréas de rat</p>
     </div>
     <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Défiler</span></div>
   </div>
@@ -95,39 +155,149 @@ p strong{color:var(--charcoal);font-weight:500;}
 
 <div class="two-col">
   <div class="col-left">
-    <div class="sec-label">Présentation</div>
-    <h2>Contexte <em>&amp; objectifs</em></h2>
-    <div class="comp-badge"><div class="comp-dot"></div><div class="comp-text">Expérimenter — Semestre 1 · 2023–2024</div></div>
-    <p><strong>But :</strong> Comprendre et reconnaître des cellules spécifiques à un organe.</p>
-    <p><strong>Principe :</strong> Choisir un organe, le préparer sur une lame grâce à un procédé de paraffinage et à l'aide de matériel spécifique. L'organe choisi est le pancréas d'un rat, afin d'observer les îlots de Langerhans.</p>
-    <ul class="obj-list"><li>Préparer et paraflner un organe animal (pancréas de rat)</li><li>Réaliser des coupes histologiques au microtome Leica</li><li>Appliquer des colorations histologiques (HE et Trichome de Masson)</li><li>Observer et interpréter des coupes au microscope optique</li></ul>
+    <div class="comp-badge"><div class="comp-dot"></div><div class="comp-text">Expérimenter — Niveau 1 · Semestre 1</div></div>
+    <p><strong>But :</strong> Comprendre et reconnaître des cellules spécifiques à un organe à travers la réalisation d'une coupe histologique.</p>
+    <p><strong>Démarche :</strong> Choisir un organe, le préparer sur une lame grâce à un procédé de paraffinage, puis l'observer au microscope après coloration — pour relier des cellules précises à leur fonction dans l'organe.</p>
+    <div class="sec-label" style="margin-top:1.5rem;">Compétences &amp; apprentissages</div>
+    <h2>Ce que cette SAé <em>développe</em></h2>
+    <ul class="ac-list">
+      <li><span class="ac-code">AC12.01</span>Décrire de manière objective un phénomène naturel</li>
+      <li><span class="ac-code">AC12.02</span>Identifier une problématique scientifique</li>
+      <li><span class="ac-code">AC12.03</span>Utiliser les outils adaptés à la réalisation d'une expérimentation</li>
+      <li><span class="ac-code">AC12.04</span>Rendre compte des résultats d'une expérimentation de manière appropriée</li>
+      <li><span class="ac-code">AC12.05</span>Identifier et référencer des documents scientifiques et techniques</li>
+    </ul>
+    <div class="sec-label" style="margin-top:1.75rem;">Ressources mobilisées</div>
+    <div class="tag-grid">
+      <span class="tag">Physiologie animale</span>
+      <span class="tag">Histologie</span>
+      <span class="tag">Biologie cellulaire</span>
+    </div>
   </div>
   <div class="col-right">
-    <div class="sec-label">Paramètres &amp; matériel</div>
-    <h2>Moyens <em>mis en œuvre</em></h2>
-    <div class="sec-label">Notions travaillées</div>
-    <div class="mat-grid"><span class="mat-tag">Histologie</span><span class="mat-tag">Paraffinage</span><span class="mat-tag">Microtome</span><span class="mat-tag">Pancréas</span><span class="mat-tag">Îlots de Langerhans</span><span class="mat-tag">Coloration HE</span></div>
-    <div class="sec-label" style="margin-top:1.5rem;">Matériel utilisé</div>
-    <div class="mat-grid"><span class="mat-tag">Microtome Leica</span><span class="mat-tag">Plaque chauffante</span><span class="mat-tag">Hématoxyline-Éosine</span><span class="mat-tag">Trichome de Masson</span><span class="mat-tag">Microscope optique</span><span class="mat-tag">Lames et lamelles</span><span class="mat-tag">Solutions de déparaffinage</span></div>
+    <div class="sec-label">Organe étudié</div>
+    <h2>Le <em>pancréas</em> de rat</h2>
+    <p>L'organe choisi a été le pancréas d'un rat mâle Wistar — un organe à la fois exocrine et endocrine, dont le rôle dans la digestion et la régulation de la glycémie en fait un sujet d'étude particulièrement riche.</p>
+    <div class="sec-label" style="margin-top:1.5rem;">Ce qu'on a recherché</div>
+    <ul class="bullet-list">
+      <li>Les îlots de Langerhans — amas de cellules endocrines alpha et bêta</li>
+      <li>La différenciation entre collagène, cytoplasme et noyau selon la coloration</li>
+    </ul>
   </div>
 </div>
 
+<div class="methods-section">
+  <div class="sec-label">Méthode expérimentale</div>
+  <h2>De l'organe à la <em>lame d'observation</em></h2>
+  <p style="max-width:660px;">Deux grandes étapes structurent une coupe histologique réussie : une préparation minutieuse de l'échantillon, puis une coloration qui révèle ce qu'on cherche à observer.</p>
 
+  <div class="methods-grid">
+    <div class="group-header">
+      <div class="group-num">01</div>
+      <div>
+        <div class="group-title">Préparation de la coupe</div>
+        <div class="group-sub">Paraffinage et microtome</div>
+      </div>
+    </div>
+    <div class="info-block info-block--wide">
+      <h3 class="info-method-title">Inclusion et découpe au microtome</h3>
+      <div class="info-block-inner">
+        <div>
+          <div class="info-label">En pratique</div>
+          <p>L'organe est fixé puis inclus dans de la paraffine pour le rigidifier. Un microtome permet ensuite d'en découper des tranches extrêmement fines, déposées sur lame après déparaffinage.</p>
+        </div>
+        <div>
+          <div class="info-label">Ce que ça apporte</div>
+          <p>C'est l'étape la plus délicate de toute la manip — la moindre imperfection de découpe rend l'observation impossible. C'est elle qui détermine si le reste du travail aura un sens.</p>
+        </div>
+      </div>
+    </div>
+    <div class="group-header">
+      <div class="group-num">02</div>
+      <div>
+        <div class="group-title">Coloration & observation</div>
+        <div class="group-sub">Hématoxyline-éosine et Trichrome de Masson</div>
+      </div>
+    </div>
+    <div class="info-block info-block--wide">
+      <h3 class="info-method-title">Double coloration différentielle</h3>
+      <div class="info-block-inner">
+        <div>
+          <div class="info-label">En pratique</div>
+          <p>Deux colorations ont été appliquées pour distinguer les structures : le collagène apparaît en bleu, le cytoplasme en rose, et le noyau en bleu foncé — ce qui permet de repérer précisément les îlots de Langerhans.</p>
+        </div>
+        <div>
+          <div class="info-label">Ce que ça apporte</div>
+          <p>Sans cette double coloration, impossible de différencier les types cellulaires au microscope. C'est ce contraste qui rend visibles des cellules alpha et bêta normalement indissociables à l'œil.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="photos-section">
+  <div class="sec-label">Documentation visuelle</div>
+  <h2>Photos <em>de la SAé</em></h2>
+  <div class="photos-grid">
+    <div class="photo-card">
+      <img src="sae12_1.png" alt="Microtome et lames" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="photo-placeholder" style="display:none"><span>I</span><span>Photo à venir</span></div>
+      <div class="photo-caption">Microtome et lames</div>
+    </div>
+    <div class="photo-card">
+      <img src="sae12_2.png" alt="Coupe en préparation" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="photo-placeholder" style="display:none"><span>II</span><span>Photo à venir</span></div>
+      <div class="photo-caption">Coupe en préparation</div>
+    </div>
+    <div class="photo-card">
+      <img src="sae12_3.png" alt="Observation au microscope" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="photo-placeholder" style="display:none"><span>III</span><span>Photo à venir</span></div>
+      <div class="photo-caption">Observation au microscope</div>
+    </div>
+    <div class="photo-card">
+      <img src="sae12_4.png" alt="Îlots de Langerhans colorés" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="photo-placeholder" style="display:none"><span>IV</span><span>Photo à venir</span></div>
+      <div class="photo-caption">Îlots de Langerhans colorés</div>
+    </div>
+  </div>
+</div>
 
 <div class="bottom-two">
   <div class="col-wine">
     <div class="sec-label">Bilan</div>
-    <h2>Bilan <em>&amp; conclusion</em></h2>
-    <p>Cette SAé nous a fait découvrir de nouvelles techniques et matériels de découpe, tout en nous faisant travailler sur les cours de physiologie animale.</p>
-    <div class="mat-grid" style="margin-top:1.5rem;"><span class="mat-tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;">Histologie</span><span class="mat-tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;">Paraffinage</span><span class="mat-tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;">Microtome</span></div>
+    <h2>Compétences <em>acquises</em></h2>
+    <p>Cette SAé nous a fait découvrir des techniques et du matériel de découpe totalement nouveaux, tout en remobilisant directement les cours de physiologie animale.</p>
+    <p>Le résultat final n'a pas été parfait — la découpe au microtome a laissé des plis qui ont compliqué l'observation — mais cet imprévu en a dit long sur l'exigence de précision que demande l'histologie.</p>
+    <div class="tag-grid" style="margin-top:1rem;">
+      <span class="tag">Histologie</span>
+      <span class="tag">Microtome</span>
+      <span class="tag">Coloration différentielle</span>
+    </div>
   </div>
   <div class="col-parch">
     <div class="quote-label">Mon ressenti</div>
-    <div class="ressenti-block"><p>« À compléter — décrivez ici ce que vous avez apprécié, ce qui a été difficile, ce que cette SAé vous a apporté personnellement... »</p></div>
+    <div class="ressenti-block">
+      <p>Ce qui m'a marqué dans cette SAé, c'est que le résultat n'était pas conforme à ce qu'on attendait — le pancréas s'est un peu effrité lors de la découpe, et les plis obtenus ont rendu l'observation des îlots de Langerhans plus compliquée. Plutôt frustrant sur le moment, mais ça m'a appris une vraie leçon : en histologie, la qualité du résultat final dépend entièrement de la précision du geste, bien avant d'arriver au microscope.</p>
+    </div>
   </div>
 </div>
 
-<div class="nav-pages"><a href="sae11.html" class="np-card"><div class="np-label">Précédent</div><h3>SAé 1.1 — Analyses biologiques</h3><p>Compétence Analyser · Semestre 1</p></a><a href="sae13.html" class="np-card"><div class="np-label">Suivant</div><h3>SAé 1.3 — Contrôler l'hygiène</h3><p>Compétence Animer · Semestre 1</p></a></div>
-<div class="retour"><a href="projets.html">← Retour aux projets 1ère année</a></div>
+<div class="nav-pages">
+  <a href="sae11.html" class="np-card">
+    <div class="np-label">Précédent</div>
+    <h3>SAé 1.1 — Réaliser des analyses</h3>
+    <p>Compétence Analyser · Semestre 1</p>
+  </a>
+  <a href="sae13.html" class="np-card">
+    <div class="np-label">Suivant</div>
+    <h3>SAé 1.3 — Contrôler l'hygiène lors d'une production</h3>
+    <p>Compétence Animer · Semestre 1</p>
+  </a>
+</div>
+
+<div class="retour">
+  <a href="projets.html">← Retour aux projets 1ère année</a>
+</div>
+
 </body>
 </html>

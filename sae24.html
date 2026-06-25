@@ -9,66 +9,124 @@
 :root{--cream:#F7F4EF;--parchment:#EDE8DE;--wine:#6B2D3E;--gold:#B8966A;--charcoal:#2A2825;--muted:#6E6A62;--light:#9E9A92;--border:#D8D2C6;--comp:#5A8A3C;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;font-size:18px;line-height:1.8;}
+
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;letter-spacing:0.08em;color:var(--wine);text-transform:uppercase;text-decoration:none;}
 nav ul{list-style:none;display:flex;gap:3rem;}
-nav a{text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+nav a{text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
 nav a:hover,nav a.active{color:var(--wine);}
+
 .hero{position:relative;height:100vh;padding-top:72px;overflow:hidden;display:flex;align-items:flex-end;}
 .hero-bg{position:absolute;inset:0;background:var(--charcoal);}
-.hero-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(42,40,37,0.98) 0%,rgba(42,40,37,0.15) 60%,transparent 100%);}
+.hero-img{position:absolute;inset:0;background:url('sae24.png') center/cover no-repeat;opacity:.28;}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(42,40,37,.97) 0%,rgba(42,40,37,.3) 55%,transparent 100%);}
 .hero-content{position:relative;z-index:1;padding:5rem 7vw;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:4rem;}
-.hero-tag{display:inline-block;background:var(--comp);color:white;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;padding:0.4rem 1.1rem;margin-bottom:1.5rem;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,4.5rem);font-weight:300;color:white;line-height:1.05;margin-bottom:0.75rem;}
-.hero-sub{font-size:0.95rem;color:rgba(255,255,255,0.45);letter-spacing:0.04em;}
-.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:0.5rem;flex-shrink:0;padding-bottom:0.5rem;}
-.hero-scroll span{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);}
-.hero-scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.3));}
-.sec-label{font-size:0.7rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.hero-tag{display:inline-block;background:var(--comp);color:white;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;padding:.4rem 1.1rem;margin-bottom:1.5rem;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,4.5rem);font-weight:300;color:white;line-height:1.05;margin-bottom:.75rem;}
+.hero-sub{font-size:.9rem;color:rgba(255,255,255,.4);letter-spacing:.06em;}
+.hero-loc{font-size:.82rem;color:rgba(255,255,255,.28);letter-spacing:.04em;margin-top:.35rem;}
+.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:.5rem;flex-shrink:0;padding-bottom:.5rem;}
+.hero-scroll span{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.hero-scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.3));}
+
+.sec-label{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
 h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.05;margin-bottom:2rem;}
 h2 em{font-style:italic;color:var(--wine);}
+h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:.75rem;margin-top:.4rem;}
+.info-method-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--charcoal);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
 p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.25rem;}
+p:last-child{margin-bottom:0;}
 p strong{color:var(--charcoal);font-weight:500;}
-.two-col{display:grid;grid-template-columns:1fr 1fr;min-height:60vh;}
-.col-left{padding:7vw 4vw 7vw 7vw;display:flex;flex-direction:column;justify-content:center;background:white;border-right:1px solid var(--border);}
-.col-right{padding:7vw 7vw 7vw 4vw;display:flex;flex-direction:column;justify-content:center;background:var(--cream);}
-.comp-badge{display:inline-flex;align-items:center;gap:0.75rem;border:1px solid var(--comp);padding:0.6rem 1.25rem;margin-bottom:2rem;}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;}
+.col-left{padding:7vw 4vw 7vw 7vw;display:flex;flex-direction:column;justify-content:flex-start;background:white;border-right:1px solid var(--border);}
+.col-right{padding:7vw 7vw 7vw 4vw;display:flex;flex-direction:column;justify-content:flex-start;background:var(--cream);}
+
+.comp-badge{display:inline-flex;align-items:center;gap:.75rem;border:1px solid var(--comp);padding:.6rem 1.25rem;margin-bottom:2rem;}
 .comp-dot{width:9px;height:9px;border-radius:50%;background:var(--comp);flex-shrink:0;}
-.comp-text{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--comp);font-weight:500;}
-.obj-list{list-style:none;margin:1.25rem 0;}
-.obj-list li{padding:0.8rem 0;border-bottom:1px solid var(--border);font-size:0.95rem;color:var(--muted);display:flex;align-items:flex-start;gap:1rem;line-height:1.7;}
-.obj-list li::before{content:'—';color:var(--gold);flex-shrink:0;}
-.mat-grid{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
-.mat-tag{border:1px solid var(--border);padding:0.4rem 0.9rem;font-size:0.82rem;color:var(--muted);background:white;}
-.photos-section{padding:7vw;background:var(--parchment);}
+.comp-text{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--comp);font-weight:500;}
+
+.bullet-list{list-style:none;margin:.5rem 0 0;}
+.bullet-list li{padding:.7rem 0;border-bottom:1px solid var(--border);font-size:.95rem;color:var(--muted);display:flex;align-items:flex-start;gap:1rem;line-height:1.6;}
+.bullet-list li:last-child{border-bottom:none;}
+.bullet-list li::before{content:'—';color:var(--gold);flex-shrink:0;}
+
+.ac-list{list-style:none;margin:.5rem 0 0;}
+.ac-list li{padding:.9rem 0;border-bottom:1px solid var(--border);font-size:.95rem;color:var(--muted);display:flex;align-items:flex-start;gap:1.25rem;line-height:1.6;}
+.ac-list li:last-child{border-bottom:none;}
+.ac-list li::before{content:'—';color:var(--gold);flex-shrink:0;}
+.ac-code{font-size:.9rem;font-weight:500;color:var(--charcoal);flex-shrink:0;}
+
+.tag-grid{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem;}
+.tag{border:1px solid var(--border);padding:.35rem .85rem;font-size:.8rem;color:var(--muted);background:white;}
+
+.context-list{display:flex;flex-direction:column;gap:1rem;margin-top:1rem;}
+.context-item{border-left:3px solid var(--comp);padding:1rem 1.25rem;background:white;}
+.context-type{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--comp);margin-bottom:.2rem;}
+.context-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--charcoal);}
+
+.group-header{grid-column:1 / -1;display:flex;align-items:center;gap:1.5rem;padding:1.75rem 0 1rem;border-bottom:1px solid var(--border);}
+.group-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;font-style:italic;color:var(--comp);line-height:1;flex-shrink:0;}
+.group-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--charcoal);line-height:1.1;}
+.group-sub{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--light);margin-top:.2rem;}
+.info-block--wide{grid-column:1 / -1;}
+.info-block-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+
+.methods-section{padding:7vw;background:var(--parchment);}
+.methods-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;}
+.info-block{background:white;padding:2.5rem;}
+.info-block:last-child{margin-bottom:0;}
+.info-block h3{margin-bottom:1.25rem;}
+.info-block p{margin-bottom:1rem;}
+.info-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;margin-top:1.25rem;}
+
+.photos-section{padding:7vw;background:var(--charcoal);}
+.photos-section .sec-label{color:rgba(255,255,255,.35);}
+.photos-section h2{color:white;}
 .photos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem;}
 .photo-card{position:relative;overflow:hidden;aspect-ratio:3/4;}
-.photo-card img{width:100%;height:100%;object-fit:cover;filter:brightness(0.9);transition:filter 0.3s;}
+.photo-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.85);transition:filter .3s;}
 .photo-card:hover img{filter:brightness(1);}
-.photo-caption{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(to top,rgba(42,40,37,0.85) 0%,transparent 100%);font-size:0.78rem;color:rgba(255,255,255,0.85);}
+.photo-placeholder{width:100%;height:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;}
+.photo-placeholder span:first-child{font-family:'Cormorant Garamond',serif;font-size:2rem;font-style:italic;color:rgba(255,255,255,.2);}
+.photo-placeholder span:last-child{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);}
+.photo-caption{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(to top,rgba(42,40,37,.85) 0%,transparent 100%);font-size:.78rem;color:rgba(255,255,255,.75);}
+
 .bottom-two{display:grid;grid-template-columns:1fr 1fr;min-height:50vh;}
-.col-wine{padding:7vw 4vw 7vw 7vw;background:var(--wine);border-right:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;justify-content:center;}
-.col-wine .sec-label{color:rgba(255,255,255,0.4);}
+.col-wine{padding:7vw 4vw 7vw 7vw;background:var(--wine);border-right:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;justify-content:center;}
+.col-wine .sec-label{color:rgba(255,255,255,.4);}
 .col-wine h2{color:white;}
-.col-wine p{color:rgba(255,255,255,0.65);}
-.col-parch{padding:7vw 7vw 7vw 4vw;background:var(--parchment);display:flex;flex-direction:column;justify-content:center;gap:2rem;}
-.ressenti-block{border-left:4px solid var(--gold);padding:2rem;background:rgba(255,255,255,0.6);}
-.ressenti-block p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--muted)!important;line-height:1.9;margin-bottom:0!important;}
-.quote-label{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.col-wine p{color:rgba(255,255,255,.65);}
+.col-wine .tag{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.45);background:transparent;}
+.col-parch{padding:7vw 7vw 7vw 4vw;background:var(--parchment);display:flex;flex-direction:column;justify-content:center;}
+.quote-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
+.ressenti-block{border-left:4px solid var(--gold);padding:2rem;background:rgba(255,255,255,.6);}
+.ressenti-block p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--muted)!important;line-height:1.9;margin-bottom:0!important;}
+
 .nav-pages{background:var(--charcoal);padding:5rem 7vw;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-.np-card{border:1px solid rgba(255,255,255,0.1);padding:2.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.4rem;position:relative;transition:border-color 0.2s,background 0.2s;}
-.np-card:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
+.np-card{border:1px solid rgba(255,255,255,.1);padding:2.5rem;text-decoration:none;display:flex;flex-direction:column;gap:.4rem;position:relative;transition:border-color .2s,background .2s;}
+.np-card:hover{border-color:var(--gold);background:rgba(255,255,255,.03);}
 .np-card::after{content:'→';position:absolute;right:2rem;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.25rem;}
-.np-label{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
-.np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:white;}
-.np-card p{font-size:0.82rem;color:rgba(255,255,255,0.35);}
+.np-label{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+.np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:white;margin-bottom:0;}
+.np-card p{font-size:.82rem;color:rgba(255,255,255,.35);margin-bottom:0;}
 .retour{padding:2rem 7vw;background:var(--cream);border-top:1px solid var(--border);}
-.retour a{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--light);text-decoration:none;}
+.retour a{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--light);text-decoration:none;}
 .retour a:hover{color:var(--wine);}
-@media(max-width:1100px){nav ul{display:none;}.two-col,.bottom-two,.nav-pages{grid-template-columns:1fr;}.photos-grid{grid-template-columns:repeat(2,1fr);}.hero-scroll{display:none;}.col-left,.col-right,.col-wine,.col-parch{padding:5vw;}}
+
+@media(max-width:1100px){
+  nav ul{display:none;}
+  .two-col,.bottom-two,.nav-pages,.methods-grid{grid-template-columns:1fr;}
+  .photos-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-scroll{display:none;}
+  .col-left,.col-right,.col-wine,.col-parch{padding:5vw;}
+  .methods-section,.photos-section{padding:5vw;}
+  .info-block-inner{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
+
 <nav>
   <a href="portfolio_florian_thomas.html" class="nav-logo">Florian Thomas</a>
   <ul>
@@ -82,12 +140,14 @@ p strong{color:var(--charcoal);font-weight:500;}
 
 <div class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-img"></div>
   <div class="hero-gradient"></div>
   <div class="hero-content">
     <div>
-      <span class="hero-tag">Compétence Produire — Semestre 2 · 2023–2024 · IUT Nancy-Brabois</span>
-      <h1>SAé 2.4 — Présenter un équipement de production alimentaire</h1>
+      <span class="hero-tag">Compétence Produire — Niveau 1 · Semestre 2 · IUT Nancy-Brabois</span>
+      <h1>SAé 2.4 — Présenter un équipement<br>de production alimentaire</h1>
       <p class="hero-sub">BUT Génie Biologique SAB · 2023–2024</p>
+      <p class="hero-loc">Visite du Cépal · Artem, Nancy</p>
     </div>
     <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Défiler</span></div>
   </div>
@@ -95,39 +155,146 @@ p strong{color:var(--charcoal);font-weight:500;}
 
 <div class="two-col">
   <div class="col-left">
-    <div class="sec-label">Présentation</div>
-    <h2>Contexte <em>&amp; objectifs</em></h2>
-    <div class="comp-badge"><div class="comp-dot"></div><div class="comp-text">Produire — Semestre 2 · 2023–2024</div></div>
-    <p><strong>But :</strong> Voir la fabrication d'aliments ainsi que l'équipement de production.</p>
-    <p><strong>Principe :</strong> Visite du Cépal à Artem (Nancy) pour se familiariser avec l'équipement permettant la production d'aliments. Observation et manipulation de matériel de charcuterie et de panification à l'échelle industrielle.</p>
-    <ul class="obj-list"><li>Découvrir le matériel de panification : pétrisseuse Bongard, four de boulangerie</li><li>Observer la production de saucisses et de charcuterie</li><li>Comprendre les étapes d'une ligne de production alimentaire</li><li>Rédiger une fiche de présentation d'un équipement de production</li></ul>
+    <div class="comp-badge"><div class="comp-dot"></div><div class="comp-text">Produire — Niveau 1 · Semestre 2</div></div>
+    <p><strong>But :</strong> Découvrir la fabrication d'aliments et l'équipement de production associé, en conditions réelles.</p>
+    <p><strong>Démarche :</strong> Une visite du Cépal, centre technique implanté sur le campus Artem à Nancy, pour observer du matériel professionnel de charcuterie et de panification.</p>
+    <div class="sec-label" style="margin-top:1.5rem;">Compétences &amp; apprentissages</div>
+    <h2>Ce que cette SAé <em>développe</em></h2>
+    <ul class="ac-list">
+      <li><span class="ac-code">AC14.01</span>Identifier les filières et les produits</li>
+      <li><span class="ac-code">AC14.02</span>Réaliser l'analyse fonctionnelle d'une ligne de production</li>
+      <li><span class="ac-code">AC14.03</span>Utiliser des outils de contrôle et d'analyse de la production</li>
+    </ul>
+    <div class="sec-label" style="margin-top:1.75rem;">Ressources mobilisées</div>
+    <div class="tag-grid">
+      <span class="tag">Charcuterie</span>
+      <span class="tag">Panification</span>
+      <span class="tag">Lignes de production</span>
+    </div>
   </div>
   <div class="col-right">
-    <div class="sec-label">Paramètres &amp; matériel</div>
-    <h2>Moyens <em>mis en œuvre</em></h2>
-    <div class="sec-label">Notions travaillées</div>
-    <div class="mat-grid"><span class="mat-tag">Panification</span><span class="mat-tag">Charcuterie</span><span class="mat-tag">Équipements industriels</span><span class="mat-tag">Cépal Artem</span><span class="mat-tag">Pétrisseuse Bongard</span><span class="mat-tag">Four de boulangerie</span></div>
-    <div class="sec-label" style="margin-top:1.5rem;">Matériel utilisé</div>
-    <div class="mat-grid"><span class="mat-tag">Pétrisseuse Bongard (spirale)</span><span class="mat-tag">Machine Cépal</span><span class="mat-tag">Poussoir à saucisse</span><span class="mat-tag">Four de boulangerie</span><span class="mat-tag">Matériel de fumage</span><span class="mat-tag">Équipements de tranchage</span></div>
+    <div class="sec-label">Lieu visité</div>
+    <h2>Le <em>Cépal</em>, à Artem</h2>
+    <p>Plutôt qu'un TP classique, cette SAé a pris la forme d'une visite — l'occasion d'observer du matériel de production à l'échelle industrielle, impossible à reproduire en salle de TP.</p>
+    <div class="sec-label" style="margin-top:1.5rem;">Deux ateliers observés</div>
+    <ul class="bullet-list">
+      <li>Atelier charcuterie — préparation et embossage</li>
+      <li>Atelier panification — pétrissage, façonnage, cuisson</li>
+    </ul>
   </div>
 </div>
 
+<div class="methods-section">
+  <div class="sec-label">Équipements observés</div>
+  <h2>Deux lignes de <em>production</em></h2>
+  <p style="max-width:660px;">Une visite organisée autour de deux ateliers très différents, chacun révélant l'échelle et les contraintes propres à sa filière.</p>
 
+  <div class="methods-grid">
+    <div class="group-header">
+      <div class="group-num">01</div>
+      <div>
+        <div class="group-title">Ligne charcuterie</div>
+        <div class="group-sub">De la matière première au produit fini</div>
+      </div>
+    </div>
+    <div class="info-block info-block--wide">
+      <h3 class="info-method-title">Préparation et embossage</h3>
+      <div class="info-block-inner">
+        <div>
+          <div class="info-label">En pratique</div>
+          <p>Observation des étapes de préparation des viandes, d'assaisonnement et d'embossage — avec du matériel professionnel bien plus volumineux et automatisé que ce qu'on manipule en TP.</p>
+        </div>
+        <div>
+          <div class="info-label">Ce que ça apporte</div>
+          <p>Voir une ligne de production réelle aide à comprendre l'échelle à laquelle ces procédés doivent fonctionner — entre rigueur hygiénique et contraintes de rendement.</p>
+        </div>
+      </div>
+    </div>
+    <div class="group-header">
+      <div class="group-num">02</div>
+      <div>
+        <div class="group-title">Ligne panification</div>
+        <div class="group-sub">Pétrissage et cuisson</div>
+      </div>
+    </div>
+    <div class="info-block info-block--wide">
+      <h3 class="info-method-title">Du pétrin au four</h3>
+      <div class="info-block-inner">
+        <div>
+          <div class="info-label">En pratique</div>
+          <p>Le pétrin automatisé, le façonnage des baguettes et leur cuisson en four professionnel ont été présentés étape par étape, avec les paramètres clés — temps, température — propres à chaque phase.</p>
+        </div>
+        <div>
+          <div class="info-label">Ce que ça apporte</div>
+          <p>Cette visite a permis de relier des notions de génie des procédés vues en cours à des équipements concrets, et de mesurer le coût et la complexité du matériel utilisé en industrie alimentaire.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="photos-section">
+  <div class="sec-label">Documentation visuelle</div>
+  <h2>Photos <em>de la SAé</em></h2>
+  <div class="photos-grid">
+    <div class="photo-card">
+      <img src="sae24_1.png" alt="Atelier charcuterie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="photo-placeholder" style="display:none"><span>I</span><span>Photo à venir</span></div>
+      <div class="photo-caption">Atelier charcuterie</div>
+    </div>
+    <div class="photo-card">
+      <img src="sae24_2.png" alt="Pétrin automatisé" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="photo-placeholder" style="display:none"><span>II</span><span>Photo à venir</span></div>
+      <div class="photo-caption">Pétrin automatisé</div>
+    </div>
+    <div class="photo-card">
+      <img src="sae24_3.png" alt="Cuisson des baguettes" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="photo-placeholder" style="display:none"><span>III</span><span>Photo à venir</span></div>
+      <div class="photo-caption">Cuisson des baguettes</div>
+    </div>
+    <div class="photo-card">
+      <img src="sae24_4.png" alt="Bâtiment du Cépal" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="photo-placeholder" style="display:none"><span>IV</span><span>Photo à venir</span></div>
+      <div class="photo-caption">Bâtiment du Cépal</div>
+    </div>
+  </div>
+</div>
 
 <div class="bottom-two">
   <div class="col-wine">
     <div class="sec-label">Bilan</div>
-    <h2>Bilan <em>&amp; conclusion</em></h2>
-    <p>Cette SAé nous a permis de nous familiariser avec du matériel de production coûteux, ainsi que d'observer une production alimentaire de manière professionnelle.</p>
-    <div class="mat-grid" style="margin-top:1.5rem;"><span class="mat-tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;">Panification</span><span class="mat-tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;">Charcuterie</span><span class="mat-tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;">Équipements industriels</span></div>
+    <h2>Compétences <em>acquises</em></h2>
+    <p>Cette SAé, sous forme de visite plutôt que de TP, nous a permis de nous familiariser avec du matériel de production coûteux et d'observer une fabrication alimentaire dans un contexte réellement professionnel — une perspective complémentaire à tout ce qu'on peut faire en salle de TP.</p>
+    <div class="tag-grid" style="margin-top:1rem;">
+      <span class="tag">Visite industrielle</span>
+      <span class="tag">Équipement professionnel</span>
+      <span class="tag">Génie des procédés</span>
+    </div>
   </div>
   <div class="col-parch">
     <div class="quote-label">Mon ressenti</div>
-    <div class="ressenti-block"><p>« À compléter — décrivez ici ce que vous avez apprécié, ce qui a été difficile, ce que cette SAé vous a apporté personnellement... »</p></div>
+    <div class="ressenti-block">
+      <p>Changer de format pour une fois — sortir de la salle de TP pour aller voir du vrai matériel de production — ça change la perspective. Le pétrin automatisé et la ligne de charcuterie donnent une autre échelle à ce qu'on fait en cours. C'était une SAé plus passive que d'habitude, mais utile pour visualiser concrètement où peuvent mener ces compétences.</p>
+    </div>
   </div>
 </div>
 
-<div class="nav-pages"><a href="sae23.html" class="np-card"><div class="np-label">Précédent</div><h3>SAé 2.3 — Analyse du vin</h3><p>Compétence Expérimenter · Semestre 2</p></a><a href="projets_annee2.html" class="np-card"><div class="np-label">Suivant</div><h3>SAé 2ème année</h3><p>Semestres 3 &amp; 4 · 2024–2025</p></a></div>
-<div class="retour"><a href="projets.html">← Retour aux projets 1ère année</a></div>
+<div class="nav-pages">
+  <a href="sae23.html" class="np-card">
+    <div class="np-label">Précédent</div>
+    <h3>SAé 2.3 — Analyse des composants du vin</h3>
+    <p>Compétence Expérimenter · Semestre 2</p>
+  </a>
+  <a href="sae31.html" class="np-card">
+    <div class="np-label">Suivant</div>
+    <h3>SAé 3.1 — Mise en œuvre d'une expérimentation</h3>
+    <p>Compétences Analyser & Expérimenter · Semestre 3</p>
+  </a>
+</div>
+
+<div class="retour">
+  <a href="projets.html">← Retour aux projets 1ère année</a>
+</div>
+
 </body>
 </html>
