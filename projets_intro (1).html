@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florian Thomas — Projets SAé</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F7F4EF;--parchment:#EDE8DE;--wine:#6B2D3E;--gold:#B8966A;--charcoal:#2A2825;--muted:#6E6A62;--light:#9E9A92;--border:#D8D2C6;--analyser:#C0392B;--experimenter:#D68A3A;--animer:#B8962A;--produire:#5A8A3C;--innover:#3A6EA8;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;width:100%;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.08em;color:var(--wine);text-transform:uppercase;text-decoration:none;}
+  nav ul{list-style:none;display:flex;gap:2.5rem;}
+  nav a{text-decoration:none;font-size:0.8rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+  nav a:hover,nav a.active{color:var(--wine);}
+
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:60vh;padding-top:64px;}
+  .hero-left{background:white;padding:6rem 5vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+  .hero-left::after{content:'SAé';font-family:'Cormorant Garamond',serif;font-size:14rem;font-weight:300;color:var(--parchment);position:absolute;right:-1rem;bottom:-2rem;line-height:1;}
+  .hero-right{background:var(--wine);padding:4rem 5vw;display:flex;flex-direction:column;justify-content:center;}
+  .breadcrumb{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light);margin-bottom:1.5rem;display:flex;gap:0.5rem;}
+  .breadcrumb a{color:var(--gold);text-decoration:none;}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,4.5rem);font-weight:300;line-height:1.05;margin-bottom:1.25rem;position:relative;z-index:1;}
+  h1 em{font-style:italic;color:var(--wine);}
+  .hero-sub{font-size:0.95rem;color:var(--muted);line-height:1.85;max-width:480px;position:relative;z-index:1;}
+  .def-quote{border-left:3px solid var(--gold);padding:1.5rem;background:white;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;}
+  .def-text{font-size:0.9rem;color:var(--muted);line-height:1.8;}
+  .ue-pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
+  .ue-pill{font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.8rem;font-weight:500;}
+  .ue-pill.analyser{background:rgba(192,57,43,0.1);color:var(--analyser);border:1px solid rgba(192,57,43,0.25);}
+  .ue-pill.experimenter{background:rgba(214,138,58,0.1);color:var(--experimenter);border:1px solid rgba(214,138,58,0.25);}
+  .ue-pill.animer{background:rgba(184,150,42,0.1);color:var(--animer);border:1px solid rgba(184,150,42,0.25);}
+  .ue-pill.produire{background:rgba(90,138,60,0.1);color:var(--produire);border:1px solid rgba(90,138,60,0.25);}
+  .ue-pill.innover{background:rgba(58,110,168,0.1);color:var(--innover);border:1px solid rgba(58,110,168,0.25);}
+
+  section{padding:4rem 5vw;}
+  .sec-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+  h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.1;margin-bottom:2.5rem;}
+  h2 em{font-style:italic;color:var(--wine);}
+
+  /* COMPÉTENCES 5 colonnes */
+  .comp5{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;}
+  .comp-card{border:1px solid var(--border);padding:1.5rem;position:relative;background:white;transition:transform 0.2s,border-color 0.2s;}
+  .comp-card:hover{transform:translateY(-2px);}
+  .comp-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;}
+  .comp-card.analyser::before{background:var(--analyser);}
+  .comp-card.experimenter::before{background:var(--experimenter);}
+  .comp-card.animer::before{background:var(--animer);}
+  .comp-card.produire::before{background:var(--produire);}
+  .comp-card.innover::before{background:var(--innover);}
+  .comp-ue{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:500;margin-bottom:0.5rem;}
+  .comp-ue.analyser{color:var(--analyser);}.comp-ue.experimenter{color:var(--experimenter);}.comp-ue.animer{color:var(--animer);}.comp-ue.produire{color:var(--produire);}.comp-ue.innover{color:var(--innover);}
+  .comp-card h3{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;margin-bottom:0.4rem;line-height:1.3;}
+  .comp-card p{font-size:0.78rem;color:var(--muted);line-height:1.6;}
+  .comp-note{font-size:0.7rem;color:var(--light);font-style:italic;margin-top:0.4rem;}
+
+  /* ÉTAPES */
+  .steps{background:white;}
+  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
+  .step{display:flex;flex-direction:column;gap:1rem;}
+  .step-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--border);line-height:1;}
+  .step h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;}
+  .step p{font-size:0.85rem;color:var(--muted);line-height:1.75;}
+
+  /* ACCÈS ANNÉES */
+  .acces{background:var(--charcoal);padding:5rem 5vw;}
+  .acces h2{color:white;}
+  .acces h2 em{color:var(--gold);}
+  .acces-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .acces-card{border:1px solid rgba(255,255,255,0.12);padding:3rem;text-decoration:none;display:block;position:relative;transition:border-color 0.2s,background 0.2s;}
+  .acces-card:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
+  .acces-card::after{content:'→';position:absolute;right:2rem;bottom:2rem;color:var(--gold);font-size:1.5rem;}
+  .acces-annee{font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:300;color:rgba(255,255,255,0.06);line-height:1;margin-bottom:0.5rem;}
+  .acces-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+  .acces-card h3{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;color:white;margin-bottom:0.3rem;}
+  .acces-sub{font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:1rem;}
+  .saes-pills{display:flex;flex-wrap:wrap;gap:0.4rem;}
+  .saes-pill{font-size:0.65rem;padding:0.2rem 0.6rem;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.4);}
+
+  .retour{padding:2rem 5vw;background:var(--cream);border-top:1px solid var(--border);}
+  .retour a{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);text-decoration:none;transition:color 0.2s;}
+  .retour a:hover{color:var(--wine);}
+
+  @media(max-width:1100px){.acces-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:900px){nav ul{display:none;}.hero,.acces-grid{grid-template-columns:1fr;}.comp5,.steps-grid{grid-template-columns:repeat(2,1fr);}.hero-left::after{display:none;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="portfolio_florian_thomas.html" class="nav-logo">Florian Thomas</a>
+  <ul>
+    <li><a href="portfolio_florian_thomas.html">Accueil</a></li>
+    <li><a href="parcours.html">Parcours BUT</a></li>
+    <li><a href="stages.html">Stages</a></li>
+    <li><a href="projets_intro.html" class="active">Projets</a></li>
+    <li><a href="portfolio_florian_thomas.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="breadcrumb"><a href="portfolio_florian_thomas.html">Accueil</a><span>/</span>Projets SAé</div>
+    <h1>Mes projets<br><em>SAé</em></h1>
+    <p class="hero-sub">Trois années de travaux pratiques, d'expérimentations et de projets concrets réalisés à l'IUT Nancy-Brabois dans le cadre du BUT Génie Biologique.</p>
+  </div>
+  <div class="hero-right">
+    <div class="def-quote">Une SAé place l'étudiant en situation professionnelle réelle : expérimenter en labo, produire un aliment, analyser un échantillon de terrain, concevoir un produit innovant…</div>
+    <p class="def-text">Chaque SAé est rattachée à une ou plusieurs <strong>Unités d'Enseignement (UE)</strong>. Elle est évaluée en contrôle continu sur la base du travail et du rapport produit. Plus de 50% des enseignements du BUT sont dédiés à la pratique.</p>
+    <div class="ue-pills">
+      <span class="ue-pill analyser">Analyser</span>
+      <span class="ue-pill experimenter">Expérimenter</span>
+      <span class="ue-pill animer">Animer</span>
+      <span class="ue-pill produire">Produire</span>
+      <span class="ue-pill innover">Innover</span>
+    </div>
+  </div>
+</div>
+
+<section id="competences" style="background:var(--cream);">
+  <div class="sec-label">Les 5 compétences</div>
+  <h2>Ce que chaque <em>UE</em> développe</h2>
+  <div class="comp5">
+    <div class="comp-card analyser"><div class="comp-ue analyser">Analyser</div><h3>Réaliser des analyses biologiques</h3><p>Protocoles analytiques, traçabilité, démarche qualité.</p></div>
+    <div class="comp-card experimenter"><div class="comp-ue experimenter">Expérimenter</div><h3>Expérimenter dans le génie biologique</h3><p>Concevoir et conduire des expérimentations scientifiques.</p></div>
+    <div class="comp-card animer"><div class="comp-ue animer">Animer</div><h3>Manager la qualité et la sécurité</h3><p>Démarches QHSE dans les industries alimentaires.</p></div>
+    <div class="comp-card produire"><div class="comp-ue produire">Produire</div><h3>Organiser la production alimentaire</h3><p>Conduire une ligne de production, suivre les indicateurs.</p></div>
+    <div class="comp-card innover"><div class="comp-ue innover">Innover</div><h3>Innover en sciences des aliments</h3><p>R&D, développement de produits innovants.</p><p class="comp-note">Apparaît en 2ème et 3ème année uniquement</p></div>
+  </div>
+</section>
+
+<section class="steps" id="fonctionnement">
+  <div class="sec-label">Organisation</div>
+  <h2>Comment se déroule <em>une SAé ?</em></h2>
+  <div class="steps-grid">
+    <div class="step"><div class="step-num">1</div><h3>Un sujet ancré dans le réel</h3><p>Analyser une eau de lac, contrôler l'hygiène d'un EHPAD, produire un jus de pomme sur pilote industriel… Le contexte est toujours proche de la réalité du terrain.</p></div>
+    <div class="step"><div class="step-num">2</div><h3>Travail en équipe et en autonomie</h3><p>La plupart des SAé se réalisent en binôme ou en groupe. L'étudiant organise son travail, gère son temps et prend des initiatives.</p></div>
+    <div class="step"><div class="step-num">3</div><h3>Travaux pratiques en laboratoire</h3><p>Manipulations, protocoles expérimentaux, collecte de données. La rigueur est évaluée à chaque étape — préparation, réalisation, traçabilité.</p></div>
+    <div class="step"><div class="step-num">4</div><h3>Rédaction d'un rapport argumenté</h3><p>Introduction, protocoles, résultats, analyse critique et bibliographie. Une compétence transversale essentielle tout au long du BUT.</p></div>
+  </div>
+</section>
+
+<div class="acces">
+  <div class="sec-label" style="color:var(--gold);margin-bottom:0.75rem;">Mes SAé</div>
+  <h2 style="margin-bottom:2.5rem;">Choisir <em>une année</em></h2>
+  <div class="acces-grid">
+    <a href="projets.html" class="acces-card">
+      <div class="acces-annee">1</div>
+      <div class="acces-label">Semestres 1 & 2</div>
+      <h3>Première année</h3>
+      <div class="acces-sub">2023–2024 · 8 SAé</div>
+      <div class="saes-pills">
+        <span class="saes-pill">SAé 1.1 Analyses</span><span class="saes-pill">SAé 1.2 Histologie</span><span class="saes-pill">SAé 1.3 Hygiène EHPAD</span><span class="saes-pill">SAé 1.4 Yaourt</span><span class="saes-pill">SAé 2.1 Biochimie œuf</span><span class="saes-pill">SAé 2.2 Physiologie</span><span class="saes-pill">SAé 2.3 Analyse du vin</span><span class="saes-pill">SAé 2.4 Équipements</span>
+      </div>
+    </a>
+    <a href="projets_annee2.html" class="acces-card">
+      <div class="acces-annee">2</div>
+      <div class="acces-label">Semestres 3 & 4</div>
+      <h3>Deuxième année</h3>
+      <div class="acces-sub">2024–2025 · 5 SAé dont Innovation</div>
+      <div class="saes-pills">
+        <span class="saes-pill">SAé 3.1 Eau de lac</span><span class="saes-pill">SAé 3.2 Enzymologie</span><span class="saes-pill">SAé 3.3 Jus de pomme</span><span class="saes-pill">SAé 3.4 Shampoing innovant</span><span class="saes-pill">SAé 4.1 Microbiologie eau</span><span class="saes-pill">SAé 4.2 Fromages</span>
+      </div>
+    </a>
+    <a href="projets_annee3.html" class="acces-card">
+      <div class="acces-annee">3</div>
+      <div class="acces-label">Semestre 5</div>
+      <h3>Troisième année</h3>
+      <div class="acces-sub">2025–2026 · 2 SAé</div>
+      <div class="saes-pills">
+        <span class="saes-pill">SAé 5.01 Innover/Produire/Animer</span><span class="saes-pill">SAé 5.02 Visite virtuelle autoclave</span>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="retour"><a href="portfolio_florian_thomas.html">← Retour à l'accueil</a></div>
+</body>
+</html>
