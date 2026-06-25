@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florian Thomas — SAé 3ème année</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F7F4EF;--parchment:#EDE8DE;--wine:#6B2D3E;--gold:#B8966A;--charcoal:#2A2825;--muted:#6E6A62;--light:#9E9A92;--border:#D8D2C6;--analyser:#C0392B;--experimenter:#D68A3A;--animer:#B8962A;--produire:#5A8A3C;--innover:#3A6EA8;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;width:100%;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,244,239,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.08em;color:var(--wine);text-transform:uppercase;text-decoration:none;}
+  nav ul{list-style:none;display:flex;gap:2.5rem;}
+  nav a{text-decoration:none;font-size:0.8rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+  nav a:hover,nav a.active{color:var(--wine);}
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:45vh;padding-top:64px;}
+  .hero-left{background:white;padding:4rem 5vw 4rem 8vw;display:flex;flex-direction:column;justify-content:center;}
+  .hero-right{background:var(--wine);padding:4rem 5vw;display:flex;flex-direction:column;justify-content:center;gap:1rem;}
+  .breadcrumb{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light);margin-bottom:1.5rem;display:flex;gap:0.5rem;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--gold);text-decoration:none;}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;line-height:1.05;margin-bottom:1rem;}
+  h1 em{font-style:italic;color:var(--wine);}
+  .hero-sub{font-size:0.92rem;color:var(--muted);line-height:1.8;}
+  .ue-pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
+  .ue-pill{font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.25rem 0.75rem;font-weight:500;}
+  .ue-pill.analyser{background:rgba(192,57,43,0.1);color:var(--analyser);border:1px solid rgba(192,57,43,0.25);}
+  .ue-pill.experimenter{background:rgba(214,138,58,0.1);color:var(--experimenter);border:1px solid rgba(214,138,58,0.25);}
+  .ue-pill.animer{background:rgba(184,150,42,0.1);color:var(--animer);border:1px solid rgba(184,150,42,0.25);}
+  .ue-pill.produire{background:rgba(90,138,60,0.1);color:var(--produire);border:1px solid rgba(90,138,60,0.25);}
+  .ue-pill.innover{background:rgba(58,110,168,0.1);color:var(--innover);border:1px solid rgba(58,110,168,0.25);}
+  .semestre{padding:3rem 5vw;}
+  .semestre:nth-child(even){background:white;}
+  .sec-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+  h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:300;line-height:1.1;margin-bottom:2.5rem;}
+  h2 em{font-style:italic;color:var(--wine);}
+  .sae-card{display:grid;grid-template-columns:3fr 2fr;border:1px solid var(--border);margin-bottom:2rem;background:white;transition:border-color 0.2s;}
+  .sae-card:hover{border-color:var(--gold);}
+  .sae-card.hl{border-color:var(--gold);}
+  .sae-top{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);}
+  .sae-title-wrap{display:flex;align-items:baseline;gap:1rem;}
+  .sae-num{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--light);}
+  .sae-top h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;line-height:1.2;}
+  .sae-badges{display:flex;gap:0.4rem;flex-wrap:wrap;align-items:center;}
+  .sbadge{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.6rem;font-weight:500;}
+  .sbadge.analyser{background:rgba(192,57,43,0.1);color:var(--analyser);}
+  .sbadge.experimenter{background:rgba(214,138,58,0.1);color:var(--experimenter);}
+  .sbadge.animer{background:rgba(184,150,42,0.1);color:var(--animer);}
+  .sbadge.produire{background:rgba(90,138,60,0.1);color:var(--produire);}
+  .sbadge.innover{background:rgba(58,110,168,0.1);color:var(--innover);}
+  .voir-plus{display:inline-flex;align-items:center;gap:0.4rem;border:none;padding:0.45rem 1.1rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:white;background:var(--wine);text-decoration:none;font-weight:500;transition:opacity 0.2s;white-space:nowrap;}
+  .voir-plus:hover{opacity:0.85;}
+  .sae-info{padding:1.5rem;border-right:1px solid var(--border);}
+  .sae-media{padding:1.5rem;display:flex;flex-direction:column;}
+  .info-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
+  .info-block{margin-bottom:1.25rem;}
+  .info-block:last-child{margin-bottom:0;}
+  .info-block p{font-size:0.88rem;color:var(--muted);line-height:1.7;}
+  .tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;}
+  .tag{font-size:0.7rem;border:1px solid var(--border);padding:0.15rem 0.55rem;color:var(--light);}
+  .res-block{border:1.5px solid var(--border);padding:1.25rem;position:relative;}
+  .res-block p{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--charcoal);line-height:1.7;}
+  .sae-photo{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;}
+  .sae-photo-wrap{aspect-ratio:16/10;background:var(--parchment);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;color:var(--light);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin:0.75rem 1.5rem 1.5rem;}
+  .nav-pages{background:var(--charcoal);padding:4rem 5vw;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+  .np-card{border:1px solid rgba(255,255,255,0.12);padding:1.75rem;text-decoration:none;display:block;position:relative;transition:border-color 0.2s,background 0.2s;}
+  .np-card:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
+  .np-card::after{content:'→';position:absolute;right:1.25rem;top:50%;transform:translateY(-50%);color:var(--gold);}
+  .np-card.current{border-color:rgba(184,150,42,0.4);}
+  .np-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+  .np-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:white;margin-bottom:0.3rem;}
+  .np-card p{font-size:0.8rem;color:rgba(255,255,255,0.4);}
+  .retour{padding:1.5rem 5vw;background:var(--cream);border-top:1px solid var(--border);}
+  .retour a{font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);text-decoration:none;}
+  .retour a:hover{color:var(--wine);}
+  @media(max-width:900px){nav ul{display:none;}.hero,.sae-card{grid-template-columns:1fr;}.nav-pages{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="portfolio_florian_thomas.html" class="nav-logo">Florian Thomas</a>
+  <ul>
+    <li><a href="portfolio_florian_thomas.html">Accueil</a></li>
+    <li><a href="parcours.html">Parcours BUT</a></li>
+    <li><a href="stages.html">Stages</a></li>
+    <li><a href="projets_intro.html" class="active">Projets SAé</a></li>
+    <li><a href="portfolio_florian_thomas.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="breadcrumb"><a href="projets_intro.html">Projets SAé</a><span>/</span><span>3ème année</span></div>
+    <h1>SAé <em>3ème année</em></h1>
+    <p class="hero-sub">Semestre 5 · 2025–2026 · IUT Nancy-Brabois</p>
+    <p class="hero-sub" style="margin-top:0.75rem;">En 3ème année, la compétence <strong>Analyser</strong> n'est plus mobilisée — elle est considérée comme acquise. Le semestre 5 prend une forme différente : une SAé multi-compétences et un projet tutoré mené avec un partenaire extérieur.</p>
+  </div>
+  <div class="hero-right">
+    <div class="sec-label" style="color:rgba(255,255,255,0.4);">Compétences travaillées</div>
+    <div class="ue-pills">
+      <span class="ue-pill experimenter">Expérimenter</span>
+      <span class="ue-pill animer">Animer</span>
+      <span class="ue-pill produire">Produire</span>
+      <span class="ue-pill innover">Innover</span>
+    </div>
+  </div>
+</div>
+
+<div class="semestre" id="s5"><div class="sec-label">Semestre 5</div><h2>Cinquième <em>semestre</em></h2>
+
+  <div class="sae-card hl">
+    <div class="sae-top">
+      <div class="sae-title-wrap"><span class="sae-num">SAé 5.01</span><h3>Innover, produire, contrôler en science des aliments</h3></div>
+      <div class="sae-badges"><span class="sbadge innover produire animer">Innover · Produire · Animer</span><a href="sae501.html" class="voir-plus">Voir en détail →</a></div>
+    </div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Mobiliser des compétences transversales sur cinq sous-éléments indépendants : gestion d'une situation d'urgence environnementale, audit qualité, nettoyage et désinfection d'un équipement, Lean management, et apport nutritionnel d'une ration alimentaire.</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>Rédaction de procédures d'urgence ICPE, stratégie de nettoyage Worst Case et méthode TACT sur une soutireuse industrielle, bilan nutritionnel détaillé et Nutri-Score d'une ration alimentaire réelle.</p><div class="tags"><span class="tag">ICPE</span><span class="tag">TACT</span><span class="tag">HACCP</span><span class="tag">Audit qualité</span><span class="tag">Nutri-Score</span><span class="tag">Lean management</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><p>Ce qui m'a marqué dans cette SAé, c'est le grand écart entre les sujets traités dans le même semestre : un jour on rédige des procédures d'urgence pour une serre, le lendemain on calcule l'alcoolémie théorique d'un repas, et la semaine suivante on valide un protocole de nettoyage industriel. Chaque sous-élément demande une rigueur et un vocabulaire différents, et c'est justement ce qui en fait un bon entraînement avant l'entrée dans le monde professionnel — on n'y traite jamais un seul type de problème à la fois.</p></div></div>
+    </div>
+    <div class="sae-media">
+      <div class="info-label">Photo</div>
+      <img class="sae-photo" src="sae501.png" alt="Photo SAé 5.01" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="sae-photo-wrap" style="display:none">PHOTO À VENIR</div>
+    </div>
+  </div>
+
+  <div class="sae-card">
+    <div class="sae-top">
+      <div class="sae-title-wrap"><span class="sae-num">SAé 5.02</span><h3>Visite virtuelle de l'autoclave de la Halle de Pixérécourt</h3></div>
+      <div class="sae-badges"><span class="sbadge innover">Innover · Projet tutoré</span><a href="sae502.html" class="voir-plus">Voir en détail →</a></div>
+    </div>
+    <div class="sae-info">
+      <div class="info-block"><div class="info-label">Objectif</div><p>Concevoir, pour la Halle alimentaire de Pixérécourt (EPL54), un outil pédagogique immersif en réalité virtuelle permettant de comprendre les phénomènes physiques et microbiologiques d'un traitement thermique en autoclave.</p></div>
+      <div class="info-block"><div class="info-label">Méthodes utilisées</div><p>Visites de terrain et manipulation réelle de l'autoclave, scénarisation en tronc commun + ramification par recette, montage vidéo sous CapCut, production immersive sur H5P via ARCHE, ajout de sous-titres pour l'accessibilité.</p><div class="tags"><span class="tag">Réalité virtuelle</span><span class="tag">H5P</span><span class="tag">Autoclave</span><span class="tag">Pasteurisation</span><span class="tag">Stérilisation</span><span class="tag">Projet tutoré</span></div></div>
+      <div class="info-block"><div class="info-label">Mon ressenti</div><div class="res-block"><p>C'est la première fois qu'on travaillait pour un vrai client extérieur, avec ses propres délais et ses propres contraintes — et ça change complètement la façon de gérer un projet par rapport à un simple TP entre étudiants. Le moment le plus marquant a été de devoir changer complètement d'outil en cours de route, l'ancien logiciel n'étant plus accessible : on a dû repenser toute notre stratégie technique, en perdant en interactivité par rapport à ce qu'on avait imaginé au départ. Ça a été frustrant sur le moment, mais ça nous a appris à nous adapter vraiment, pas juste sur le papier.</p></div></div>
+    </div>
+    <div class="sae-media">
+      <div class="info-label">Photo</div>
+      <img class="sae-photo" src="sae502.png" alt="Photo SAé 5.02" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="sae-photo-wrap" style="display:none">PHOTO À VENIR</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="nav-pages">
+  <a href="projets_annee2.html" class="np-card"><div class="np-label">Précédent</div><h3>SAé 2ème année</h3><p>Semestres 3 & 4 · 2024–2025</p></a>
+  <div class="np-card current"><div class="np-label">Vous êtes ici</div><h3>SAé 3ème année</h3><p>Semestre 5 · 2025–2026</p></div>
+  <a href="stages.html" class="np-card"><div class="np-label">Découvrir</div><h3>Mes stages</h3><p>3 expériences de terrain</p></a>
+</div>
+<div class="retour"><a href="portfolio_florian_thomas.html">← Retour à l'accueil</a></div>
+</body>
+</html>
